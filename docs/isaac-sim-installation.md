@@ -1,5 +1,5 @@
 # Isaac Sim Installation
-## Infomation
+## Environment Infomation
 | 항목 | 내용 |
 |-|-|
 | Author | 오민석 |
