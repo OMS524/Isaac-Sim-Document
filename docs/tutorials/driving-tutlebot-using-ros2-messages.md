@@ -94,7 +94,7 @@ base_footprint의 Articulation Root API를 삭제 후, turtlebot3_burger에 Arti
 Articulation Controller Node의 Property 탭에서 'Add Target...'을 클릭하여 turtlebot3_burger을 추가합니다.
 turtlebot3_burger은 Articulation Root API가 적용되어 있어야 합니다.
 
-<img width="515" height="295" alt="image" src="https://github.com/user-attachments/assets/b41975a3-8330-4baf-a512-332202819c68" />
+<img width="514" height="296" alt="image" src="https://github.com/user-attachments/assets/cf437cb6-944a-4299-95c7-d7de11878c6c" />
 
 각 Constant Tokoen Node의 Property 탭에서 Value에 wheel_left_joint, wheel_right_joint를 입력하세요.
 
