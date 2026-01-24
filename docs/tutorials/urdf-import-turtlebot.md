@@ -1,5 +1,5 @@
 # URDF Import: Turtlebot
-## Infomation
+## Environment Infomation
 | 항목 | 내용 |
 |-|-|
 | Author | 오민석 |
