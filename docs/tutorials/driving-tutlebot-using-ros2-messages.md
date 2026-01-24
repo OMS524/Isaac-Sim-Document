@@ -1,4 +1,4 @@
-[Screencast from 01-24-2026 07:48:58 PM.webm](https://github.com/user-attachments/assets/4f04764b-d911-4b1b-b3ab-b2a5e52911b8)# Driving TurtleBot using ROS 2 Messages
+# Driving TurtleBot using ROS 2 Messages
 ## Environment Infomation
 | Item | Description |
 |-|-|
@@ -66,13 +66,28 @@ ros2 topic list
 ```
 <img width="236" height="72" alt="image" src="https://github.com/user-attachments/assets/4394cc70-4c57-4d44-8435-88704a89bf58" />
 
-3. 다음 명령어를 통해 로봇을 앞으로 움직이는 토픽 게시
+3. 다음 명령어를 통해 로봇을 앞으로 움직이거나 멈추는 토픽 게시
+앞으로 가기
 ```bash
 ros2 topic pub /cmd_vel geometry_msgs/Twist "{'linear': {'x': 0.2, 'y': 0.0, 'z': 0.0}, 'angular': {'x': 0.0, 'y': 0.0, 'z': 0.0}}"
 ```
 
-4. 다음 명령어를 통해 로봇을 멈추는 토픽 게시
+멈추기
 ```bash
 ros2 topic pub /cmd_vel geometry_msgs/Twist "{'linear': {'x': 0.0, 'y': 0.0, 'z': 0.0}, 'angular': {'x': 0.0, 'y': 0.0, 'z': 0.0}}"
 ```
+[Driving TurtleBot using ROS 2 Messages_1.webm](https://github.com/user-attachments/assets/7fd39b75-94e7-4e0f-a5c4-ec1344f39850)
+
+5. 다음 명령어를 통해 teleop_twist_keyboard를 이용하여 터틀봇을 더 쉽게 이동
+```bash
+sudo apt-get install ros-$ROS_DISTRO-teleop-twist-keyboard
+```
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+[Driving TurtleBot using ROS 2 Messages_2.webm](https://github.com/user-attachments/assets/7aa26a35-db73-4322-ab6c-db2c131bea12)
+
+
+
+
 
