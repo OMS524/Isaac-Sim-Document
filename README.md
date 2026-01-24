@@ -8,7 +8,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html
 
 | Name | Version | Release Date | Links |
 |------|---------|--------------|-------|
-| Isaac Sim | 5.1.0 | October 2025 | [Linux (x86_64)](https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone-5.1.0-linux-x86_64.zip)) |
+| Isaac Sim | 5.1.0 | October 2025 | [Linux (x86_64)](https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone-5.1.0-linux-x86_64.zip) |
 
 
 
@@ -30,4 +30,17 @@ unzip ~/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64.zip -d ~/isaac-sim
 IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 메모리 복사를 제대로 못 해서 오류, 깨짐, 크래스가 날 수 있다
 라는 오류 팝업이 뜨고 Isaac Sim App Selector가 실행된다.
 따라서, BIOS에서 IOMMU를 비활성화를 해야 한다.
+
+<img width="3462" height="1918" alt="image" src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" />
+<img width="3450" height="1936" alt="image" src="https://github.com/user-attachments/assets/b9878d0e-f853-4af7-bb61-2eee4f96945a" />
+<img width="3064" height="1714" alt="image" src="https://github.com/user-attachments/assets/bbbe24b5-dab3-41f1-8a59-d9d0bc659b43" />
+<img width="3408" height="1937" alt="image" src="https://github.com/user-attachments/assets/257466e0-e4d2-4ceb-99f1-a3a3ef1231e0" />
+<img width="3673" height="2099" alt="image" src="https://github.com/user-attachments/assets/fe7a84c1-be5f-4fbf-9edf-edf948dd5d79" />
+
+
+
+
+
+
+
 
