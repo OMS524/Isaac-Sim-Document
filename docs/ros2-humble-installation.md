@@ -1,6 +1,6 @@
 # ROS2 humble Installation
 ## Environment Infomation
-| 항목 | 내용 |
+| Item | Description |
 |-|-|
 | Author | 오민석 |
 | Date | 2026-01-24 |
