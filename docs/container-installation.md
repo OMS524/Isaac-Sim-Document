@@ -96,7 +96,9 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
 ```
 
 ### 7. Isaac Sim WebRTC Streaming Client 설치
-
+| Name | Version | Release Date | Links |
+|------|---------|--------------|-------|
+| Isaac Sim WebRTC Streaming Client | 1.1.5 | October 2025 | [Linux (x86_64)](https://download.isaacsim.omniverse.nvidia.com/isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage) |
 
 
 
