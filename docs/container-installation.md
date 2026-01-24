@@ -17,6 +17,7 @@ $ newgrp docker
 # Verify Docker
 $ docker run hello-world
 ```
+
 ### 2. NVIDIA Container Toolkit을 설치
 ```bash
 # Configure the repository
@@ -38,6 +39,19 @@ $ sudo systemctl restart docker
 # Verify NVIDIA Container Toolkit
 $ docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 ```
+
+
+## 컨테이너 배포
+### 1. GPU 드라이버 버전 확인
+```bash
+$ nvidia-smi
+```
+
+### 2. Pull the Isaac Sim Container
+```bash
+$ docker pull nvcr.io/nvidia/isaac-sim:5.1.0
+```
+
 
 
 
