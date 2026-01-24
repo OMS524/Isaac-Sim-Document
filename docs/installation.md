@@ -65,5 +65,24 @@ ls /sys/kernel/iommu_groups/
 위 명령어를 실행하면 다음 사진과 같이 아무런 출력이 없으면 비활성화 된 것을 확인할 수 있다.
 <img width="786" height="173" alt="image" src="https://github.com/user-attachments/assets/72e10ef9-71ba-4600-9800-0b1093c18c49" />
 
-**IOMMU**를 비활성화 하고 다시 실행 명령어를 실행하면 다음과 같이 **Isaac Sim Selector**가 나온다.
-<img width="502" height="527" alt="image" src="https://github.com/user-attachments/assets/e802b28f-bcd7-46b5-88a5-bb0739004a82" />
+Isaac Sim을 실행하면 아래와 같이 **Isaac Sim App Selector** 창이 나타난다.
+여기서 **Isaac Sim**을 선택한 후 **START** 버튼을 누르면,
+두 번째 이미지와 같이 기본 빈 Stage가 열린 Isaac Sim 메인 화면이 실행된다.
+
+### Isaac Sim Launch Process
+
+**Isaac Sim App Selector**
+
+<img width="500" alt="Isaac Sim App Selector"
+src="https://github.com/user-attachments/assets/e802b28f-bcd7-46b5-88a5-bb0739004a82" />
+
+**Isaac Sim Main Window (New Stage)**
+
+<img width="900" alt="Isaac Sim Main Window"
+src="https://github.com/user-attachments/assets/a0d83112-e15a-475e-90f8-4cd6c661a495" />
+
+
+
+
+
+
