@@ -12,19 +12,20 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html
 ## 2. 디렉토리 생성 및 압축 풀기
 디렉토리 생성
 ```bash
-$ mkdir -p ~/isaac-sim
+mkdir -p ~/isaac-sim
 ```
 압축 풀기
 ```bash
-$ unzip ~/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64.zip -d ~/isaac-sim
+unzip ~/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64.zip -d ~/isaac-sim
 ```
 
 
 
 ## 3. 실행
 ```bash
-$ ./post_install.sh
-$ ./isaac-sim.selector.sh
+cd ~/isaac-sim
+./post_install.sh
+./isaac-sim.selector.sh
 ```
 위 명령어를 실행하면
 IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 메모리 복사를 제대로 못 해서 오류, 깨짐, 크래스가 날 수 있다
@@ -59,8 +60,8 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 
 IOMMU 비활성화 확인 명령어
 ```bash
-$ sudo dmesg | grep -e DMAR -e IOMMU
-$ ls /sys/kernel/iommu_groups/
+sudo dmesg | grep -e DMAR -e IOMMU
+ls /sys/kernel/iommu_groups/
 ```
 위 명령어를 실행하면 다음 사진과 같이 아무런 출력이 없으면 비활성화 된 것을 확인할 수 있다.
 <img width="786" height="173" alt="image" src="https://github.com/user-attachments/assets/72e10ef9-71ba-4600-9800-0b1093c18c49" />
@@ -83,8 +84,8 @@ src="https://github.com/user-attachments/assets/a0d83112-e15a-475e-90f8-4cd6c661
 
 여기까지 문제 없이 설치가 되었다면 앞으로 Isaac Sim을 실행할 때 다음 명령어를 사용하면 된다.
 ```bash
-$ cd ~/isaac-sim
-$ ./isaac-sim.selector.sh
+cd ~/isaac-sim
+./isaac-sim.selector.sh
 ```
 
 
