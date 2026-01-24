@@ -102,8 +102,6 @@ Yes를 클릭한다.
 
 <img width="464" height="105" alt="image" src="https://github.com/user-attachments/assets/c06cfda0-82e5-48e3-b5f7-fd1dc5a4a277" />
 
-
-
 다음과 같이 UEDF를 불러온 것을 확인할 수 있다.
 <img width="1850" height="1053" alt="image" src="https://github.com/user-attachments/assets/fd9674c9-26af-4b9b-9159-1b62474e60fe" />
 
