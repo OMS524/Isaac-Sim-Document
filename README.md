@@ -58,5 +58,11 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 | 1 | <img src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" width="300"/> | BIOS 진입 후 **Advanced** 탭 선택 후 **CPU Configuration** 진입 |
 | 2 | <img src="https://github.com/user-attachments/assets/0a77c151-59ee-4772-8f5a-d1a3f0c107b7" width="300"/> | **Extended APIC** → `Disabled` |
 
+```bash
+sudo dmesg | grep -e DMAR -e IOMMU
+ls /sys/kernel/iommu_groups/
+```
+
+<img width="786" height="173" alt="image" src="https://github.com/user-attachments/assets/72e10ef9-71ba-4600-9800-0b1093c18c49" />
 
 
