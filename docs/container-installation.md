@@ -121,6 +121,7 @@ Isaac Sim의 로컬 인스턴스에 연결하려면 Server 입력칸에 기본 I
 Connect를 누르면 다음과 같이 Isaac Sim 인터페이스가 나타난다.
 <img width="820" height="655" alt="image" src="https://github.com/user-attachments/assets/26919689-4653-4ac6-ab3f-ffe6d12a3afe" />
 
+|-----------|-----------|
 | <img src="https://github.com/user-attachments/assets/23f0d4bc-bcbf-465e-b2d9-8ff43d907958" width="300"/> | <img src="https://github.com/user-attachments/assets/26919689-4653-4ac6-ab3f-ffe6d12a3afe" width="300"/> |
 
 
