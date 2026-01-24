@@ -48,19 +48,19 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
     -v ~/docker/isaac-sim/config:/isaac-sim/.nvidia-omniverse/config:rw \
     -v ~/docker/isaac-sim/data:/isaac-sim/.local/share/ov/data:rw \
     -v ~/docker/isaac-sim/pkg:/isaac-sim/.local/share/ov/pkg:rw \
-    -v ~/IsaacSim-ros_workspaces/humble_ws:/humble_ws:rw \
+    -v ~/IsaacSim-ros_workspaces:/IsaacSim-ros_workspaces:rw \
     -u 1234:1234 \
     nvcr.io/nvidia/isaac-sim:5.1.0
 ```
 위 Docker 실행 명령어에서 -u 1234:1234는 user의 uid, gid를 의미한다.
 해당 uid, gid를 이용하여 다음 명령어를 통해 소유권을 가지게 할 수 있다.
-sudo chown -R <container_uid>:<container_gid> ~/IsaacSim-ros_workspaces/humble_ws
+sudo chown -R <container_uid>:<container_gid> ~/IsaacSim-ros_workspaces
 ```bash
 sudo chown -R 1234:1234 ~/IsaacSim-ros_workspaces/humble_ws
 ```
 
 또한, 위 Docker 실행 명령어를 보면
--v ~/IsaacSim-ros_workspaces/humble_ws:/humble_ws:rw를 추가하여
+-v ~/IsaacSim-ros_workspaces:/IsaacSim-ros_workspaces:rw를 추가하여
 Isaac Sim에서 URDF 파일을 가져올 수 있게 워크스페이스를 마운트 해주었고, rw는 읽기/쓰기 권한을 의미한다.
 
 ### Isaac Sim 실행
@@ -73,7 +73,7 @@ docker run --name isaac-sim --entrypoint bash -it --gpus all -e "ACCEPT_EULA=Y" 
     -v ~/docker/isaac-sim/config:/isaac-sim/.nvidia-omniverse/config:rw \
     -v ~/docker/isaac-sim/data:/isaac-sim/.local/share/ov/data:rw \
     -v ~/docker/isaac-sim/pkg:/isaac-sim/.local/share/ov/pkg:rw \
-    -v ~/IsaacSim-ros_workspaces/humble_ws:/humble_ws:rw \
+    -v ~/IsaacSim-ros_workspaces:/IsaacSim-ros_workspaces:rw \
     -u 1234:1234 \
     nvcr.io/nvidia/isaac-sim:5.1.0
 ./runheadless.sh -v
