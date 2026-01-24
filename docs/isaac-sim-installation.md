@@ -21,7 +21,10 @@ mkdir -p ~/isaac-sim
 ```bash
 unzip ~/Downloads/isaac-sim-standalone-5.1.0-linux-x86_64.zip -d ~/isaac-sim
 ```
-실행
+
+
+
+### 3. 실행
 ```bash
 ./post_install.sh
 ./isaac-sim.selector.sh
