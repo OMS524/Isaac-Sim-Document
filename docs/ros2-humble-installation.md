@@ -61,4 +61,44 @@ Environment 설정
 source /opt/ros/humble/setup.bash
 ```
 
+## 워크스페이스 설정
+### 1. IsaacSim-ros_workspaces 다운
+https://github.com/isaac-sim/IsaacSim-ros_workspaces
+```bash
+cd ~
+git clone https://github.com/isaac-sim/IsaacSim-ros_workspaces.git
+```
+
+### 2. 빌드하기 전 추가 패키지 설치
+```bash
+sudo apt install python3-rosdep build-essential
+sudo apt install python3-colcon-common-extensions
+```
+
+### 3. 소싱
+```bash
+source /opt/ros/humble/setup.bash
+```
+
+### 4. 패키지 종속성 해결
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws
+git submodule update --init --recursive # If using docker, perform this step outside the container and relaunch the container
+
+sudo rosdep init
+rosdep update
+
+rosdep install -i --from-path src --rosdistro humble -y
+```
+
+### 5. 빌드
+```bash
+colcon build
+```
+
+### 6. 소싱
+```bash
+source install/local_setup.bash
+```
+
 
