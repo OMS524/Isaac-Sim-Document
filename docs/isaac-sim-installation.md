@@ -1,4 +1,14 @@
 # Isaac Sim Installation
+## Infomation
+| 항목 | 내용 |
+|-|-|
+| Author | 오민석 |
+| Date | 2026-01-24 |
+| OS | Ubuntu 22.04 |
+| GPU | NVIDIA RTX 6000 Ada Generation |
+| Driver Version | 580.126.09 |
+| CUDA Version | 13.0 |
+
 ## 1. Isaac Sim zip 파일 다운로드
 https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/download.html
 <img width="781" height="607" alt="image" src="https://github.com/user-attachments/assets/a17c6764-ce54-46ae-99b7-e250f6683268" />
