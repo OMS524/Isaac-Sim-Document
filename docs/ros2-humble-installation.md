@@ -101,4 +101,49 @@ colcon build
 source install/local_setup.bash
 ```
 
+## ROS2 브리지 활성화
+### Fast DDS를 사용하는 Linux 환경에서
+**워크스페이스에 fastdds.xml 존재하지 않을 경우**
+해당 워크스페이스에 fastdds.xml 파일을 만들고,
+다음 코드를 적용
+```bash
+<?xml version="1.0" encoding="UTF-8" ?>
 
+<license>Copyright (c) 2022-2024, NVIDIA CORPORATION.  All rights reserved.
+NVIDIA CORPORATION and its licensors retain all intellectual property
+and proprietary rights in and to this software, related documentation
+and any modifications thereto.  Any use, reproduction, disclosure or
+distribution of this software and related documentation without an express
+license agreement from NVIDIA CORPORATION is strictly prohibited.</license>
+
+
+<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles" >
+    <transport_descriptors>
+        <transport_descriptor>
+            <transport_id>UdpTransport</transport_id>
+            <type>UDPv4</type>
+        </transport_descriptor>
+    </transport_descriptors>
+
+    <participant profile_name="udp_transport_profile" is_default_profile="true">
+        <rtps>
+            <userTransports>
+                <transport_id>UdpTransport</transport_id>
+            </userTransports>
+            <useBuiltinTransports>false</useBuiltinTransports>
+        </rtps>
+    </participant>
+</profiles>
+```
+
+**ROS2를 사용할 터미널에 Fast DDS 미들웨어를 설정 및 UDP 전송 활성화**
+export FASTRTPS_DEFAULT_PROFILES_FILE=<path_to_ros2_ws>/fastdds.xml
+```bash
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+```
+
+**Isaac Sim을 실행하기 전 ROS2 라이브러리 및 작업 공간 소싱**
+```bash
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
