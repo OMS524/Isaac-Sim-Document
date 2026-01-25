@@ -59,6 +59,7 @@ ros2 param set /rviz use_sim_time true
 ```
 
 5. Isaac Sim에서 Play를 클릭하세요.
+
 [ROS 2 Clock_1.webm](https://github.com/user-attachments/assets/4ba2aac8-1bd1-4085-84c7-f700689a004e)
 
 
