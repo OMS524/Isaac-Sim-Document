@@ -15,6 +15,12 @@
 | ROS 2 Installation | Native (Host) |
 | DDS Implementation | Fast DDS |
 
+## Learning Objectives
+이 튜토리얼에서는 Isaac Sim의 Real Time Factor(RTF)를 ROS2 Float 32 메시지로 publish 하는 방법을 설명합니다.
+
+## Getting Started
+**Extension Manager** 창에서 **Window > Extensions** 으로 이동하여 **isaacsim.ros2.bridge** Extension을 활성화합니다.
+
 ## Publish RTF
 
 
