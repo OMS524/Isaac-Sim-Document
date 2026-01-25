@@ -32,6 +32,7 @@ ros2 param set /node_name use_sim_time true
 1. Window > Graph Editors > Action Graph로 가서 Action graph를 생성하세요.
 2. 다음 사진과 같이 Action graph에 OmniGraph를 추가하세요.
 <img width="678" height="512" alt="image" src="https://github.com/user-attachments/assets/c4dba303-0a9b-456d-9210-25f65b68100c" />
+
 - On Playback Tick: 모든 시뮬레이션 프레임에서 다른 그래프 노드를 실행합니다.
 - ROS 2 Context: 주어진 도메인 ID 또는 ROS_DOMAIN_ID 환경 변수를 사용하여 컨텍스트를 생성합니다.
 - Isaac Read Simulation Time: 현재 시뮬레이션 시간을 가져옵니다. 참고: 기본적으로 시뮬레이션 시간은 단조롭게 증가하므로 시뮬레이션이 중지되었다가 다시 재생되더라도 시간은 계속 증가합니다. 이는 주로 시뮬레이션이 초기화될 때 시간이 뒤로 이동할 때 발생할 수 있는 문제를 방지하기 위한 것입니다. 시뮬레이션이 초기화될 때마다 시계를 0에서 시작하도록 하려면 resetOnStop을 True로 설정할 수 있습니다.
