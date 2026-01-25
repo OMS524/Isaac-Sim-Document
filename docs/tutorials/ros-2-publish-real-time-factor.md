@@ -21,6 +21,10 @@
 ## Getting Started
 **Extension Manager** 창에서 **Window > Extensions** 으로 이동하여 **isaacsim.ros2.bridge** Extension을 활성화합니다.
 
+<img width="311" height="457" alt="image" src="https://github.com/user-attachments/assets/2af677f3-43ce-4c48-a84a-920b9e44cb7a" />
+
+<img width="1199" height="737" alt="image" src="https://github.com/user-attachments/assets/6b59364b-c63e-4a3f-b657-1d40206285b6" />
+
 ## Publish RTF
 RTF는 시뮬레이션이 실시간과 비교하여 얼마나 빠르거나 느린지를 나타냅니다. 이는 프레임당 RTF = simulated_elapsed_time / real_elapsed_time으로 계산됩니다. RTF가 1보다 크면 시뮬레이션 시간이 wall clock time보다 빠르게 실행됩니다. RTF가 1보다 작으면 시뮬레이션이 실시간보다 느리게 실행됩니다.
 
