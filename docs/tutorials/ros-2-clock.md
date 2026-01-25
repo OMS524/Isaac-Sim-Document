@@ -113,9 +113,8 @@ ROS2 Subscribe Clock OmniGraph 노드의 timeStamp 값이 1.2로 변경되는지
 
 | Step | Screenshot | Path / Description |
 |------|-----------|--------------------|
-| 1 | <img src="https://github.com/user-attachments/assets/b4c854a6-8648-4dcf-ac9d-4e53be4a3fa4" width="300"/> | **Tools > Robotics > ROS 2 OmniGraphs > Clock**로 이동합니다. |
-| 2 | <img src="https://github.com/user-attachments/assets/5a1361a3-2c5e-44f5-813a-38882db433ae" width="300"/> | 나열된 ROS2 그래프가 보이지 않는 경우 ROS2 브리지를 활성화해야 합니다.
-그래프를 채우는 데 필요한 매개변수를 묻는 팝업 상자가 표시됩니다. |
+| 1 | <img src="https://github.com/user-attachments/assets/b4c854a6-8648-4dcf-ac9d-4e53be4a3fa4" width="300"/> | **Tools > Robotics > ROS 2 OmniGraphs > Clock**로 이동합니다. 나열된 ROS2 그래프가 보이지 않는 경우 ROS2 브리지를 활성화해야 합니다. |
+| 2 | <img src="https://github.com/user-attachments/assets/5a1361a3-2c5e-44f5-813a-38882db433ae" width="300"/> | 그래프를 채우는 데 필요한 매개변수를 묻는 팝업 상자가 표시됩니다. |
 | 3 | <img src="https://github.com/user-attachments/assets/c1a1ca60-32df-48da-b7b1-2e636f530862" width="300"/> | 그래프 경로를 제공하고 확인을 클릭하여 시뮬레이션된 시계를 게시하는 그래프가 무대에 나타나는지 확인합니다. |
 
 
