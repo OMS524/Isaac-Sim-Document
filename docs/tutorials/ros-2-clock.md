@@ -16,7 +16,7 @@
 | DDS Implementation | Fast DDS |
 
 ## Simulation Time and Clock
-외부 ROS 2 노드가 시뮬레이션 시간과 동기화되는 경우 일반적으로 클록 토픽이 사용됩니다.
+외부 ROS 2 노드가 시뮬레이션 시간과 동기화되는 경우 일반적으로 clock 토픽이 사용됩니다.
 
 RViz2와 같은 많은 ROS 2 노드는 매개변수 use_sim_time을 사용하며,
 
