@@ -10,11 +10,11 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 ## Tutorials
 튜토리얼의 순서는 다음과 같습니다.
 ### Getting Started with Importing and Controlling
-  1. URDF Import: Turtlebot
-  2. Driving TurtleBot using ROS 2 Messages
+  URDF Import: Turtlebot
+  Driving TurtleBot using ROS 2 Messages
 ### Timing
-  3. ROS 2 Clock
-  4. ROS 2 Publish Real Time Factor (RTF)
+  ROS 2 Clock
+  ROS 2 Publish Real Time Factor (RTF)
 
 
 
