@@ -98,14 +98,16 @@ ros2 topic echo /clock
 
 4. 새로운 ROS2 소스 터미널에서 다음 명령을 실행하여 시계 메시지를 수동으로 한 번 게시합니다.
 ```bash
-ros2 topic pub  -t 1 /clock rosgraph_msgs/Clock "clock: { sec: 1, nanosec: 200000000 }"
 ros2 topic pub  -t 1 /clock rosgraph_msgs/Clock "clock: { sec: 0, nanosec: 0 }"
-ros2 topic pub  -t 1 /clock rosgraph_msgs/Clock "clock: { sec: 5, nanosec: 500000000 }"
 ```
 ROS2 Subscribe Clock OmniGraph 노드의 timeStamp 값이 1.2로 변경되는지 확인합니다.
 
 5. 이전 명령을 다른 sec 및 nanosec 값으로 변경하여 ROS2 Subscribe Clock OmniGraph 노드의 timeStamp 필드에 반영된 값을 관찰합니다.
-
+```bash
+ros2 topic pub  -t 1 /clock rosgraph_msgs/Clock "clock: { sec: 1, nanosec: 200000000 }"
+ros2 topic pub  -t 1 /clock rosgraph_msgs/Clock "clock: { sec: 0, nanosec: 0 }"
+ros2 topic pub  -t 1 /clock rosgraph_msgs/Clock "clock: { sec: 5, nanosec: 500000000 }"
+```
 [ROS 2 Clock_3.webm](https://github.com/user-attachments/assets/429cce56-4e22-477c-9dc7-5dea20abc20f)
 
 ## Graph Shortcut
