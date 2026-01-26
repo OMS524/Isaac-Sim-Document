@@ -10,6 +10,7 @@
 | CUDA Version | 13.0 |
 
 ## 필수 조건
+[!IMPORTANT]
 Isaac Sim Installation 과정에서 IOMMU 비활성화 부분이 완료되어 있어야 합니다.
 
 ## 컨테이너 설치
