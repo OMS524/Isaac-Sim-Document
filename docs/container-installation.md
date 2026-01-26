@@ -137,13 +137,12 @@ chmod +x isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
 > **Isaac Sim WebRTC Streaming Client 실행 전 주의 사항**
 > 
 > Streaming Client는 Isaac Sim이 완전히 로드된 이후에만 실행해야 합니다.
-> 
 > - Isaac Sim 앱이 완전히 로드되기 전에 Streaming Client를 실행하면 연결 실패, 검은 화면, 타임아웃이 발생할 수 있습니다.
 > - Isaac Sim 최초 실행 시에는 쉐이더 캐시 생성으로 인해 로딩에 수 분이 소요될 수 있습니다.
 > 
 > Isaac Sim 실행 터미널에서 다음과 같은 로그가 출력된 이후에만 Streaming Client를 실행하세요
 > ```text
-> `Isaac Sim Full Streaming App is loaded.`
+> Isaac Sim Full Streaming App is loaded.
 > ```
 > 
 > Issac Sim 실행 시 `-v` 옵션을 사용하면 쉐이더 캐시 생성 중 상세 로그를 확인할 수 있습니다.
