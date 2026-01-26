@@ -134,6 +134,7 @@ chmod +x isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
 실행하면 다음과 같은 화면이 나온다.
 Isaac Sim의 로컬 인스턴스에 연결하려면 Server 입력칸에 기본 IP 주소인 127.0.0.1을 입력 후
 Connect를 누르면 다음과 같이 Isaac Sim 인터페이스가 나타난다.
+(Isaac Sim 실행 터미널에서 `Isaac Sim Full Streaming App is loaded.`라는 문구가 나온 후 Connect를 진행할 것)
 | Connect Interface | Streaming Interface |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/23f0d4bc-bcbf-465e-b2d9-8ff43d907958" width="300"/> | <img src="https://github.com/user-attachments/assets/26919689-4653-4ac6-ab3f-ffe6d12a3afe" width="300"/> |
