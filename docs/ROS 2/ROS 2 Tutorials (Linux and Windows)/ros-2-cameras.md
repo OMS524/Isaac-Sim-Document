@@ -112,6 +112,7 @@ Isaac Sim 콘텐츠 브라우저, **Isaac Sim>Samples>ROS2>Scenario>Turtlebot_tu
 Camera Info Helper publisher node는 다음 방정식을 사용하여 K, P, R 카메라 고유 행렬을 계산합니다.
 
 **Parameter calculations**:
+
 $$
 \begin{aligned}
 f_x &= \frac{\text{width} \cdot \text{focalLength}}{\text{horizontalAperture}} \\
@@ -120,8 +121,10 @@ c_x &= 0.5 \cdot \text{width} \\
 c_y &= 0.5 \cdot \text{height}
 \end{aligned}
 $$
+
 **K Matrix (Matrix of intrinsic parameters)**
 K 행렬은 3x3 행렬입니다.
+
 $$
 K =
 \begin{bmatrix}
@@ -130,12 +133,14 @@ f_x & 0 & c_x \\
 0 & 0 & 1
 \end{bmatrix}
 $$
+
 **P Matrix (Projection Matrix)**
 스테레오 카메라의 경우 x와 y의 첫 번째 카메라에 대한 두 번째 카메라의 스테레오 오프셋은 Tx와 Ty로 표시됩니다. 이 값은 두 개의 렌더링 제품이 노드에 연결된 경우 자동으로 계산됩니다.
 
 단안 카메라의 경우 Tx=Ty=0
 
 P 행렬은 `3x4` 행-장조 행렬입니다.
+
 $$
 P =
 \begin{bmatrix}
