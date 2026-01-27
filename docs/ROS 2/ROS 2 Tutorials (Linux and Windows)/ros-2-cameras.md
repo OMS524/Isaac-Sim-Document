@@ -68,6 +68,22 @@ Camera Helper Node가 연결된 상태에서 Play을 누른 후, Action Graph �
 <img width="1199" height="880" alt="image" src="https://github.com/user-attachments/assets/5e36ed40-ba39-4048-b960-ddd8ca755698" />
 <img width="1220" height="901" alt="image" src="https://github.com/user-attachments/assets/20e26496-be29-4b92-816c-6bbea6572dd1" />
 
+## Graph Shortcut
+여러 개의 카메라 센서 그래프를 만들 수 있는 메뉴 바로가기가 있습니다.
+
+**Tools > Robotics > ROS 2 OmniGraphs > Camera**
+
+기존 그래프에 그래프를 추가하려면 **Add to an existing graph?** 상자를 선택합니다.
+
+나열된 ROS 2 graph가 표시되지 않으면 ROS 2 bridge를 활성화해야 합니다.
+
+아래와 같이 그래프를 표시하는 데 필요한 매개변수를 입력하라는 팝업 상자가 나타납니다.
+
+Graph Path, the Camera Prim, frameId, Node Namespaces(있는 경우)를 입력하고 게시할 데이터에 해당하는 확인란을 선택해야 합니다.
+
+이렇게 하면 노드가 기존 그래프에 추가되고 기존 tick node, context node, and simulation time node가 존재하는 경우 이 노드를 사용합니다.
+<img width="460" height="550" alt="image" src="https://github.com/user-attachments/assets/9ee8ac7a-5bb2-4a7c-a9a7-72de89409a33" />
+
 ## Depth and Other Perception Ground Truth Data
 
 RGB 이미지 외에도 다음과 같은 합성 센서와 지각 정보가 모든 카메라에 제공됩니다:
@@ -90,6 +106,46 @@ RGB 이미지 외에도 다음과 같은 합성 센서와 지각 정보가 모�
 여러 대의 카메라에 대해 여러 개의 ros topic을 게시하는 예는
 
 Isaac Sim 콘텐츠 브라우저, **Isaac Sim>Samples>ROS2>Scenario>Turtlebot_tutorial.usd**로 이동하여 찾을 수 있습니다.
+
+## Camera Info Helper Node
+Camera Info Helper publisher node는 다음 방정식을 사용하여 K, P, R 카메라 고유 행렬을 계산합니다.
+
+**Parameter calculations**:
+$$
+\begin{aligned}
+f_x &= \frac{\text{width} \cdot \text{focalLength}}{\text{horizontalAperture}} \\
+f_y &= \frac{\text{height} \cdot \text{focalLength}}{\text{verticalAperture}} \\
+c_x &= 0.5 \cdot \text{width} \\
+c_y &= 0.5 \cdot \text{height}
+\end{aligned}
+$$
+**K Matrix (Matrix of intrinsic parameters)**
+K 행렬은 3x3 행렬입니다.
+$$
+K =
+\begin{bmatrix}
+f_x & 0 & c_x \\
+0 & f_y & c_y \\
+0 & 0 & 1
+\end{bmatrix}
+$$
+**P Matrix (Projection Matrix)**
+스테레오 카메라의 경우 x와 y의 첫 번째 카메라에 대한 두 번째 카메라의 스테레오 오프셋은 Tx와 Ty로 표시됩니다. 이 값은 두 개의 렌더링 제품이 노드에 연결된 경우 자동으로 계산됩니다.
+
+단안 카메라의 경우 Tx=Ty=0
+
+P 행렬은 `3x4` 행-장조 행렬입니다.
+$$
+P =
+\begin{bmatrix}
+f_x & 0   & c_x & T_x \\
+0   & f_y & c_y & T_y \\
+0   & 0   & 1   & 0
+\end{bmatrix}
+$$
+
+**R Matrix (Rectification Matrix)**
+R 행렬은 카메라 좌표계를 이상적인 스테레오 이미지 평면에 맞추기 위해 적용되는 회전 행렬로, 두 스테레오 이미지의 에피폴라 라인이 평행해지도록 합니다. R 행렬은 스테레오 카메라에만 사용되며 `3x3` 행렬로 설정됩니다.
 
 
 
