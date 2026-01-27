@@ -55,6 +55,19 @@ Camera Helper Node가 연결된 상태에서 Play을 누른 후, Action Graph �
 
 이 그래프는 Camera Helper Node에서 자동으로 생성됩니다. 파이프라인은 렌더러로부터 관련 데이터를 가져와 처리한 다음 해당 ROS Publisher에게 보냅니다. 이 그래프는 실행 중인 세션에서만 생성됩니다. 자산의 일부로 저장되지 않으며 Stage 트리에 표시되지 않습니다.
 
+## Verifying ROS Connection
+전달되는 원시 정보를 관찰하려면 `ros2 topic echo /<topic>`을 사용합니다.
+
+`rqt_image_view` 방법을 사용하여 깊이를 다시 시각화합니다: `ros2 run rqt_image_view rqt_image_view /depth`.
+
+
+이번에 RViz2에 publish 된 이미지를 확인하려면:
+1. Isaac Sim에서 Play를 눌러 시뮬레이션을 시작합니다.
+2. ROS 2 소스 터미널에서 rviz2 명령을 입력하여 RViz를 엽니다.
+3. Add를 눌러 By Topic 탭에서 /rgb 토픽의 Image를 추가합니다.
+<img width="1199" height="880" alt="image" src="https://github.com/user-attachments/assets/5e36ed40-ba39-4048-b960-ddd8ca755698" />
+<img width="1220" height="901" alt="image" src="https://github.com/user-attachments/assets/20e26496-be29-4b92-816c-6bbea6572dd1" />
+
 ## Depth and Other Perception Ground Truth Data
 
 RGB 이미지 외에도 다음과 같은 합성 센서와 지각 정보가 모든 카메라에 제공됩니다:
