@@ -53,6 +53,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/isaac-sim/exts/isaacsim.ros2.bridge/hum
 > `Module omni.replicator.core.ogn.python.impl.nodes.OgnAugment 843efe5 load on device 'cuda:0' took 0.81 ms  (cached)`<br><br>
 > 해당 로그가 출력되면 노드가 정상적으로 실행된 상태이며,<br>
 > 이후 `ros2 topic list` 명령을 통해 `/rgb_augmented` 토픽이 생성된 것을 확인할 수 있다.
+<br>
 
 2. 새로운 터미널에서 rviz2 실행
 ```bash
