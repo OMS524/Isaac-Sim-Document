@@ -21,7 +21,7 @@
 ./python.sh standalone_examples/api/isaacsim.ros2.bridge/camera_noise.py
 ```
 위 명령어를 Docker에서 실행하게 되면 오류 몇 가지가 발생하여 순차적으로 오류 해결법을 제시한다.
-
+<br>
 **ROS2 Bridge startup failed**
 <img width="924" height="415" alt="image" src="https://github.com/user-attachments/assets/ff630cfe-f6df-4078-8638-35a775f3b20e" /><br>
 아래 명령어를 Docker 내에서 실행한다.
@@ -30,7 +30,7 @@ export ROS_DISTRO=humble
 export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/isaac-sim/exts/isaacsim.ros2.bridge/humble/lib
 ```
-
+<br>
 **Augmentation cannot run, script nodes are disabled**
 <img width="924" height="35" alt="image" src="https://github.com/user-attachments/assets/b446d80c-6041-4530-b721-46308650a035" /><br>
 기존 실행 명령어에서<br>
@@ -42,6 +42,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/isaac-sim/exts/isaacsim.ros2.bridge/hum
   --/app/omni.graph.scriptnode/opt_in=true \
   --/app/omni.graph.scriptnode/enable_opt_in=false
 ```
+<br>
 
 | 실행 된 터미널 로그 | ROS 토픽 확인 |
 |:-:|:-:|
@@ -63,5 +64,17 @@ source install/local_setup.bash
 rviz2
 ```
 
-3. 
+3. Add를 눌러 By Topic 탭에서 `/rgb_augmented` 토픽의 Image를 추가합니다.
+| 실행 된 터미널 로그 |
+|:-:|
+| <img src="https://github.com/user-attachments/assets/7c0879d1-f91a-49db-80df-bbaec65cc85e" width="300"/><img src="https://github.com/user-attachments/assets/ee8a5503-fc29-43f8-9af1-a9068aedb45b" width="300"/> |
+
+<img width="520" height="715" alt="image" src="https://github.com/user-attachments/assets/7c0879d1-f91a-49db-80df-bbaec65cc85e" />
+
+<img width="1220" height="901" alt="image" src="https://github.com/user-attachments/assets/ee8a5503-fc29-43f8-9af1-a9068aedb45b" />
+
+
+
+
+
 
