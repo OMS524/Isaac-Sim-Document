@@ -13,7 +13,7 @@
 > [!IMPORTANT]
 > **IOMMU**가 비활성화 되어 있어야 합니다.
 > 
-> 비활성화 방법은 [Workstation Installation](/docs/Installation/Isaac%20Sim/isaac-sim-workstation-installation.md)를 참고하세요.
+> 비활성화 방법은 [isaac-sim-workstation-installation.md](/docs/Installation/Isaac%20Sim/isaac-sim-workstation-installation.md)를 참고하세요.
 
 ## 컨테이너 설치
 ### 1. Docker 설치
