@@ -15,3 +15,4 @@
 | ROS 2 Installation | Native (Host) |
 | DDS Implementation | Fast DDS |
 
+## Running the Example
