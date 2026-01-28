@@ -30,6 +30,6 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
   - [ROS 2 Publish Real Time Factor (RTF)](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/ros-2-publish-real-time-factor.md)
 
 ### Sensors and Control
-  - [ROS 2 Cameras](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/ROS%202Cameras/ros-2-cameras.md)
+  - [ROS 2 Cameras](/docs/ROS%202/ROS%202%20Tutorials%20%28Linux%20and%20Windows%29/ROS%202%20Cameras/ros-2-cameras.md)
 
 
