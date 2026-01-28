@@ -64,11 +64,9 @@ rviz2
 ```
 
 3. Add를 눌러 By Topic 탭에서 `/rgb_augmented` 토픽의 Image를 추가합니다.
-> **
 > <img src="https://github.com/user-attachments/assets/7c0879d1-f91a-49db-80df-bbaec65cc85e" width="300"/> <img src="https://github.com/user-attachments/assets/ee8a5503-fc29-43f8-9af1-a9068aedb45b" width="300"/>
-> **
 
-
+## Code Explained
 
 
 
