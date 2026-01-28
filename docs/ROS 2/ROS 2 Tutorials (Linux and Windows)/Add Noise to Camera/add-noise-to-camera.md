@@ -48,5 +48,5 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/isaac-sim/exts/isaacsim.ros2.bridge/hum
 | <img src="https://github.com/user-attachments/assets/869104a1-03c2-46b9-9d70-f91debec637a" width="300"/> | <img src="https://github.com/user-attachments/assets/10d64ebe-9546-4b82-9d61-c8324a41115f" width="300"/> |
 > [!NOTE]
 > 실행하면 `rclpy loaded`에서 약간 기다려야 다음과 같이 실행된 로그가 나타난다.<br>
-> `Module omni.replicator.core.ogn.python.impl.nodes.OgnAugment 843efe5 load on device 'cuda:0' took 0.81 ms  (cached)`
+> `Module omni.replicator.core.ogn.python.impl.nodes.OgnAugment 843efe5 load on device 'cuda:0' took 0.81 ms  (cached)`<br>
 > 실행된 로그를 확인한 후 `ros2 topic list`를 통해 `/rgb_augmented`를 확인할 수 있다.
