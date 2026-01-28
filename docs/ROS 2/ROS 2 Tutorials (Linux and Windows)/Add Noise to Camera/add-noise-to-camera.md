@@ -30,7 +30,7 @@ export ROS_DISTRO=humble
 export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/isaac-sim/exts/isaacsim.ros2.bridge/humble/lib
 ```
-
+<br>
 **Augmentation cannot run, script nodes are disabled**
 <img width="924" height="35" alt="image" src="https://github.com/user-attachments/assets/b446d80c-6041-4530-b721-46308650a035" /><br>
 기존 실행 명령어에서<br>
