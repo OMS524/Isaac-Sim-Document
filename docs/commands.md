@@ -58,6 +58,11 @@ docker run --name isaac-sim \
   nvcr.io/nvidia/isaac-sim:5.1.0
 ```
 ```bash
+./python.sh /IsaacSim-ros_workspaces/tutorial/src/publishing_camera_data.py \
+  --/app/omni.graph.scriptnode/opt_in=true \
+  --/app/omni.graph.scriptnode/enable_opt_in=false    
+```
+```bash
 sudo chown -R $(id -u):$(id -g) ~/IsaacSim-ros_workspaces
 ```
 
