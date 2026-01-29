@@ -112,7 +112,7 @@ def image_gaussian_noise_np(data_in: np.ndarray, seed: int, sigma: float = 25.0)
 ```
 
 <br>
-두 함수 중 어느 것이든 rep.Augmentation.from_from_function()과 함께 사용하여 augmentation을 정의할 수 있습니다.
+두 함수 중 어느 것이든 `rep.Augmentation.from_from_function()`과 함께 사용하여 augmentation을 정의할 수 있습니다.
 
 ```python
 # register new augmented annotator that adds noise to rgba and then outputs to rgb to the ROS publisher can publish
@@ -130,3 +130,7 @@ rep.annotators.register(
 )
 ```
 
+> [!NOTE]
+> `seed`는 파이썬 함수와 워프 함수 모두에서 사용할 수 있는 선택적인 사전 정의된 Replicator Augmentation 인수입니다.<br>
+> 없음 또는 < 0으로 설정되면, Replicator의 전역 seed와 노드 식별자를 함께 사용하여 반복 가능한 고유 seed를 생성합니다.<br>
+> warp 커널과 함께 사용될 때, seed는 각 warp 커널 호출에 대해 새로운 정수 seed 값을 생성하는 난수 생성기를 초기화하는 데 사용됩니다.
