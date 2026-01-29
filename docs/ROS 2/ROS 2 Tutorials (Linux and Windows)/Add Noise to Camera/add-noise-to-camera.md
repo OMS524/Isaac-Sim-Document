@@ -100,6 +100,7 @@ def image_gaussian_noise_warp(
     data_out[i, j, 1] = wp.uint8(float(data_in[i, j, 1]) + (255.0 * sigma * wp.randn(state_g)))
     data_out[i, j, 2] = wp.uint8(float(data_in[i, j, 2]) + (255.0 * sigma * wp.randn(state_b)))
 ```
+
 ```bash
 # CPU noise kernel
 def image_gaussian_noise_np(data_in: np.ndarray, seed: int, sigma: float = 25.0):
