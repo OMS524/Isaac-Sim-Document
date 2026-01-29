@@ -74,7 +74,7 @@ rviz2
 # grab our render product and directly set the camera prim
 render_product_path = get_active_viewport().get_render_product_path()
 set_camera_prim_path(render_product_path, CAMERA_STAGE_PATH)
-```
+
 <br>
 sensor 파이프라인 내에서 augmentation을 정의하는 방법에는 여러 가지가 있습니다
 - C++ OmniGraph node
