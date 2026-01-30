@@ -36,8 +36,8 @@ source install/local_setup.bash
 <br>
 <br>
 
-## Test
-컨테이너 생성
+## Docker 명령어
+### Container 생성
 ```bash
 docker run --name isaac-sim \
   --entrypoint bash -it --gpus all \
@@ -65,40 +65,35 @@ docker exec -it -u root isaac-sim bash
 chmod a+rx /isaac-sim
 ```
 
-
-```bash
-./python.sh /IsaacSim-ros_workspaces/tutorial/src/publishing_camera_data.py \
-  --/app/omni.graph.scriptnode/opt_in=true \
-  --/app/omni.graph.scriptnode/enable_opt_in=false    
-```
-```bash
-sudo chown -R $(id -u):$(id -g) ~/IsaacSim-ros_workspaces
-```
-
-### Docker
+### Container 확인 및 삭제
 컨테이너 확인
 ```bash
 docker ps -a
 ```
-
 컨테이너 삭제
 ```bash
 docker rm isaac-sim
 ```
 
+### Container 실행 및 종료
 컨테이너 실행
 ```bash
 docker start isaac-sim
 ```
-
 컨테이너 종료
 ```bash
 docker stop isaac-sim
 ```
 
+### Container 진입
 실행 중인 컨테이너 들어가기
 ```bash
 docker exec -it isaac-sim bash
 ```
 
-
+### 실행 명령어 예시
+```bash
+./python.sh /IsaacSim-ros_workspaces/tutorial/src/publishing_camera_data.py \
+  --/app/omni.graph.scriptnode/opt_in=true \
+  --/app/omni.graph.scriptnode/enable_opt_in=false    
+```
