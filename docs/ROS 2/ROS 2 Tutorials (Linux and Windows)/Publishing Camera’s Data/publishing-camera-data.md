@@ -360,6 +360,7 @@ docker exec -it isaac-sim bash
 ```
 <br>
 <br>
+
 **토픽 확인**<br>
 새로운 터미널에서 다음 명령어를 수행하여 토픽을 확인한다.
 ```bash
@@ -372,6 +373,7 @@ source install/local_setup.bash
 ros2 topic list
 ```
 <img width="459" height="182" alt="image" src="https://github.com/user-attachments/assets/9ee29124-1a4f-4f57-928c-483b227afc17" />
+<br>
 <br>
 TF에서 publish 되는 frame은 다음과 같습니다.<br>
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/02e1620b-ded6-44b7-b46e-b04bdd449711" />
