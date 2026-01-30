@@ -21,6 +21,12 @@ docker run --name isaac-sim \
   nvcr.io/nvidia/isaac-sim:5.1.0
 ```
 
+```bash
+docker exec -it -u root isaac-sim bash
+chmod 755 /isaac-sim
+exit
+``
+
 ### Container 확인 및 삭제
 Container 확인
 ```bash
