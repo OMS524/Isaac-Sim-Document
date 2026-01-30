@@ -57,6 +57,15 @@ docker run --name isaac-sim \
   -u $(id -u):$(id -g) \
   nvcr.io/nvidia/isaac-sim:5.1.0
 ```
+
+`-u $(id -u):$(id -g)`로 컨테이너의 id를 `host`의 id와 맞춰서 실행 시 컨테이너는 `host`의 폴더 권한을 얻지만 컨테이너 안에 `root(GID:0)`가 권한을 가지고 있는 `/isaac-sim`의 권한이 없어 접근을 못하기 때문에 권한을 부여 해줘야 한다.<br>
+(컨테이너 생성 시 최초 1회 실행)
+```bash
+docker exec -it -u root isaac-sim bash
+chmod a+rx /isaac-sim
+```
+
+
 ```bash
 ./python.sh /IsaacSim-ros_workspaces/tutorial/src/publishing_camera_data.py \
   --/app/omni.graph.scriptnode/opt_in=true \
@@ -92,8 +101,4 @@ docker stop isaac-sim
 docker exec -it isaac-sim bash
 ```
 
-`-u $(id -u):$(id -g)`로 실행 시 `/isaac-sim` 접근 권한 부여 (최초 1회 실행)
-```bash
-docker exec -it -u root isaac-sim bash
-chmod a+rx /isaac-sim
-```
+
