@@ -15,7 +15,7 @@
 | ROS 2 Installation | Native (Host) |
 | DDS Implementation | Fast DDS |
 
-## Coding Python file
+## Create Python file
 `/home/user/IsaacSim-ros_workspaces/ros2_tutorials/publishing_camera_data/publishing_camera_data.py`<br>
 Isaac Sim 워크스페이스에 위와 경로로 디렉토리를 만들어 publishing_camera_data.py를 만들어준다.<br>
 그 후 다음과 같이 코드 내용을 넣어준다.
@@ -341,3 +341,35 @@ simulation_app.close()
 > # publish_depth(camera, approx_freq)
 > # publish_pointcloud_from_depth(camera, approx_freq)
 > ```
+
+## Running the Example
+이 워크플로 튜토리얼을 따라 `isaacsim.ros2.bridge` 확장을 활성화하고 ROS 2 환경 변수를 설정합니다.<br>
+위 스크립트를 저장하고 Isaac Sim 폴더의 `python.sh` 을 사용하여 실행합니다.<br>
+예제에서 `{camera_frame_id}`는 카메라의 기본 이름인 `floating_camera`입니다.<br>
+<br>
+장면에서 프라이밍 경로 `/World/floating_camera`가 있는 floating camera를 관찰하고 카메라에 지게차가 보이는지 확인합니다:<br>
+<br>
+**실행 명령어**
+```bash
+docker exec -it isaac-sim bash
+```
+```bash
+./python.sh /IsaacSim-ros_workspaces/tutorials/ros2_tutorials/publishing_camera_data/publishing_camera_data.py \
+  --/app/omni.graph.scriptnode/opt_in=true \
+  --/app/omni.graph.scriptnode/enable_opt_in=false    
+```
+
+**토픽 확인**
+새로운 터미널에서 다음 명령어를 수행하여 토픽을 확인한다.
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+```bash
+ros2 topic list
+```
+
+
+
