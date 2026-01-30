@@ -382,5 +382,6 @@ rviz2
 ```
 2. Fixed Frame을 world로 설정합니다.
 <img width="341" height="161" alt="image" src="https://github.com/user-attachments/assets/f2ab9110-3b1f-45e3-9e20-68884b0d565f" />
+
 3. Add를 눌러 By Topic 탭에서 `/camera_depth`의 Image, `/camera_rgb`의 Image, `/camera_pointcloud`의 PointCloud2, By display type 탭에서 TF를 추가합니다.
 <img width="1220" height="901" alt="image" src="https://github.com/user-attachments/assets/f46d7259-f271-4dfb-ba58-cac3fee2be9b" />
