@@ -358,7 +358,7 @@ docker exec -it isaac-sim bash
   --/app/omni.graph.scriptnode/opt_in=true \
   --/app/omni.graph.scriptnode/enable_opt_in=false    
 ```
-
+<br>
 **토픽 확인**
 새로운 터미널에서 다음 명령어를 수행하여 토픽을 확인한다.
 ```bash
@@ -371,18 +371,16 @@ source install/local_setup.bash
 ros2 topic list
 ```
 <img width="459" height="182" alt="image" src="https://github.com/user-attachments/assets/9ee29124-1a4f-4f57-928c-483b227afc17" />
-
+<br>
 TF에서 publish 되는 frame은 다음과 같습니다.
-<img width="852" height="880" alt="image" src="https://github.com/user-attachments/assets/02e1620b-ded6-44b7-b46e-b04bdd449711" />
-
+<img width="852/2" height="880/2" alt="image" src="https://github.com/user-attachments/assets/02e1620b-ded6-44b7-b46e-b04bdd449711" />
+<br>
 **Rviz2**
 1. 다음 명령어를 실행하여 Rviz2를 실행합니다.
 ```bash
 rviz2
 ```
-
 2. Fixed Frame을 world로 설정합니다.
 <img width="341" height="161" alt="image" src="https://github.com/user-attachments/assets/f2ab9110-3b1f-45e3-9e20-68884b0d565f" />
-
 3. Add를 눌러 By Topic 탭에서 `/camera_depth`의 Image, `/camera_rgb`의 Image, `/camera_pointcloud`의 PointCloud2, By display type 탭에서 TF를 추가합니다.
 <img width="1220" height="901" alt="image" src="https://github.com/user-attachments/assets/f46d7259-f271-4dfb-ba58-cac3fee2be9b" />
