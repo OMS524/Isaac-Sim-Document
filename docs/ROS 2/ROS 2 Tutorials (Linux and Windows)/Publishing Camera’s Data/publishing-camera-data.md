@@ -320,12 +320,12 @@ simulation_app.close()
 > [!NOTE]
 > https://docs.isaacsim.omniverse.nvidia.com/5.1.0/ros2_tutorials/tutorial_ros2_camera_publishing.html<br>
 > 해당 튜토리얼 공식 문서를 보면 메인 코드와 함수별로 코드 내용이 적혀있다.<br>
-> 순서대로 코드를 작성하여 토픽 함수 정의 코드를 메인 코드 아래에 넣게 되면 함수 정의가 메인 코드에서 토픽 함수 호출이 먼저 되어 오류가 발생한다.<br><br>
+> 순서대로 코드를 작성하여 토픽 함수 정의 코드를 메인 코드 아래에 넣게 되면 함수 정의보다 메인 코드에서 토픽 함수 호출이 먼저 되어 오류가 발생한다.<br><br>
 > **코드 수정 내용은 다음과 같다.**
 > 1. 토픽 함수 정의 코드는 메인 코드 내 다음과 같은 코드 부분에 작성한다.
 > ```python
 > ###### Camera helper functions for setting up publishers. ########
-> <br>
+> 
 > # Paste functions from the tutorial here
 > # def publish_camera_tf(camera: Camera): ...
 > # def publish_camera_info(camera: Camera, freq): ...
@@ -335,9 +335,9 @@ simulation_app.close()
 > ```
 > 2. 토픽 생성 함수 호출 코드 주석 제거
 > ```bash
-> publish_camera_tf(camera)
-> publish_camera_info(camera, approx_freq)
-> publish_rgb(camera, approx_freq)
-> publish_depth(camera, approx_freq)
-> publish_pointcloud_from_depth(camera, approx_freq)
+> # publish_camera_tf(camera)
+> # publish_camera_info(camera, approx_freq)
+> # publish_rgb(camera, approx_freq)
+> # publish_depth(camera, approx_freq)
+> # publish_pointcloud_from_depth(camera, approx_freq)
 > ```
