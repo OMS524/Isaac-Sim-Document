@@ -22,7 +22,7 @@
 ## Transform Tree Publisher
 이미 ROS 2 카메라 튜토리얼을 검토하고 이미 두 대의 카메라가 무대에 있다고 가정하면, 그 카메라를 변환 트리에 추가하여 글로벌 프레임에서 카메라의 위치를 추적할 수 있도록 합시다.<br>
 <br>
-**ROS 2 Cameras** 튜토리얼의 [ros_2_cameras.usd](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Cameras/ros_2_cameras.usd)를 열어주세요.<br>
+**ROS 2 Cameras** 튜토리얼의 [ros2_cameras.usd](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Cameras/ros2_cameras.usd)를 열어주세요.<br>
 
 ### Transform Publisher
 1. 새로운 Action Graph 만들어 다음과 같이 구성합니다.<br>
@@ -68,4 +68,30 @@ Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지
 1. 가져온 Turtlebot3 로봇의 Articulation Root가 `/World/Turtlebot3_burger`인지 확인합니다.<br>그렇지 않으면 `/World/Turtlebot3_burger/base_footprint`에서 Articulation Root를 제거하고 `/World/Turtlebot3_burger`에 추가합니다.<br>Articulation Root 섹션의 단계를 따라 Turtlebot3 로봇의 관절 루트를 변경합니다.
 > (Optional Exercise)
 > ROS2 Publish Transform Tree 노드의 **targetPrims** 필드에 `/World/Turtlebot3_burger`(기본값)를 추가하고, 로봇의 모든 링크(고정 또는 관절)의 TF가 `/tf` topic에 게시되는 것을 관찰합니다.
+
+2. 새로운 Action Graph를 만들어 다음과 같이 Action Graph를 구성하세요.<br>
+> <img width="750" alt="image" src="https://github.com/user-attachments/assets/dd2de0c1-a899-4acd-8a21-382cf6bcc982" />
+> - **Isaac Compute Odometry**의 Property 탭에서:
+> > chassisPrim에 `/World/turtlebot3_burger`를 추가합니다.
+> > 이 노드는 로봇의 시작 위치를 기준으로 현재 위치를 계산합니다.
+> > 이 노드의 출력은 `/odom` ROS 2 topic의 publisher와 `/odom` 프레임에서 `/base_link` 프레임으로의 단일 변환을 publisher하는 TF publisher 모두에 입력됩니다.
+> - **ROS2 Publish Raw Transform Tree**의 Property 탭에서:
+> > childFrameId에 `base_link`
+> > parentFrameId에 `odom`
+> > TF 트리에서 odom -> base_link 프레임을 publish합니다.
+> - **ROS2 Publish Odometry**의 Property 탭에서:
+> > chassisFrameId에 `base_link`
+> > odomFrameId에 `odom`
+> > TF 트리에서 odom -> base_link 프레임을 publish합니다.
+
+> [!NOTE]
+> **ROS2 Publish Odometry** 노드는 전체 3D 속도 정보를 publish합니다. 선형 속도와 각속도 모두 3차원(x, y, z)으로 publish되므로 로봇의 motion state를 보다 완벽하게 표현할 수 있습니다.
+
+
+
+
+
+
+
+
 
