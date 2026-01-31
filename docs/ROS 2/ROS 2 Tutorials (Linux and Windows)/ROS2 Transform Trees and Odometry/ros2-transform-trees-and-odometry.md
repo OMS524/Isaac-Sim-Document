@@ -42,10 +42,16 @@ ros2 topic echo /tf
 ```
 <img width="250" alt="image" src="https://github.com/user-attachments/assets/3f4a9b91-c032-4f71-976a-6954933ee406" />
 
+### Articulation Transforms
+관절 로봇의 각 링크 변환을 얻으려면 로봇의 관절 루트를 ROS2 Publish Transform Tree 노드의 대상 Prims 필드에 추가할 수 있습니다. 관절 루트 이후의 모든 링크는 자동으로 게시됩니다.<br>
 
+> [!IMPORTANT]
+> 관절형 로봇에 대해 생성된 TF 트리가 잘못된 링크를 root link로 선택한 것을 발견하면 다음 단계를 통해 관절형 root link를 수동으로 선택합니다.<br>
+> - Stage Tree의 **Raw USD Properties** 탭에서 로봇의 root prim을 선택하고 **Articulation Root** 섹션을 찾습니다. 섹션 내부 오른쪽 상단 모서리에 있는 X를 클릭하여 삭제합니다.
+> - Stage Tree의 **Raw USD Properties** 탭에서 원하는 link를 선택하고 +ADD 버튼을 클릭한 다음 **Physics > Articulation Root**를 추가합니다.
+> - Articulation Root를 변경한 후 파일을 저장하고 다시 로드합니다.
 
-
-
+### Publish Relative Transforms
 
 
 
