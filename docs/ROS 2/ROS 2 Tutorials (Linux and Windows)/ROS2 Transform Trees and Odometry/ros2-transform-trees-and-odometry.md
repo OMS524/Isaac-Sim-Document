@@ -101,7 +101,7 @@ Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지
 > > - `/World/turtlebot3_burger/wheel_left_link`
 > > - `/World/turtlebot3_burger/wheel_right_link`
 
-4. *odom -> base_link -> <other robot links>*로 구성된 TF 트리를 publish합니다.<br>이 다음 단계는 로봇의 실제 localization을 지정하려는 경우에만 필요합니다.<br>일반적으로 Nav2 AMCL과 같은 localization 지정용 ROS package는 global frame과 odom frame 간의 변환을 설정하는 역할을 합니다.<br>실제 localization 지정을 설정하려면 그래프에 다른 *ROS2 Publish Raw Transform Tree* 게시 노드를 추가하고 위의 이전 노드와 유사하게 Exec In, Context 및 Timestamp를 연결합니다.
+4. odom -> base_link -> <other robot links>로 구성된 TF 트리를 publish합니다.<br>이 다음 단계는 로봇의 실제 localization을 지정하려는 경우에만 필요합니다.<br>일반적으로 Nav2 AMCL과 같은 localization 지정용 ROS package는 global frame과 odom frame 간의 변환을 설정하는 역할을 합니다.<br>실제 localization 지정을 설정하려면 그래프에 다른 *ROS2 Publish Raw Transform Tree* 게시 노드를 추가하고 위의 이전 노드와 유사하게 Exec In, Context 및 Timestamp를 연결합니다.
 > <img width="750" alt="image" src="https://github.com/user-attachments/assets/1e31507e-d93d-4dc7-96e5-37eef22393a2" /><br>
 > 
 > **ROS2 Publish Raw Transform Tree**의 Property 탭에서:
