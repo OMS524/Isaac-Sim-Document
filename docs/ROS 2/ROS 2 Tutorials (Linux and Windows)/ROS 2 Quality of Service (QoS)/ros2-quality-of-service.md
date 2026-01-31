@@ -77,8 +77,15 @@
 > Cyclone DDS로 전환한 후에도 Depth policy이 여전히 알 수 없는 것으로 표시된다면, 이는 하드웨어 구성과 관련이 있을 수 있습니다.<br>
 
 ### Creating Static Publishers
-
-
+이 섹션은 위 섹션을 이미 완료했다고 가정합니다.<br>
+<br>
+Static publishers는 메시지를 한 번만 publish할 때 유용할 수 있지만, topic에 연결된 subscribers 수에 관계없이 동일한 메시지를 사용할 수 있어야 합니다.<br>
+1. On Stage Event 및 Countdown OmniGraph 추가하여 다음과 같이 Action Graph를 수정합니다
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/4aac97ad-c034-4cba-9540-c26eca66f591" /><br>
+> - On Stage Event의 경우 eventName 이름을 시뮬레이션 시작 재생으로 설정했습니다.
+> > <img width="500" alt="image" src="https://github.com/user-attachments/assets/46d1b48d-3f3e-48a2-92ae-8b1bee44b6e5" /><br>
+> - Countdown 노드의 경우 duration을 3으로 설정하고 period를 1로 설정합니다.<br>시뮬레이션이 Play된 후 ROS2 Publisher 노드를 3번 체크합니다.<br>ROS2 Publisher 노드의 경우 처음 2프레임이 설정에 사용되고 3프레임이 메시지를 publish합니다.
+> > <img width="500" alt="image" src="https://github.com/user-attachments/assets/70d6c190-b502-405d-b868-c9b65fd09582" /><br>
 
 
 
