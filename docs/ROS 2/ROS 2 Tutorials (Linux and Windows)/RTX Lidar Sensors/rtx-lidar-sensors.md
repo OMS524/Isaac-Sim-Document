@@ -32,7 +32,7 @@
 > **Isaac Create Render Product**: Property 탭에서 cameraPrim에 Add Target을 눌러 생성된 `Example Rotary 2D`를 선택합니다.<br>
 > 다른 **Isaac Create Render Product**에서 Property 탭에서 cameraPrim에 Add Target을 눌러 생성된 `Example Rotary`를 선택합니다.<br>
 > **ROS2 RTX Lidar Helper**: 이 노드는 RTX Lidar에서 레이저 스캔 메시지의 Publush를 처리합니다. input의 render product는 Isaac Create Render Product의 출력에서 얻어집니다. frameId를 `base_scan`으로 설정합니다.<br>
-> 다른 **ROS2 RTX Lidar Helper**에서 input에서 type을 `point_cloud`으로 변경합니다. 이 노드는 RTX Lidar에서 포인트 클라우드를 Publush하는 작업을 처리합니다. input의 render product는 두 번째 Isaac Create Render Product의 출력에서 얻어집니다. frameId를 `base_scan`으로 설정합니다.
+> 다른 **ROS2 RTX Lidar Helper**에서 input에서 type을 `point_cloud`으로 변경합니다. topicName을 `point_cloud`으로 변경합니다. 이 노드는 RTX Lidar에서 포인트 클라우드를 Publush하는 작업을 처리합니다. input의 render product는 두 번째 Isaac Create Render Product의 출력에서 얻어집니다. frameId를 `base_scan`으로 설정합니다.
 
 > [!NOTE]
 > **ROS2 RTX Lidar Helper**에서 type이 laser_scan으로 설정된 경우, RTX Lidar가 전체 스캔을 생성할 때만 LaserScan 메시지가 게시됩니다. rotary Lidar의 경우, 이는 360도 전체 회전이며, solid state Lidar 의 경우 프로필에 설정된 대로 라이다의 전체 방위각입니다. 라이다 회전 속도와 시간 스텝 크기에 따라 전체 회전 스캔을 완료하는 데 여러 프레임이 필요할 수 있습니다. 즉, 스텝 크기 1/60s를 렌더링할 때 회전 속도가 10Hz인 회전 라이다는 전체 스캔을 완료하는 데 6 프레임이 소요되므로, LaserScan 메시지는 6 프레임마다 한 번씩 게시됩니다. 고체 상태 라이다는 단일 프레임으로 전체 스캔을 완료하므로, 해당 LaserScan 메시지는 모든 프레임에 publish됩니다.
