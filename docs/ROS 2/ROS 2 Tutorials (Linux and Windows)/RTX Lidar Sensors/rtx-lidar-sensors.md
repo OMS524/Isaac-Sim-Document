@@ -76,6 +76,30 @@ rviz2 -d ./src/isaac_tutorials/rviz2/rtx_lidar.rviz
 ```
 <img width="750" alt="image" src="https://github.com/user-attachments/assets/5a21c5ca-6072-4acc-8fa3-cf67431a4480" />
 
+## Multiple Sensors in RViz2
+RViz2에서 여러 센서 데이터를 표시하려면 모든 메시지가 동기화되고 타임스탬프가 정확하게 기록되도록 몇 가지 사항을 확인해야 합니다.
+<br>
+**Simulation Timestamp**
+publish 노드의 모든 타임스탬프에 타임스탬프를 입력하는 노드로 **Isaac Read Simulation Time**을 사용합니다.
+<br>
+**ROS 2 clock**
+시뮬레이션 시간을 ROS 2 clock topic에 publish하려면 ROS 2 Clock Publisher 실행 튜토리얼에 표시된 대로 그래프를 설정할 수 있습니다
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/355caea1-4a85-425f-9641-069f7f5969bf" />
+<br>
+**frameId and topicName**
+RViz 내부의 모든 센서와 TF 트리를 한 번에 시각화하려면, RViz가 이를 모두 인식하려면 frameId와 topicNames가 특정 규칙을 따라야 합니다. 아래 표는 이러한 규칙을 대략적으로 설명하고 있습니다. 아래의 다중 센서 예제를 보려면 USD asset을 참조하세요. USD 자산은 Isaac Sim Content 브라우저로 이동하여 **Isaac Sim>Samples>ROS2>Scenario>Turtlebot_tutorial.usd**를 클릭하면 확인할 수 있습니다.
+
+| Source | frameId | nodeNamespace | topicName | type |
+|-|-|-|-|-|
+| Camera RGB | (device_name)_(data_type) | (device_name)/(data_type) | image_raw | rgb |
+| Camera Depth | (device_name)_(data_type) | (device_name)/(data_type) | image_rect_raw | depth |
+| Lidar | base_scan |  | scan | laser scan |
+| Lidar | base_scan |  | point_cloud | point_cloud |
+| TF |  |  | tf | tf |
+
+
+
+
 
 
 
