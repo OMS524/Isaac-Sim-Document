@@ -19,7 +19,9 @@
 - **ROS 2 Cameras** 튜토리얼의 [rtx-lidar-sensors.md](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/RTX%20Lidar%20Sensors/rtx-lidar-sensors.md)를 열어주세요.
 
 ## Transform Tree Publisher
-이미 ROS 2 카메라 튜토리얼을 검토하고 이미 두 대의 카메라가 무대에 있다고 가정하면, 그 카메라를 변환 트리에 추가하여 글로벌 프레임에서 카메라의 위치를 추적할 수 있도록 합시다.
+이미 ROS 2 카메라 튜토리얼을 검토하고 이미 두 대의 카메라가 무대에 있다고 가정하면, 그 카메라를 변환 트리에 추가하여 글로벌 프레임에서 카메라의 위치를 추적할 수 있도록 합시다.<br>
+<br>
+**ROS 2 Cameras** 튜토리얼의 [ros_2_cameras.usd](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Cameras/ros_2_cameras.usd)를 열어주세요.<br>
 
 ### Transform Publisher
 1. 새로운 Action Graph 만들어 다음과 같이 구성합니다.<br>
