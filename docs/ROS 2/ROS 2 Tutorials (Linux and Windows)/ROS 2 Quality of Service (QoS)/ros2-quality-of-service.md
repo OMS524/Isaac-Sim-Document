@@ -106,15 +106,6 @@ Static publishers는 메시지를 한 번만 publish할 때 유용할 수 있지
 > ```
 
 6. 새로운 터미널에서 4번을 반복하고 이 second subscriber에 대해 static message가 다시 나타나는 것을 확인합니다.
-> ```bash
-> cd ~/IsaacSim-ros_workspaces/humble_ws/
-> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
-> source /opt/ros/humble/setup.bash
-> source install/local_setup.bash
-> ```
-> ```bash
-> ros2 topic echo /topic
-> ```
 > <img width="700" alt="image" src="https://github.com/user-attachments/assets/eaf97e6a-cd5c-4a7b-a31a-3980b5f451cc" />
 
 
