@@ -115,7 +115,10 @@ Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지
 ```bash
 ros2 run tf2_tools view_frames
 ```
-<img width="750" alt="image" src="https://github.com/user-attachments/assets/a74c92bf-c72e-4e47-b266-dfb8f96a21bd" />
+<img width="750" alt="image" src="https://github.com/user-attachments/assets/a74c92bf-c72e-4e47-b266-dfb8f96a21bd" /><br>
+<br>
+Turtlebot ROS2 튜토리얼에서 설정된 모든 publishers와 subscribers의 예시는,<br>
+Isaac Sim에서 Content 탭에서 **Isaac Sim>Sampions>ROS2>Scenario>Turtlebot_tutorial.usd**를 클릭합니다.
 
 ## Graph Shortcuts
 ### TF Publisher
