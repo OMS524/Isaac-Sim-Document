@@ -152,6 +152,7 @@ Isaac Sim의 TF 뷰어를 사용하면 Viewport 창에서 시뮬레이션된 sce
 > > - **TF Viewer** 창을 열기 전에 시뮬레이션이 실행되고 있는지 확인합니다
 > > - **TF Viewer** 창을 닫았다가 다시 열어 TF subscription을 업데이트합니다
 > > - **TF Viewer** 창에서 Reset 버튼을 눌러 TF 트리를 재설정합니다
+> 
 
 
 
