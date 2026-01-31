@@ -15,6 +15,9 @@
 | ROS 2 Installation | Native (Host) |
 | DDS Implementation | Fast DDS |
 
+## Getting Started
+- **URDF Import: Turtlebot** 튜토리얼에서 [urdf_import_turtlebot.usd](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/URDF%20Import%3A%20Turtlebot/urdf_import_turtlebot.usd)을 열어주세요.
+
 ## Adding a RTX Lidar ROS 2 Bridge
 다음 명령어를 통해 Isaac Sim을 실행하세요.<br>
 ```bash
