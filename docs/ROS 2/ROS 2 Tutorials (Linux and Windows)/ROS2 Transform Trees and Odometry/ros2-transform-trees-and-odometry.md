@@ -135,13 +135,13 @@ Isaac Sim의 TF 뷰어를 사용하면 Viewport 창에서 시뮬레이션된 sce
 2. Extension 기능이 활성화된 후, 상단 메뉴 바로 이동하여 **Window > TF Viewew**를 클릭하여 transform viewer control 창을 엽니다.
 > <img width="750" alt="image" src="https://github.com/user-attachments/assets/80b88f53-f309-4468-83f7-75d1c7db6fd1" /><br>
 > Window components:<br>
-> A. 변환을 계산할 프레임.<br>
-> B. 프레임(마커)이 표시되는지 여부. 마커 색상. 마커 크기(상대적).<br>
-> C. 프레임 이름이 표시되는지 여부. 텍스트 색상. 텍스트 크기(상대적).<br>
-> D. 프레임의 축이 표시되는지 여부(RGB -> XYZ 축). 축 길이(미터 단위). 축 두께(상대적).<br>
-> E. 자식 프레임과 부모 프레임 간의 연결을 표시할지 여부. 선 색상. 선 두께(상대적).<br>
-> F. 프레임 변환 업데이트 주파수(Hz). 주파수가 높을수록 시뮬레이션 성능이 저하될 수 있습니다.<br>
-> G. TF 트리를 Reset합니다(transformation buffers 지우기). 예를 들어 `TF_OLD_DATA` 경고를 지우는 데 유용합니다.
+>   A. 변환을 계산할 프레임.<br>
+>   B. 프레임(마커)이 표시되는지 여부. 마커 색상. 마커 크기(상대적).<br>
+>   C. 프레임 이름이 표시되는지 여부. 텍스트 색상. 텍스트 크기(상대적).<br>
+>   D. 프레임의 축이 표시되는지 여부(RGB -> XYZ 축). 축 길이(미터 단위). 축 두께(상대적).<br>
+>   E. 자식 프레임과 부모 프레임 간의 연결을 표시할지 여부. 선 색상. 선 두께(상대적).<br>
+>   F. 프레임 변환 업데이트 주파수(Hz). 주파수가 높을수록 시뮬레이션 성능이 저하될 수 있습니다.<br>
+>   G. TF 트리를 Reset합니다(transformation buffers 지우기). 예를 들어 `TF_OLD_DATA` 경고를 지우는 데 유용합니다.
 
 3. 시각화를 시작하려면 변환을 계산할 적절한 root frame을 선택합니다(예: publish된 변환 트리 사양에 따라 World 또는 world).
 > <img width="728" height="392" alt="image" src="https://github.com/user-attachments/assets/c9d40e47-5f5d-4329-95d7-756810f03392" />
