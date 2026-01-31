@@ -32,6 +32,7 @@
 5. **Window > Graph Editors > Action Graph**에서 New Action Graph를 클릭합니다.<br>생성된 Action Graph를 *//World/turtlebot3_burger/base_scan*로 이동합니다.<br>다음과 같이 Action Graph를 구성합니다.
 
 
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/1f1e749d-4cfa-4baf-a74b-2f9268d6faf7" />
 
 
 
