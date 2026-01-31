@@ -16,7 +16,8 @@
 | DDS Implementation | Fast DDS |
 
 ## Getting Started
-- **ROS 2 Cameras** 튜토리얼의 [rtx-lidar-sensors.md](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/RTX%20Lidar%20Sensors/rtx-lidar-sensors.md)를 열어주세요.
+- **URDF Import: Turtlebot** 튜토리얼을 완료해야 합니다.
+- **ROS 2 Cameras** 튜토리얼을 완료해야 합니다.
 
 ## Transform Tree Publisher
 이미 ROS 2 카메라 튜토리얼을 검토하고 이미 두 대의 카메라가 무대에 있다고 가정하면, 그 카메라를 변환 트리에 추가하여 글로벌 프레임에서 카메라의 위치를 추적할 수 있도록 합시다.<br>
@@ -61,6 +62,8 @@ Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지
 
 ## Setting Up Odometry
 로봇의 odometry를 설정하려면 odometry ROS message와 해당 transforms을 publish합니다.<br>
+<br>
+**URDF Import: Turtlebot** 튜토리얼의 [urdf_import_turtlebot.usd](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/URDF%20Import%3A%20Turtlebot/urdf_import_turtlebot.usd)를 열어주세요.<br>
 
 1. 가져온 Turtlebot3 로봇의 Articulation Root가 `/World/Turtlebot3_burger`인지 확인합니다.<br>그렇지 않으면 `/World/Turtlebot3_burger/base_footprint`에서 Articulation Root를 제거하고 `/World/Turtlebot3_burger`에 추가합니다.<br>Articulation Root 섹션의 단계를 따라 Turtlebot3 로봇의 관절 루트를 변경합니다.
 > (Optional Exercise)
