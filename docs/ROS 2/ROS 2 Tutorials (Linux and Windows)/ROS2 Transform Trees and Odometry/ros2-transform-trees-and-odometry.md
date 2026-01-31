@@ -117,5 +117,9 @@ ros2 run tf2_tools view_frames
 ```
 <img width="750" alt="image" src="https://github.com/user-attachments/assets/a74c92bf-c72e-4e47-b266-dfb8f96a21bd" />
 
-
+## Graph Shortcuts
+### TF Publisher
+**Tools > Robotics > ROS 2 OmniGraphs > TF Publisher**
+### Odometry Publisher
+**Tools > Robotics > ROS 2 OmniGraphs > Odometry**
 
