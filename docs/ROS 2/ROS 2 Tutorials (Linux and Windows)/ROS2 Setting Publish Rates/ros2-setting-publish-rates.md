@@ -93,9 +93,11 @@ Camera 및 RTX Lidar sensor의 경우 SDG pipeline 내에서 자동으로 구성
 특정 노드를 다양한 속도로 체크하도록 ActionGraphs를 구성했습니다.<br>
 모든 ActionGraphs는 시뮬레이션 속도에 대해 정의된 최대 프레임 속도로 제한되므로 Python interface를 사용하여 이 시뮬레이션 프레임 속도를 수정할 수 있습니다.<br>
 <br>
-1. 스크립트 편집기에서 파이썬 코드를 실행하여 시뮬레이션 속도를 설정합니다. 창 > 스크립트 편집기로 이동하여 스크립트 편집기를 엽니다.
-> 시뮬레이션 속도를 설정하는 두 가지 방법이 있습니다:
-> - 탄소 설정 변경. 장면 재생 후 아래 스크립트를 실행합니다. 이 방법은 시뮬레이션 타임라인 실행률을 설정하는 것을 목표로 합니다. 이는 OnPlayBackTick 노드의 시간에 영향을 미칩니다.
+1. 스크립트 편집기에서 파이썬 코드를 실행하여 시뮬레이션 속도를 설정합니다. **Window > Script Editor**로 이동하여 script editor를 엽니다.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/5ce33a19-d094-4807-ba82-5bec97f10463" /><br>
+> 시뮬레이션 속도를 설정하는 두 가지 방법이 있습니다:<br>
+> <br>
+> - carb 설정 변경. scene 재생 후 아래 스크립트를 실행합니다.<br>이 방법은 시뮬레이션 타임라인 실행률을 설정하는 것을 목표로 합니다.<br>이는 OnPlayBackTick 노드의 시간에 영향을 미칩니다.
 > > ```python
 > > # Change the carb settings. This is not persistent between when stopping and replaying
 > > 
@@ -106,11 +108,29 @@ Camera 및 RTX Lidar sensor의 경우 SDG pipeline 내에서 자동으로 구성
 > > carb.settings.get_settings().set_int("/app/runLoops/main/rateLimitFrequency", int(physics_rate))
 > > carb.settings.get_settings().set_int("/persistent/simulation/minFrameRate", int(physics_rate))
 > > ```
-> - SetTimeCodesPerSecond 및 set_target_framerate 변경. 이 방법은 물리학 실행 속도를 설정하는 것을 목표로 합니다. 이는 IsaacReadSimulationTime 노드의 시간에 영향을 미칩니다.
+> - SetTimeCodesPerSecond 및 set_target_framerate 변경.<br>이 방법은 물리학 실행 속도를 설정하는 것을 목표로 합니다.<br>이는 IsaacReadSimulationTime 노드의 시간에 영향을 미칩니다.
+> > 초당 시간 코드는 장면이 재생되기 전에 한 번만 설정할 수 있습니다. 이 값을 변경하려면 먼저 장면을 다시 로드하세요.
+> > ```python
+> > # This must be called after a stage is loaded. Timeline must be stopped when setting SetTimeCodesPerSecond and set_target_framerate. This is persistent between stopping and replaying:
+> > import omni
+> > physics_rate = 60 # fps
 > > 
+> > timeline = omni.timeline.get_timeline_interface()
+> > stage = omni.usd.get_context().get_stage()
+> > timeline.stop()
+> > 
+> > stage.SetTimeCodesPerSecond(physics_rate)
+> > timeline.set_target_framerate(physics_rate)
+> > 
+> > timeline.play()
+> > ```
 
+2. script editor에서 snippets(`Run (Ctrl+Enter)`)을 실행하고 시뮬레이션 속도에 미치는 영향을 확인합니다.<br>viewport show/hide menu **(eye) > Heads Up Display > FPS**로 이동하여 FPS 디스플레이를 활성화할 수 있습니다.
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/b6ae993c-f4d9-4163-b7c4-a471518e7f6f" /><br>
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/f52cb73b-bd55-4b20-ac32-4b31fba8161d" /><br>
+> 
+> physics_rate를 다른 값으로 수정하고 FPS 수치를 확인해 보세요.
 
-2. 스크립트 편집기에서 스니펫을 실행하고 시뮬레이션 속도에 미치는 영향을 확인합니다. 뷰포트 표시/숨기기 메뉴(눈) > 헤드업 디스플레이 > FPS로 이동하여 FPS 디스플레이를 활성화할 수 있습니다.
 
 ### Checking ROS 2 Publish Rate
 
