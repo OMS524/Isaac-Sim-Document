@@ -69,7 +69,6 @@
 > ros2 topic info /topic -v
 > ```
 > QoS 프로파일의 출력은 Isaac Sim에서 정의한 것과 일치해야 합니다.<br>
-> <br>
 > <img width="300" alt="image" src="https://github.com/user-attachments/assets/9e0f7aa9-4c7d-401a-8ee2-474aae531dab" /><br>
 
 > [!NOTE]
