@@ -20,14 +20,14 @@
 
 
 
-2. 생성된 Example Rotary 2D의 Prim을 */World/turtlebot3_burger/base_scan*으로 드래그하세요. 그 후 Example Rotary 2D의 Property 탭에서 위치를 `(0,0,0)`으로 설정합니다.
+2. 생성된 Example Rotary 2D의 Prim을 */World/turtlebot3_burger/base_scan*으로 드래그하세요.<br>그 후 Example Rotary 2D의 Property 탭에서 위치를 `(0,0,0)`으로 설정합니다.
 
 
 
 3. **Create > Sensors > RTX Lidar > NVIDIA > Example Rotary**
 
 
-4. 생성된 Example Rotary의 Prim을 */World/turtlebot3_burger/base_scan*으로 드래그하세요. 그 후 Example Rotary의 Property 탭에서 위치를 `(0,0,0)`으로 설정합니다.
+4. 생성된 Example Rotary의 Prim을 */World/turtlebot3_burger/base_scan*으로 드래그하세요.<br>그 후 Example Rotary의 Property 탭에서 위치를 `(0,0,0)`으로 설정합니다.
 
 5. **Window > Graph Editors > Action Graph**에서 New Action Graph를 클릭합니다.<br>생성된 Action Graph를 *//World/turtlebot3_burger/base_scan*로 이동합니다.<br>다음과 같이 Action Graph를 구성합니다.
 
