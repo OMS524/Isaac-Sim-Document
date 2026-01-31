@@ -65,7 +65,7 @@ ros2 topic list
 ```bash
 rviz2
 ```
-5. Rviz2에서 Fixed Frame을 `base_scan`으로 설정합니다.<br>해당 예제는 TF 구성이 안되어 있기 때문에 직접 입력해야 합니다.<br>TF 구성은 다음 예제인 [ROS2 Transform Trees and Odometry]에서 진행됩니다.<br>해당 예제에서 TF 구성 된 예시를 보시려면 [rtx_lidar_sensors.usd](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/RTX%20Lidar%20Sensors/rtx_lidar_sensors.usd)를 참고하시기 바랍니다.
+5. Rviz2에서 Fixed Frame을 `base_scan`으로 설정합니다.<br>해당 예제는 TF 구성이 안되어 있기 때문에 직접 입력해야 합니다.<br>TF 구성은 다음 예제인 [ROS2 Transform Trees and Odometry](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS2%20Transform%20Trees%20and%20Odometry/ros2-transform-trees-and-odometry.md)에서 진행됩니다.<br>해당 예제에서 TF 구성 된 예시를 보시려면 [rtx_lidar_sensors.usd](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/RTX%20Lidar%20Sensors/rtx_lidar_sensors.usd)를 참고하시기 바랍니다.
 <img width="750" alt="image" src="https://github.com/user-attachments/assets/18aa8162-a236-42dd-ba89-e0636619d050" />
 
 ## Running the Example
