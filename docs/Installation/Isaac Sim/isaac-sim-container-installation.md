@@ -160,7 +160,7 @@ Connect를 누르면 다음과 같이 Isaac Sim 인터페이스가 나타난다.
 ## 명령어
 자세한 명령어는 [commands.md](/docs/commands.md)를 참고하세요.
 
-### 컨테이너 생성
+### Container 생성
 ```bash
 docker run --name isaac-sim \
   --entrypoint bash -it --gpus all \
