@@ -55,7 +55,7 @@ ros2 topic list
 ```bash
 rviz2
 ```
-5. Rviz2에서 fixed_frame을 `base_scan`으로 설정합니다
+5. Rviz2에서 Fixed Frame을 `base_scan`으로 설정합니다.<br>해당 예제는 TF 구성이 안되어 있기 때문에 직접 입력해야 합니다.
 
 
 
