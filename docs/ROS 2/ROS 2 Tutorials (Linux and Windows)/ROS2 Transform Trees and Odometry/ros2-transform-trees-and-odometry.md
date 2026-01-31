@@ -109,7 +109,11 @@ Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지
 > - parentFrameId을 `world` 설정하세요.
 > TF 트리에서 odom -> base_link 프레임을 publish합니다.
 > - Translation 및 Rotation 필드는 (0.0, 0.0, 0.0) translation vector(XYZ)와 (1.0, 0.0, 0.0, 0.0) rotation quaternion(IJKR)의 기본값을 사용하므로 분리된 상태로 두십시오.<br>이 rotation 및 translation은 로봇의 시작 자세에 해당합니다.<br>로봇이 다른 위치에서 시작하는 경우, 해당 자세에 맞게 이러한 필드를 업데이트해야 합니다.
-
+<br>
+시뮬레이션에서 Play를 누르고 다음 명령어를 실행하세요.
+```bash
+ros2 run tf2_tools view_frames
+```
 
 
 
