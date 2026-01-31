@@ -16,8 +16,16 @@
 | DDS Implementation | Fast DDS |
 
 ## Setting QoS Profile for ROS 2 OmniGraph Nodes
+다음 명령어를 통해 Isaac Sim을 실행하세요.<br>
+```bash
+./runheadless.sh
+```
+다음 명령어를 통해 Isaac Sim을 Streaming 하세요.<br>
+```bash
+./docker/isaacsim-webrtc-streaming-client-1.1.5-linux-x64.AppImage
+```
 
-
+1. **Tools > Robotics > ROS 2 OmniGraphs > Generic Publisher**로 이동합니다.<br>**Publish String**를 선택하고 **OK**를 클릭합니다.
 
 
 
