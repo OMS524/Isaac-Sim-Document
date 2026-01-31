@@ -52,9 +52,10 @@ ros2 topic echo /tf
 > - Articulation Root를 변경한 후 파일을 저장하고 다시 로드합니다.
 
 ### Publish Relative Transforms
-
-
-
+기본적으로 TF는 world frame을 참조합니다.<br>
+Turtlebot의 `/base_link` TF가 `/World`를 기준으로 publish되어 있는지 확인할 수 있습니다.<br>
+카메라와 같은 다른 것에 대한 TF를 얻으려면 부모 *parentPrim*에 해당 TF를 표시해야 합니다.<br>
+*parentPrim* 필드에 *Camera_1*을 추가하고 property 변경 사이에 시뮬레이션을 중지하고 재생하면 `/base_link` TF가 이제 *Camera_1*에 상대적임을 확인할 수 있습니다.<br>
 
 ## Setting Up Odometry
 로봇의 odometry를 설정하려면 odometry ROS message와 해당 transforms을 publish합니다.
