@@ -23,6 +23,7 @@
 
 ### Transform Publisher
 1. 새로운 Action Graph 만들어 다음과 같이 구성합니다.<br>
+
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ff4c18c1-d5a7-4dc1-a99f-90c9c643f59f" /><br>
 
 2. *ROS 2 Publish Transform Tree*의 Property 탭에서 targetPrims에 `Camera_1`과 `Camera_2`를 추가합니다.<br>
