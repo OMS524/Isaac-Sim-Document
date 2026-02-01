@@ -16,7 +16,8 @@
 | DDS Implementation | Fast DDS |
 
 ## Add Joint States in UI
-
+1. **Isaac Sim > Robots > FrankaRobotics > FrankaPanda > franka.usd**를 Stage로 드래그하여 Asset을 가져옵니다.
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/a2831870-a70f-47c9-ad2b-31894d54fe47" />
 
 
 
