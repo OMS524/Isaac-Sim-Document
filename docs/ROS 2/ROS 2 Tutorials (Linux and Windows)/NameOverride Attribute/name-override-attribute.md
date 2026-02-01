@@ -14,3 +14,28 @@
 | ROS 2 Distribution | Humble |
 | ROS 2 Installation | Native (Host) |
 | DDS Implementation | Fast DDS |
+
+
+## Setting up the NameOverride Attribute
+
+
+
+
+
+
+
+## Adding the `isaac:nameOverride` Prim Attribute
+
+
+
+
+
+
+
+
+
+
+
+
+
+
