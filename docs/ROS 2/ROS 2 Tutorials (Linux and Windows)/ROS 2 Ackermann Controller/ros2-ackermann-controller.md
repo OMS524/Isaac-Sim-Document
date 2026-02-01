@@ -121,9 +121,10 @@ command velocity를 Ackermann drive stamped messages로 변환하여 키보드�
 > source install/local_setup.bash
 > ```
 > ```bash
-> ros2 run isaac_tutorials ros2_ackermann_publisher.py
+> ros2 run teleop_twist_keyboard teleop_twist_keyboard
 > ```
 
+이제 키보드를 사용하여 Leatherback 로봇을 제어할 수 있습니다.
 > [ros2_ackermann_controller_2.webm](https://github.com/user-attachments/assets/b474f06f-a4be-4300-9732-5e6f8fcd697f)
 
 
