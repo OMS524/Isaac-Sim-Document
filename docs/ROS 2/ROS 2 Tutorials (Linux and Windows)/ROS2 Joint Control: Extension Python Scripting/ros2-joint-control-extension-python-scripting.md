@@ -52,8 +52,7 @@
 > ros2 topic echo /joint_states
 > ```
 
-> [ros2_joint_control_extension_python_scripting.webm](https://github.com/user-attachments/assets/97260aca-c1e6-4e62-a4d6-4902d955169e)
-
+> [ros2_joint_control_extension_python_scripting.webm](https://github.com/user-attachments/assets/080a992a-cc7d-4a57-836f-6e03b83f84b3)
 
 ## Graph Shortcut
 
