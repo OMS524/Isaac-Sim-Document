@@ -137,10 +137,51 @@ NVIDIA Isaac Sim 사용의 다양한 Workflows.에 대한 자세한 내용은 Wo
 > [ros2_joint_control_extension_python_scripting_2.webm](https://github.com/user-attachments/assets/c1670166-fdab-429b-9d38-e2548db5d13f)
 
 ## Position and Velocity Control Modes
+joint state subscriber는 position 및 velocity control를 지원합니다. 각 조인트는 한 번에 단일 모드로만 제어할 수 있지만, 동일한 articulation tree의 다른 joint는 다른 모드로 제어할 수 있습니다. 각 joint의 stiffness 및 damping 매개변수가 원하는 control mode(position control: stiffness >> damping, velocity control: stiffness = 0)에 맞게 적절하게 설정되었는지 확인합니다.
 
+이 snippet은 동일한 모드를 사용하는 관절을 하나의 메시지로 그룹화하여 position control와 velocity control를 모두 사용하여 로봇을 명령하는 방법을 보여주는 예시입니다. 이를 분리하여 position control joint와 velocity control joint에 대해 두 가지 다른 메시지를 생성합니다. 이를 분리하는 것은 조직화를 위한 것이며, 잠재적으로 서로 다른 rate로 전송할 수 있습니다.
+```python
+import threading
 
+import rclpy
+from sensor_msgs.msg import JointState
 
+rclpy.init()
+node = rclpy.create_node('position_velocity_publisher')
+pub = node.create_publisher(JointState, 'joint_command', 10)
 
+# Spin in a separate thread
+thread = threading.Thread(target=rclpy.spin, args=(node, ), daemon=True)
+thread.start()
+
+joint_state_position = JointState()
+joint_state_velocity = JointState()
+
+joint_state_position.name = ["joint1", "joint2","joint3"]
+joint_state_velocity.name = ["wheel_left_joint", "wheel_right_joint"]
+joint_state_position.position = [0.2,0.2,0.2]
+joint_state_velocity.velocity = [20.0, -20.0]
+
+rate = node.create_rate(10)
+try:
+    while rclpy.ok():
+        pub.publish(joint_state_position)
+        pub.publish(joint_state_velocity)
+        rate.sleep()
+except KeyboardInterrupt:
+    pass
+rclpy.shutdown()
+thread.join()
+```
+
+원하는 경우 하나의 메시지로 결합할 수 있습니다. 해당 control mode로 control되지 않는 joint에는 'nan'을 사용합니다.
+
+```python
+joint_state = JointState()
+joint_state.name = ["joint1", "joint2","joint3", "wheel_left_joint", "wheel_right_joint"]
+joint_state.position = [0.2,0.2,0.2, float('nan'), float('nan')]
+joint_state.velocity = [float('nan'), float('nan'), float('nan'), 20.0, -20.0]
+```
 
 
 
