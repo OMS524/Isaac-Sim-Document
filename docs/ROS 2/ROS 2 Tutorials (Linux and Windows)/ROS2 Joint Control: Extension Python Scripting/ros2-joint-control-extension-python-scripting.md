@@ -64,7 +64,7 @@
 
 ## Add Joint States in Extension
 UI를 사용하여 수행한 동일한 작업은 파이썬 스크립트를 사용하여 수행할 수도 있습니다.<br>
-NVIDIA Isaac Sim 사용의 다양한 Workflows.에 대한 자세한 내용은 Workflows에 대한 문서에서 확인할 수 있습니다.
+NVIDIA Isaac Sim 사용의 다양한 Workflows.에 대한 자세한 내용은 [Workflows](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/introduction/workflows.html#isaac-sim-app-tutorial-intro-workflows)에서 확인할 수 있습니다.
 
 1. **Isaac Sim > Robots > FrankaRobotics > FrankaPanda > franka.usd**를 Stage로 드래그하여 Asset을 가져옵니다.
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/a2831870-a70f-47c9-ad2b-31894d54fe47" /><br>
