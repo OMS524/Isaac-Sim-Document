@@ -64,11 +64,17 @@
 > > | wheelBase | 0.32 |
 > > | maxAcceleration | 1.0 |
 > > | maxSteeringAngleVelocity | 1.0 |
-
-
-
-
-
+5. **Play**를 눌러 시뮬레이션을 시작하세요.
+6. 새로운 터미널에서 다음 명령어를 실행하여 Ackermann commands를 publish 하세요.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 run isaac_tutorials ros2_ackermann_publisher.py
+> ```
 
 
 
