@@ -70,6 +70,7 @@ NVIDIA Isaac Sim 사용의 다양한 Workflows.에 대한 자세한 내용은 Wo
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/a2831870-a70f-47c9-ad2b-31894d54fe47" /><br>
 
 2. **Window > Script Editor**로 이동하여 다음 코드를 넣습니다.
+> ```bash
 > import omni.graph.core as og
 > 
 > og.Controller.edit(
@@ -103,6 +104,7 @@ NVIDIA Isaac Sim 사용의 다양한 Workflows.에 대한 자세한 내용은 Wo
 >         ],
 >     },
 > )
+> ```
 
 
 ## Position and Velocity Control Modes
