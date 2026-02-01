@@ -51,9 +51,9 @@
 > > > - **Add Element**를 클릭하고 표시되는 텍스트 필드에 `Wheel__Upright__Rear_Right`를 입력합니다.
 > > > - **Add Element**를 클릭하고 표시되는 텍스트 필드에 `Wheel__Knuckle__Front_Left`를 입력합니다.
 > > > - **Add Element**를 클릭하고 표시되는 텍스트 필드에 `Wheel__Knuckle__Front_Right`를 입력합니다.
-> - **ROS 2 Subscribe AckermannDrive** 노드에서 Property 탭에서 다음을 설정하세요.
+> - **ROS 2 Subscribe AckermannDrive** 노드에서 **Property** 탭에서 다음을 설정하세요.
 > > **topicName**에 `ackermann_cmd`로 설정하세요.
-> - **Ackermann Controller** 노드에서 Property 탭에서 아래 표와 같이 설정하세요.
+> - **Ackermann Controller** 노드에서 **Property** 탭에서 아래 표와 같이 설정하세요.
 > > | Input Field | Value |
 > > |:-|:-|
 > > | backWheelRadius | 0.052 |
@@ -75,6 +75,25 @@
 > ```bash
 > ros2 run isaac_tutorials ros2_ackermann_publisher.py
 > ```
+> [ros2_ackermann_controller_1.webm](https://github.com/user-attachments/assets/f13f0a5e-1a54-40fb-aa9d-8aa88eca85c1)
+
+> [!NOTE]
+> 사전 구성된 Leatherback Assets<br>
+> <br>
+> - Action Graph가 있는 Leatherback Assets은 Content Browser에서 **Isaac Sim>Sample>ROS2>Robots>Leatherback_ROS**에 있습니다.
+> - race track scene이 있는 Leatherback warehouse는 Content Browser의 **Isaac Sim>Sample>ROS2>Scenario>leatherback_ackermann**에 위치해 있습니다.
+
+## Converting Twist Messages to AckermannDriveStamped Messages
+
+
+
+
+
+
+
+
+
+
 
 
 
