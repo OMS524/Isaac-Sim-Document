@@ -109,6 +109,7 @@ prim에 isaac:namespace 속성을 추가하려면 다음 단계를 따릅니다:
 > - `/lidar_link/laser_scan`
 > - `/wheel_left/tf`
 > - `/wheel_left/topic`
+> 
 > 위 목록에서 자동으로 생성된 주제를 확인할 수 있습니다. 네임스페이스에 사용자 지정 이름 체계가 필요한 경우 각 ROS 옴니그래프 노드에 대한 nodeNamespace 입력 필드를 입력할 수 있습니다.
 3. 시뮬레이션을 중지합니다. /mock_robot prim을 선택하고 iaca:namespace 속성을 추가합니다. 그런 다음 네임스페이스 값을 prim 이름으로 설정합니다.
 
