@@ -113,17 +113,17 @@ prim에 `isaac:namespace` 속성을 추가하려면 다음 단계를 따릅니�
 #### Testing the isaac:namespace Prim Attribute
 다음 prim에 `isaac:namespace` 속성을 적용합니다. 이 튜토리얼에서는 각 namespace value을 prim 이름으로 설정합니다(사용자 지정 namespace value을 시도해 볼 수는 있지만):
 > - `/mock_robot/base_link/lidar_link`
-> <img width="500" alt="image" src="https://github.com/user-attachments/assets/389d4747-c305-4e09-a8cb-8dd310dcbbf1" />
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/389d4747-c305-4e09-a8cb-8dd310dcbbf1" /><br>
 > - `/mock_robot/base_link/camera_link`
-> <img width="500" alt="image" src="https://github.com/user-attachments/assets/b785f462-c3d5-4845-b611-a25409bccf5b" />
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/b785f462-c3d5-4845-b611-a25409bccf5b" /><br>
 > - `/mock_robot/base_link/camera_link/Hawk`
-> <img width="500" alt="image" src="https://github.com/user-attachments/assets/d8ff9d1f-7b03-49ca-a096-76a521293517" />
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/d8ff9d1f-7b03-49ca-a096-76a521293517" /><br>
 > - `/mock_robot/base_link/camera_link/Hawk/left`
-> <img width="500" alt="image" src="https://github.com/user-attachments/assets/d853e2d6-f047-4f56-8684-58ceeb39eb3f" />
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/d853e2d6-f047-4f56-8684-58ceeb39eb3f" /><br>
 > - `/mock_robot/base_link/camera_link/Hawk/right`
-> <img width="500" alt="image" src="https://github.com/user-attachments/assets/4fec3de0-10b4-4b44-874f-5634ecaafb73" />
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/4fec3de0-10b4-4b44-874f-5634ecaafb73" /><br>
 > - `/mock_robot/base_link/wheel_left`
-> <img width="500" alt="image" src="https://github.com/user-attachments/assets/2a153d5d-5455-4f1d-8888-df7c878afe5c" />
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/2a153d5d-5455-4f1d-8888-df7c878afe5c" /><br>
 
 1. **Play**을 클릭하고 시뮬레이션을 시작합니다.
 2. ROS source 터미널을 열고 `ros2 topic list`을 입력하고, 다음 topic 준수하는지 확인합니다:
