@@ -126,15 +126,16 @@ prim에 `isaac:namespace` 속성을 추가하려면 다음 단계를 따릅니�
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/2a153d5d-5455-4f1d-8888-df7c878afe5c" /><br>
 
 1. **Play**을 클릭하고 시뮬레이션을 시작합니다.
-2. ROS source 터미널을 열고 `ros2 topic list`을 입력하고, 다음 topic 준수하는지 확인합니다:
-> - `/camera_link/Hawk/left/camera_info`
-> - `/camera_link/Hawk/left/rgb`
-> - `/camera_link/Hawk/right/camera_info`
-> - `/camera_link/Hawk/right/rgb`
-> - `/lidar_link/laser_scan`
-> - `/wheel_left/tf`
-> - `/wheel_left/topic`
-> 
+2. ROS source 터미널을 열고 `ros2 topic list`을 입력하고, 다음 topic들이 출력되는지 확인합니다.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/ea6e997c-dc16-4388-8a63-2ab856b9c420" /><br>
+> - `/camera_link/Hawk/left/camera_info`<br>
+> - `/camera_link/Hawk/left/rgb`<br>
+> - `/camera_link/Hawk/right/camera_info`<br>
+> - `/camera_link/Hawk/right/rgb`<br>
+> - `/lidar_link/laser_scan`<br>
+> - `/wheel_left/tf`<br>
+> - `/wheel_left/topic`<br>
+> <br>
 > 위 목록에서 자동으로 생성된 topic을 확인할 수 있습니다. namespace에 사용자 지정 이름 체계가 필요한 경우 각 ROS OmniGraph 노드에 대한 `nodeNamespace` 입력 필드를 입력할 수 있습니다.
 3. 시뮬레이션을 중지합니다. `/mock_robot` prim을 선택하고 `isaac:namespace` 속성을 추가합니다. 그런 다음 namespace 값을 prim 이름으로 설정합니다.
 
