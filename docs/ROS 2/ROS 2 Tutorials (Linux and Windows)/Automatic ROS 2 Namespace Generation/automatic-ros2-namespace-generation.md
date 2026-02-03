@@ -109,6 +109,7 @@ namespace 생성 동작은 ROS publisher의 유형과 단계에서 위치에 따
 prim에 `isaac:namespace` 속성을 추가하려면 다음 단계를 따릅니다:
 > 1. prim을 선택하고 property 창에서 **Add**를 클릭합니다. popup 메뉴에서 **Isaac > Namespace**로 이동합니다. 이 속성이 prim에 적용됩니다.
 > 2. property 패널에서 namespace 필드에 namespace value을 추가합니다.
+> <img width="200" alt="image" src="https://github.com/user-attachments/assets/032e3771-fcd1-4c08-95a2-35d7b70823bb" /><br>
 
 #### Testing the isaac:namespace Prim Attribute
 다음 prim에 `isaac:namespace` 속성을 적용합니다. 이 튜토리얼에서는 각 namespace value을 prim 이름으로 설정합니다(사용자 지정 namespace value을 시도해 볼 수는 있지만):
@@ -126,7 +127,16 @@ prim에 `isaac:namespace` 속성을 추가하려면 다음 단계를 따릅니�
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/2a153d5d-5455-4f1d-8888-df7c878afe5c" /><br>
 
 1. **Play**을 클릭하고 시뮬레이션을 시작합니다.
-2. ROS source 터미널을 열고 `ros2 topic list`을 입력하고, 다음 topic들이 출력되는지 확인합니다.
+2. 새로운 터미널에서 다음 명령어를 실행하여, 다음 topic들이 출력되는지 확인합니다.
+```bssh
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+```bash
+ros2 topic list
+```
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/ea6e997c-dc16-4388-8a63-2ab856b9c420" /><br>
 > - `/camera_link/Hawk/left/camera_info`<br>
 > - `/camera_link/Hawk/left/rgb`<br>
@@ -137,13 +147,26 @@ prim에 `isaac:namespace` 속성을 추가하려면 다음 단계를 따릅니�
 > - `/wheel_left/topic`<br>
 > <br>
 > 위 목록에서 자동으로 생성된 topic을 확인할 수 있습니다. namespace에 사용자 지정 이름 체계가 필요한 경우 각 ROS OmniGraph 노드에 대한 `nodeNamespace` 입력 필드를 입력할 수 있습니다.
+
 3. 시뮬레이션을 중지합니다. `/mock_robot` prim을 선택하고 `isaac:namespace` 속성을 추가합니다. 그런 다음 namespace 값을 prim 이름으로 설정합니다.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/5e737f01-e3d8-488d-8610-2568787f8436" /><br>
 
-4. /mock_robot Prim을 선택하고, 마우스 오른쪽 버튼을 클릭한 다음, 복제를 눌러 복제합니다. 새로 생성된 /mock_robot_01의 경우, Prim을 선택하고 속성 패널로 이동한 다음, iaca:namespace 속성을 mock_robot_01로 변경합니다.
+4. `/mock_robot` Prim을 선택하고, 마우스 오른쪽 버튼을 클릭한 다음, **Duplicate**를 눌러 복제합니다.<br>새로 생성된 `/mock_robot_01`의 경우, Prim을 선택하고 속성 패널로 이동한 다음, `isaac:namespace` 속성을 `mock_robot_01`로 변경합니다.
+> <img width="200" alt="image" src="https://github.com/user-attachments/assets/e56d3bb6-4a4f-4fad-9c29-ffb2f027495b" /><br>
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/4d900506-8f33-4407-a899-e2869d9aeae3" /><br>
 
-5. 재생을 눌러 시뮬레이션을 시작합니다.
+5. **Play**을 눌러 시뮬레이션을 시작합니다.
 
-6. ROS 소스 터미널을 열고 ROS2 주제 목록을 입력합니다. 최소한 다음 주제를 관찰했는지 확인합니다:
+6. 새로운 터미널에서 다음 명령어를 실행하여, 다음 topic들이 출력되는지 확인합니다.
+```bssh
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+```bash
+ros2 topic list
+```
 > **Topics from mock_robot**
 > > - `/mock_robot/camera_link/Hawk/left/camera_info`
 > > - `/mock_robot/camera_link/Hawk/left/rgb`
@@ -163,7 +186,7 @@ prim에 `isaac:namespace` 속성을 추가하려면 다음 단계를 따릅니�
 > > - `/mock_robot_01/wheel_left/topic`
 
 > [!IMPORTANT]
-> 위 목록에서 주제가 자동으로 생성된 것을 확인할 수 있습니다. 네임스페이스에 사용자 지정 이름 체계가 필요한 경우 각 ROS OmniGraph 노드에 대한 nodeNamespace 입력 필드를 입력할 수 있습니다.
+> 위 목록에서 topic들이 자동으로 생성된 것을 확인할 수 있습니다.<br>namespace에 사용자 지정 이름 체계가 필요한 경우 각 ROS OmniGraph 노드에 대한 nodeNamespace 입력 필드를 입력할 수 있습니다.
 
 
 
