@@ -105,22 +105,28 @@ namespace 생성 동작은 ROS publisher의 유형과 단계에서 위치에 따
 **All other OmniGraph nodes**: OmniGraph 노드로의 path는 namespace 검색 알고리즘이 선택한 path를 식별하고 그에 따라 namespace value를 추가하는 데 사용됩니다. 이 경우 이러한 OmniGraph 노드의 위치가 중요합니다.<br>
 <br>
 
-#### Adding the isaac:namespace Prim Attribute
-prim에 isaac:namespace 속성을 추가하려면 다음 단계를 따릅니다:
-> 1. 프림을 선택하고 속성 창에서 추가를 클릭합니다. 팝업 메뉴에서 Isaac > 네임스페이스로 이동합니다. 이 속성이 프림에 적용됩니다.
-> 2. 속성 패널에서 네임스페이스 필드에 네임스페이스 값을 추가합니다.
+#### Adding the `isaac:namespace` Prim Attribute
+prim에 `isaac:namespace` 속성을 추가하려면 다음 단계를 따릅니다:
+> 1. prim을 선택하고 property 창에서 **Add**를 클릭합니다. popup 메뉴에서 **Isaac > Namespace**로 이동합니다. 이 속성이 prim에 적용됩니다.
+> 2. property 패널에서 namespace 필드에 namespace value을 추가합니다.
 
 #### Testing the isaac:namespace Prim Attribute
-다음 프림에 iaca:namespace 속성을 적용합니다. 이 튜토리얼에서는 각 네임스페이스 값을 프림 이름으로 설정합니다(사용자 지정 네임스페이스 값을 시도해 볼 수는 있지만):
+다음 prim에 `isaac:namespace` 속성을 적용합니다. 이 튜토리얼에서는 각 namespace value을 prim 이름으로 설정합니다(사용자 지정 namespace value을 시도해 볼 수는 있지만):
 > - `/mock_robot/base_link/lidar_link`
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/389d4747-c305-4e09-a8cb-8dd310dcbbf1" />
 > - `/mock_robot/base_link/camera_link`
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/b785f462-c3d5-4845-b611-a25409bccf5b" />
 > - `/mock_robot/base_link/camera_link/Hawk`
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/d8ff9d1f-7b03-49ca-a096-76a521293517" />
 > - `/mock_robot/base_link/camera_link/Hawk/left`
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/d853e2d6-f047-4f56-8684-58ceeb39eb3f" />
 > - `/mock_robot/base_link/camera_link/Hawk/right`
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/4fec3de0-10b4-4b44-874f-5634ecaafb73" />
 > - `/mock_robot/base_link/wheel_left`
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/2a153d5d-5455-4f1d-8888-df7c878afe5c" />
 
-1. 재생을 클릭하고 시뮬레이션을 시작합니다.
-2. ROS 소스 터미널을 열고 ros2 주제 목록을 입력하고, 최소한 다음 주제들을 관찰했는지 확인합니다:
+1. **Play**을 클릭하고 시뮬레이션을 시작합니다.
+2. ROS source 터미널을 열고 `ros2 topic list`을 입력하고, 다음 topic 준수하는지 확인합니다:
 > - `/camera_link/Hawk/left/camera_info`
 > - `/camera_link/Hawk/left/rgb`
 > - `/camera_link/Hawk/right/camera_info`
@@ -129,8 +135,8 @@ prim에 isaac:namespace 속성을 추가하려면 다음 단계를 따릅니다:
 > - `/wheel_left/tf`
 > - `/wheel_left/topic`
 > 
-> 위 목록에서 자동으로 생성된 주제를 확인할 수 있습니다. 네임스페이스에 사용자 지정 이름 체계가 필요한 경우 각 ROS 옴니그래프 노드에 대한 nodeNamespace 입력 필드를 입력할 수 있습니다.
-3. 시뮬레이션을 중지합니다. /mock_robot prim을 선택하고 iaca:namespace 속성을 추가합니다. 그런 다음 네임스페이스 값을 prim 이름으로 설정합니다.
+> 위 목록에서 자동으로 생성된 topic을 확인할 수 있습니다. namespace에 사용자 지정 이름 체계가 필요한 경우 각 ROS OmniGraph 노드에 대한 `nodeNamespace` 입력 필드를 입력할 수 있습니다.
+3. 시뮬레이션을 중지합니다. `/mock_robot` prim을 선택하고 `isaac:namespace` 속성을 추가합니다. 그런 다음 namespace 값을 prim 이름으로 설정합니다.
 
 4. /mock_robot Prim을 선택하고, 마우스 오른쪽 버튼을 클릭한 다음, 복제를 눌러 복제합니다. 새로 생성된 /mock_robot_01의 경우, Prim을 선택하고 속성 패널로 이동한 다음, iaca:namespace 속성을 mock_robot_01로 변경합니다.
 
