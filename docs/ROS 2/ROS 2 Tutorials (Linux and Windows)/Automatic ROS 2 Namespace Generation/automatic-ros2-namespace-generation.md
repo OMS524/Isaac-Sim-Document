@@ -108,8 +108,9 @@ namespace 생성 동작은 ROS publisher의 유형과 단계에서 위치에 따
 #### Adding the `isaac:namespace` Prim Attribute
 prim에 `isaac:namespace` 속성을 추가하려면 다음 단계를 따릅니다:
 > 1. prim을 선택하고 property 창에서 **Add**를 클릭합니다. popup 메뉴에서 **Isaac > Namespace**로 이동합니다. 이 속성이 prim에 적용됩니다.<br>
-> 2. property 패널에서 namespace 필드에 namespace value을 추가합니다.<br>
 > <img width="200" alt="image" src="https://github.com/user-attachments/assets/032e3771-fcd1-4c08-95a2-35d7b70823bb" /><br>
+> 2. property 패널에서 namespace 필드에 namespace value을 추가합니다.<br>
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/04815def-ecd8-481e-ac0f-905a59c0e07c" />
 
 #### Testing the isaac:namespace Prim Attribute
 다음 prim에 `isaac:namespace` 속성을 적용합니다. 이 튜토리얼에서는 각 namespace value을 prim 이름으로 설정합니다(사용자 지정 namespace value을 시도해 볼 수는 있지만):
