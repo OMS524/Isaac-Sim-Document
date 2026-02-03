@@ -25,7 +25,7 @@ ROS 2에서 namespaces를 관리하는 것은 다중 로봇 시뮬레이션에�
 ### Configuring the Asset
 #### Setting Up the Base Asset
 1. **Window > Script Editor**을 열고 다음 코드를 넣고 실행하세요.
-> ```bash
+> ```python
 > # Import necessary modules
 > from pxr import UsdGeom
 > import omni.usd
