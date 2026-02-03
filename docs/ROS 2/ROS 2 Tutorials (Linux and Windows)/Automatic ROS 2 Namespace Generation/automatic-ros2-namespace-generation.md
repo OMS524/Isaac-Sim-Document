@@ -93,22 +93,22 @@ prim에 isaac:namespace 속성을 추가하려면 다음 단계를 따릅니다:
 
 #### Testing the isaac:namespace Prim Attribute
 다음 프림에 iaca:namespace 속성을 적용합니다. 이 튜토리얼에서는 각 네임스페이스 값을 프림 이름으로 설정합니다(사용자 지정 네임스페이스 값을 시도해 볼 수는 있지만):
-> `/mock_robot/base_link/lidar_link`
-> `/mock_robot/base_link/camera_link`
-> `/mock_robot/base_link/camera_link/Hawk`
-> `/mock_robot/base_link/camera_link/Hawk/left`
-> `/mock_robot/base_link/camera_link/Hawk/right`
-> `/mock_robot/base_link/wheel_left`
+> - `/mock_robot/base_link/lidar_link`
+> - `/mock_robot/base_link/camera_link`
+> - `/mock_robot/base_link/camera_link/Hawk`
+> - `/mock_robot/base_link/camera_link/Hawk/left`
+> - `/mock_robot/base_link/camera_link/Hawk/right`
+> - `/mock_robot/base_link/wheel_left`
 
 1. 재생을 클릭하고 시뮬레이션을 시작합니다.
 2. ROS 소스 터미널을 열고 ros2 주제 목록을 입력하고, 최소한 다음 주제들을 관찰했는지 확인합니다:
-> `/camera_link/Hawk/left/camera_info`
-> `/camera_link/Hawk/left/rgb`
-> `/camera_link/Hawk/right/camera_info`
-> `/camera_link/Hawk/right/rgb`
-> `/lidar_link/laser_scan`
-> `/wheel_left/tf`
-> `/wheel_left/topic`
+> - `/camera_link/Hawk/left/camera_info`
+> - `/camera_link/Hawk/left/rgb`
+> - `/camera_link/Hawk/right/camera_info`
+> - `/camera_link/Hawk/right/rgb`
+> - `/lidar_link/laser_scan`
+> - `/wheel_left/tf`
+> - `/wheel_left/topic`
 > 위 목록에서 자동으로 생성된 주제를 확인할 수 있습니다. 네임스페이스에 사용자 지정 이름 체계가 필요한 경우 각 ROS 옴니그래프 노드에 대한 nodeNamespace 입력 필드를 입력할 수 있습니다.
 3. 시뮬레이션을 중지합니다. /mock_robot prim을 선택하고 iaca:namespace 속성을 추가합니다. 그런 다음 네임스페이스 값을 prim 이름으로 설정합니다.
 
@@ -118,21 +118,21 @@ prim에 isaac:namespace 속성을 추가하려면 다음 단계를 따릅니다:
 
 6. ROS 소스 터미널을 열고 ROS2 주제 목록을 입력합니다. 최소한 다음 주제를 관찰했는지 확인합니다:
 > **Topics from mock_robot**
-> > `/mock_robot/camera_link/Hawk/left/camera_info`
-> > `/mock_robot/camera_link/Hawk/left/rgb`
-> > `/mock_robot/camera_link/Hawk/right/camera_info`
-> > `/mock_robot/camera_link/Hawk/right/rgb`
-> > `/mock_robot/lidar_link/laser_scan`
-> > `/mock_robot/tf`
-> > `/mock_robot/wheel_left/topic`
+> > - `/mock_robot/camera_link/Hawk/left/camera_info`
+> > - `/mock_robot/camera_link/Hawk/left/rgb`
+> > - `/mock_robot/camera_link/Hawk/right/camera_info`
+> > - `/mock_robot/camera_link/Hawk/right/rgb`
+> > - `/mock_robot/lidar_link/laser_scan`
+> > - `/mock_robot/tf`
+> > - `/mock_robot/wheel_left/topic`
 > **Topics from mock_robot_01**
-> > `/mock_robot_01/camera_link/Hawk/left/camera_info`
-> > `/mock_robot_01/camera_link/Hawk/left/rgb`
-> > `/mock_robot_01/camera_link/Hawk/right/camera_info`
-> > `/mock_robot_01/camera_link/Hawk/right/rgb`
-> > `/mock_robot_01/lidar_link/laser_scan`
-> > `/mock_robot_01/tf`
-> > `/mock_robot_01/wheel_left/topic`
+> > - `/mock_robot_01/camera_link/Hawk/left/camera_info`
+> > - `/mock_robot_01/camera_link/Hawk/left/rgb`
+> > - `/mock_robot_01/camera_link/Hawk/right/camera_info`
+> > - `/mock_robot_01/camera_link/Hawk/right/rgb`
+> > - `/mock_robot_01/lidar_link/laser_scan`
+> > - `/mock_robot_01/tf`
+> > - `/mock_robot_01/wheel_left/topic`
 
 > [!IMPORTANT]
 > 위 목록에서 주제가 자동으로 생성된 것을 확인할 수 있습니다. 네임스페이스에 사용자 지정 이름 체계가 필요한 경우 각 ROS OmniGraph 노드에 대한 nodeNamespace 입력 필드를 입력할 수 있습니다.
