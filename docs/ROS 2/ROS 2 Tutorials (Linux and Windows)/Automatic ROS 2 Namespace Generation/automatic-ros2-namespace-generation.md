@@ -89,15 +89,21 @@ ROS 2에서 namespaces를 관리하는 것은 다중 로봇 시뮬레이션에�
 8. **Tools > Robotics > ROS 2 OmniGraphs > RTX Lidar**로 이동하여 2D RTX Lidar Publisher를 만드세요.<br>**Lidar Prim**을 `/mock_robot/base_link/lidar_link/Example_Rotary_2D`로 설정하고 **Graph Path**를 `/mock_robot/base_link/lidar_link/Lidar_Graph`로 설정합니다. **Laser Scan**만 활성화된 다음 **OK**을 누르세요.
 > <img width="300" alt="image" src="https://github.com/user-attachments/assets/58b2bce7-3032-4196-b3cb-b63481e1ab9f" /><br>
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/6722d598-31c8-47d5-a210-01bb71e5075d" /><br>
+<br>
 
 #### Configuring Namespace Attributes
-이제 기본 자산이 설정되었으므로 네임스페이스 값을 원하는 각 프림에 대해 iaca:namespace 속성을 추가해야 합니다. 네임스페이스는 프림 계층의 상단에서 각 ROS 퍼블리셔에 설정된 각 iaca:namespace 속성 값을 추가하여 생성됩니다. 네임스페이스 생성 동작은 ROS 퍼블리셔의 유형과 단계에서 위치에 따라 달라집니다.
-
-ROS 2 TF 옴니그래프 노드: 생성된 네임스페이스에는 네임스페이스 속성 집합이 있는 최상위 프림의 네임스페이스 값만 포함됩니다. 이는 한 로봇 내에서 게시된 모든 TF가 해당 로봇의 네임스페이스(즉, robot1/tf) 아래에만 위치하기 때문입니다.
-
-ROS 2 카메라 및 라이다 옴니그래프 헬퍼 노드: 카메라 또는 라이다 렌더 제품 경로는 네임스페이스 검색 알고리즘이 취하는 경로를 식별하고 그에 따라 네임스페이스 값을 추가하는 데 사용됩니다. 따라서 이 경우 카메라/라이다 헬퍼 노드의 위치는 관련이 없으며, 오히려 카메라/라이다 센서 프림의 위치가 사용됩니다.
-
-다른 모든 OmniGraph 노드: OmniGraph 노드로의 경로는 네임스페이스 검색 알고리즘이 선택한 경로를 식별하고 그에 따라 네임스페이스 값을 추가하는 데 사용됩니다. 이 경우 이러한 OmniGraph 노드의 위치가 중요합니다.
+이제 기본 asset이 설정되었으므로 namespace 값을 원하는 각 prim에 대해 `isaac:namespace` 속성을 추가해야 합니다.<br>
+namespace는 prim 계층의 상단에서 각 ROS publisher에 설정된 각 `isaac:namespace` 속성 값을 추가하여 생성됩니다.<br>
+namespace 생성 동작은 ROS publisher의 유형과 단계에서 위치에 따라 달라집니다.<br>
+<br>
+**ROS 2 TF OmniGraph Nodes**: 생성된 namespace에는 namespace 속성 집합이 있는 최상위 prim의 namespace value만 포함됩니다.<br>
+이는 한 로봇 내에서 publish된 모든 TF가 해당 로봇의 namespace(즉, `robot1/tf`) 아래에만 위치하기 때문입니다.<br>
+<br>
+**ROS 2 Camera & Lidar OmniGraph Helper Nodes**: Camera 또는 Lidar render product의 path는 namespace 검색 알고리즘이 취하는 path를 식별하고 그에 따라 namespace value를 추가하는 데 사용됩니다.<br>
+따라서 이 경우 Camera/Lidar Helper node의 위치는 관련이 없으며, 오히려 Camera/Lidar sensor prim의 위치가 사용됩니다.<br>
+<br>
+**All other OmniGraph nodes**: OmniGraph 노드로의 path는 namespace 검색 알고리즘이 선택한 path를 식별하고 그에 따라 namespace value를 추가하는 데 사용됩니다. 이 경우 이러한 OmniGraph 노드의 위치가 중요합니다.<br>
+<br>
 
 #### Adding the isaac:namespace Prim Attribute
 prim에 isaac:namespace 속성을 추가하려면 다음 단계를 따릅니다:
