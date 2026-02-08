@@ -248,6 +248,7 @@ IMU 데이터를 처리하여 body frame linear acceleration, angular velocity �
 1. ActionGraph를 오른쪽 클릭하고 **Open Graph**를 클릭하여 ActionGraph를 여세요.
 2. 다음과 같이 ActionGraph를 구성하세요.
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/4e0fbbb2-44f7-4695-b108-f8c6300c006c" /><br>
+> 
 > - `On Physics Step`: 이 노드는 Isaac Sim physics steps에서 트리거되어 전체 그래프를 실행합니다.<br>
 > - `ROS2 Context`: 이 노드는 ROS 2 노드에 대한 context를 생성합니다.<br>
 > - `ROS2 QoS Profile`: 이 노드는 ROS 2 노드의 QoS profile을 설정합니다.<br>
