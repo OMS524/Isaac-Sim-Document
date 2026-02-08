@@ -243,10 +243,15 @@ IMU 데이터를 처리하여 body frame linear acceleration, angular velocity �
 이렇게 하면 Isaac Sim physics 단계에서 ActionGraph 노드가 실행됩니다.
 
 ### Create Imu Publisher Node
-
-
-
-
+1. ActionGraph를 오른쪽 클릭하고 **Open Graph**를 클릭하여 ActionGraph를 여세요.
+2. 다음과 같이 ActionGraph를 구성하세요.
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/4e0fbbb2-44f7-4695-b108-f8c6300c006c" /><br>
+> `On Physics Step`: 이 노드는 Isaac Sim physics steps에서 트리거되어 전체 그래프를 실행합니다.
+> `ROS2 Context`: 이 노드는 ROS 2 노드에 대한 context를 생성합니다.
+> `ROS2 QoS Profile`: 이 노드는 ROS 2 노드의 QoS profile을 설정합니다.
+> `Isaac Read IMU Node`: 이 노드는 Isaac Sim에서 IMU 데이터를 읽습니다.
+> `Isaac Read Simulation Time`: 이 노드는 Isaac Sim에서 simulation time을 읽습니다.
+> `ROS2 Publish IMU`: 이 노드는 `Isaac Read IMU Node` 노드와 `Isaac Read Simulation Time` 노드를 source로 사용하여 ROS 2에 IMU 데이터를 publish합니다.
 
 ### Create Joint State Publisher and Subscriber Nodes
 
