@@ -119,6 +119,7 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > $S_{\text{deg}} = S_{\text{rad}} \times \frac{\pi}{180}$<br>
 > $D_{\text{deg}} = D_{\text{rad}} \times \frac{\pi}{180}$<br>
 > <br>
+> 
 > **stiffness**<br>
 > | Joint | Rad | Deg |
 > |-|-|-|
@@ -128,6 +129,7 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > | *_knee | 200.0 | 3.49 |
 > | torso | 200.0 | 3.49 |
 > <br>
+> 
 > **damping**<br>
 > | Joint | Rad | Deg |
 > |-|-|-|
