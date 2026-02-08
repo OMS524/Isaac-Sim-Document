@@ -112,12 +112,12 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 
 ## Setting Joint Configuration
 
-1. 각 joint 마다 Property에서 joint drive API의 `Stiffness`를 다음 내용의 `stiffness`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Damping`를 다음 내용의 `damping`를 참고해서 설정하세요.<br>
+1. 각 joint 마다 Property에서 joint drive API의 `Stiffness`를 다음 내용의 `stiffness`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Damping`를 다음 내용의 `damping`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Maximum Joint Velocity`를 다음 내용의 `velocity_limit`를 참고해서 설정하세요.<br>
 > [!NOTE]
 > `stiffness`, `damping`는 다음 수식을 이용하여 degree로 변환해서 넣어야 합니다.<br>
 > <br>
-> $S_{\text{deg}} = S_{\text{rad}} \times \frac{\pi}{180}$
-> $D_{\text{deg}} = D_{\text{rad}} \times \frac{\pi}{180}$
+> $S_{\text{deg}} = S_{\text{rad}} \times \frac{\pi}{180}$<br>
+> $D_{\text{deg}} = D_{\text{rad}} \times \frac{\pi}{180}$<br>
 > $\omega_{\text{deg}} = \omega_{\text{rad}} \times \frac{180}{\pi}$<br>
 > <br>
 > 
@@ -139,6 +139,12 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > | *_hip_pitch | 5.0 | 0.087 |
 > | *_knee | 5.0 | 0.087 |
 > | torso | 5.0 | 0.087 |
+> <br>
+> 
+> **velocity_limit**<br>
+> | Joint | Rad | Deg |
+> |-|-|-|
+> | all | 100.0 | 5729.58 |
 
 > ```python
 > actuators:k
