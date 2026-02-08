@@ -248,12 +248,12 @@ IMU 데이터를 처리하여 body frame linear acceleration, angular velocity �
 1. ActionGraph를 오른쪽 클릭하고 **Open Graph**를 클릭하여 ActionGraph를 여세요.
 2. 다음과 같이 ActionGraph를 구성하세요.
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/4e0fbbb2-44f7-4695-b108-f8c6300c006c" /><br>
-> `On Physics Step`: 이 노드는 Isaac Sim physics steps에서 트리거되어 전체 그래프를 실행합니다.<br>
-> `ROS2 Context`: 이 노드는 ROS 2 노드에 대한 context를 생성합니다.<br>
-> `ROS2 QoS Profile`: 이 노드는 ROS 2 노드의 QoS profile을 설정합니다.<br>
-> `Isaac Read IMU Node`: 이 노드는 Isaac Sim에서 IMU 데이터를 읽습니다.<br>
-> `Isaac Read Simulation Time`: 이 노드는 Isaac Sim에서 simulation time을 읽습니다.<br>
-> `ROS2 Publish IMU`: 이 노드는 `Isaac Read IMU Node` 노드와 `Isaac Read Simulation Time` 노드를 source로 사용하여 ROS 2에 IMU 데이터를 publish합니다.<br>
+> - `On Physics Step`: 이 노드는 Isaac Sim physics steps에서 트리거되어 전체 그래프를 실행합니다.<br>
+> - `ROS2 Context`: 이 노드는 ROS 2 노드에 대한 context를 생성합니다.<br>
+> - `ROS2 QoS Profile`: 이 노드는 ROS 2 노드의 QoS profile을 설정합니다.<br>
+> - `Isaac Read IMU Node`: 이 노드는 Isaac Sim에서 IMU 데이터를 읽습니다.<br>
+> - `Isaac Read Simulation Time`: 이 노드는 Isaac Sim에서 simulation time을 읽습니다.<br>
+> - `ROS2 Publish IMU`: 이 노드는 `Isaac Read IMU Node` 노드와 `Isaac Read Simulation Time` 노드를 source로 사용하여 ROS 2에 IMU 데이터를 publish합니다.<br>
 
 3. 다음과 같이 노드를 설정하세요.
 > - `Isaac Read IMU Node` 노드에서 `IMU Prim`을 `/h1/pelvis/Imu_Sensor`으로 설정하세요.
@@ -265,6 +265,95 @@ IMU 데이터를 처리하여 body frame linear acceleration, angular velocity �
 
 1. 새로운 ActionGraph를 만들고 이름을 `ROS_Joint_States`으로 변경하세요.
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/074bbbdd-aa56-4fee-abce-db2c0b615b83" />
+
+2. ActionGraph를 클릭하고 Property에서 **Raw USD Properties**의 `pipelineStage`를 `pipelineStageOnDemand`으로 설정하세요.
+3. 다음과 같이 ActionGraph를 구성하세요.
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/36bcfca8-a8c0-4eaf-a53b-d10dc8528e09" /><br>
+> - `On Physics Step`: 이 노드는 Isaac Sim physics steps에서 트리거되어 전체 그래프를 실행합니다.<br>
+> - `ROS2 Context`: 이 노드는 ROS 2 노드에 대한 context를 생성합니다.<br>
+> - `ROS2 QoS Profile`: 이 노드는 ROS 2 노드의 QoS profile을 설정합니다.<br>
+> - `ROS2 Subscribe Joint State`: 이 노드는 external policy node의 joint states commands을 subscribe합니다.<br>
+> - `ROS2 Publish Joint State`: 이 노드는 Isaac Sim의 현재 joint states를 ROS 2에 publish합니다.<br>
+> - `Isaac Read Simulation Time`: 이 노드는 Isaac Sim에서 simulation time을 읽습니다.<br>
+> - `Articulation Controller`: 이 노드는 Subscribe joint States node에서 joint state commands을 실행합니다.<br>
+
+4. 다음과 같이 노드를 설정하세요.
+> - `ROS2 Publish Joint State` 노드에서 `Target Prim`을 `/h1`으로 설정하세요.
+> - `ROS2 Publish Joint State` 노드에서 `Topic Name`을 `/joint_states`으로 설정하세요.
+> - `ROS2 Subscribe Joint State` 노드에서 `Topic Name`을 `/joint_command`으로 설정하세요.
+> - `Articulation Controller` 노드에서 `Target Prim`을 `/h1`으로 설정하세요.
+> - `Isaac Read Simulation Time` 노드에서 `Reset on Stop`을 체크하세요.
+
+## Publish ROS Clock and Set Up Environment
+이제 asset이 설정되었으니 로봇을 배치하고 물리적 설정을 구성한 후 ROS time을 publish할 시뮬레이션 시나리오를 만드세요.
+
+### Setup Simulation Scenario
+1. **File > New**를 눌러 새로운 파일을 만들고, content browser에서 **Isaac Sim/Environments/Simple_Warehouse**에서 **warehouse.usd**를 Stage로 드래그하세요.
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/19a458aa-f06b-424e-9bc5-a02de2cb62a4" />
+
+> [!NOTE]
+> **warehouse.usd**를 불러올 때 스트리밍 클라이언트가 멈출 시 스트리밍 클라이언트를 재실행하세요.
+
+2. content browser에서 위에서 만들었던 **running_a_reinforcement_learning_policy_through_ros2_and_isaac_sim.usd**를 Stage로 드래그하세요.
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/f9a872de-70d7-4274-b041-2105d361777b" />
+
+3. `h1`의 Z값을 `1.0`으로 설정하여 ground 위로 올라오게 합니다.
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/72948166-e689-4457-ba1f-e5bf5db55794" />
+
+4. Stage에서 오른쪽 클릭을 하고 **Create > Physics > Physcis Scene**을 클릭하여 `Physics Scene`을 생성하세요.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/b141a1d1-1e95-4251-aeb4-031967abe3f5" /><br>
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/0d77e714-16f7-41ac-8b7a-de67007d95e8" /><br>
+
+5. `Physics Scene`을 클릭하고 Property에서 `Time Steps Per Second`을 `200`으로 설정하세요.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/7867c500-229a-4025-b648-15f3d57965a9" />
+
+### Setup ROS 2 Clock Publisher
+1. 새로운 ActionGraph를 생성하고 이름을 `ROS_Clock`으로 변경하세요.
+2. ActionGraph를 클릭하고 Property에서 **Raw USD Properties**의 `pipelineStage`를 `pipelineStageOnDemand`으로 설정하세요.
+3. 다음과 같이 ActionGraph를 구성하세요.
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/702f92bb-b296-4bca-b102-c5134d628407" />
+> - `On Physics Step`: 이 노드는 Isaac Sim physics steps에서 트리거되어 전체 그래프를 실행합니다.<br>
+> - `ROS2 Context`: 이 노드는 ROS 2 노드에 대한 context를 생성합니다.<br>
+> - `ROS2 QoS Profile`: 이 노드는 ROS 2 노드의 QoS profile을 설정합니다.<br>
+> - `Isaac Read Simulation Time`: 이 노드는 Isaac Sim에서 simulation time을 읽습니다.<br>
+> - `ROS2 Publish Clock`: 이 노드는 ROS 2 clock을 ROS 2에 publish합니다.<br>
+
+4. 다음과 같이 노드를 설정하세요.
+> - `Isaac Read Simulation Time` 노드에서 `Reset on Stop`을 체크하세요.
+
+## Run ROS 2 Policy
+asset이 설정되면 ROS 2 policy을 실행할 수 있습니다. ROS 2 workspace을 구축하고 `setup.bash` 파일을 source합니다.<br>
+<br>
+
+1. PyTorch가 설치된 환경에서 새로운 터미널에서 다음 명령을 실행하여 `h1_fullbody_controller` ROS 2 패키지를 실행합니다:
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+```bash
+ros2 launch h1_fullbody_controller h1_fullbody_controller.launch.py
+```
+> [!NOTE]
+> 이 ROS 2 패키지는 위에 publish한 ROS message와 flat terrain locomotion policy을 사용하여 observations 및 actions을 계산합니다. command velocities가 receive되지 않으면 로봇은 가만히 서서 균형을 유지합니다. 시뮬레이션을 시작하기 전에 ROS 2 policy를 반드시 시작해야 하며, 그렇지 않으면 로봇이 넘어질 것입니다.
+
+2. **Play**를 클릭하여 시뮬레이션을 시작하세요.
+3. 새로운 터미널에서 다음 명령을 실행하여 Twist messages를 publish하세요.
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+
+
+
+
+
 
 
 
