@@ -103,6 +103,7 @@ Set Up Robot Joint Configurations은 [Tutorial 13: Rigging a Legged Robot for Lo
 6. **Play**를 눌러 시뮬레이션을 실행하여 로봇이 지정된 초기 위치로 이동하는 것을 확인합니다.
 > [running-a-reinforcement-learning-policy-through-ros2-and-isaac-sim_1.webm](https://github.com/user-attachments/assets/eb1f2290-f7a9-4a2d-a83f-3c7b377c6eec)
 <br>
+
 joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정지 상태로 재설정하지 않도록 시뮬레이션 설정을 변경해야 합니다.
 1. **Edit > Preferences**를 클릭하세요.
 2. 왼쪽 카테고리에서 **Physics**를 클릭하세요.
