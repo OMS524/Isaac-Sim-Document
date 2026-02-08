@@ -49,16 +49,18 @@
 > GPU 동작 확인
 > ```bash
 > python3 - <<EOF
-import torch
-print("torch:", torch.__version__)
-print("cuda available:", torch.cuda.is_available())
-print("torch cuda:", torch.version.cuda)
-if torch.cuda.is_available():
-    print("gpu:", torch.cuda.get_device_name(0))
-    x = torch.randn(1024, 1024, device="cuda")
-    print("cuda tensor ok:", x.mean().item())
-EOF
+> import torch
+> print("torch:", torch.__version__)
+> print("cuda available:", torch.cuda.is_available())
+> print("torch cuda:", torch.version.cuda)
+> if torch.cuda.is_available():
+>     print("gpu:", torch.cuda.get_device_name(0))
+>     x = torch.randn(1024, 1024, device="cuda")
+>     print("cuda tensor ok:", x.mean().item())
+> EOF
 > ```
+> <img width="300" alt="image" src="https://github.com/user-attachments/assets/34bedf61-9f68-49b2-ba6e-62714233ae3b" />
+
 
 
 
