@@ -97,7 +97,8 @@ Set Up Robot Joint Configurations은 [Tutorial 13: Rigging a Legged Robot for Lo
 > ```
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/8b7b4c58-6545-4683-8c92-7390d4a8658d" />
 
-
+5. 로봇이 떨어지는 것을 방지하기 위해 `/h1/torso_link`를 오른쪽 클릭하고 **Create > Physics > Joint > Fixed Joint**를 클릭합니다.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/b3d075c4-fbf1-418f-9dfc-1b7880f10354" /><br>
 
 
 
