@@ -198,7 +198,7 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 1. **Play**를 클릭하여 시뮬레이션을 실행하세요.
 2. **Window > Script Editor**를 클릭하여 script editor를 열어주세요.
 3. 다음 명령어를 입력하고 **Run**을 클릭하여 snippet을 실행하세요.
-> ```bash
+> ```python
 > from isaacsim.core.prims import SingleArticulation
 > 
 > prim_path = "/World/h1"
