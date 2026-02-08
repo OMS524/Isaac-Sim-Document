@@ -151,9 +151,10 @@ rviz2 -d ./src/isaac_tutorials/rviz2/carter_stereo.rviz
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/e9c23bb3-76ff-4136-b364-d686f01ae30a" />
 
 ### Multiple Robot ROS 2 Navigation
-이 샘플은 기존 USD 단계를 실행하는 방법을 보여줍니다.
+이 샘플은 기존 USD stage를 실행하는 방법을 보여줍니다.<br>
+출력을 시각화하려면 [Multiple Robot ROS2 Navigation]()을 참조하세요:<br>
+<br>
 
-출력을 시각화하려면 샘플의 인터랙티브 버전을 참조하세요:
 - On each frame:
     - The ROS 2 clock component is published
     - ROS 2 PointCloud2 messages originating from RTX Lidars are published
@@ -161,17 +162,50 @@ rviz2 -d ./src/isaac_tutorials/rviz2/carter_stereo.rviz
     - The Twist subscriber is spun
     - TF messages are published
 
+샘플은 hospital 및 office 환경 모두에서 실행할 수 있습니다. 컨테이너에서 다음 명령 중 하나를 실행하여 지정된 환경에서 샘플을 실행합니다:
+Hospital Environment
+```bash
+./python.sh standalone_examples/api/isaacsim.ros2.bridge/carter_multiple_robot_navigation.py --environment hospital
+```
+Office Environment
+```bash
+./python.sh standalone_examples/api/isaacsim.ros2.bridge/carter_multiple_robot_navigation.py --environment office
+```
 
-샘플은 병원 및 사무실 환경 모두에서 실행할 수 있습니다. 다음 명령 중 하나를 실행하여 지정된 환경에서 샘플을 실행합니다:
+### MoveIt2
+이 샘플은 여러 USD stage를 추가하는 방법을 보여줍니다. 또한 ROS 2 component nodes로 action graph를 수동으로 생성한 다음 수동으로 tick하는 방법도 보여줍니다.<br>
+출력을 시각화하려면 [MoveIt 2]()을 참조하세요:<br>
+<br>
 
+- On each frame:
+    - The ROS 2 clock is published
+    - Joint State messages are published
+    - Joint State subscriber is spun
+    - TF messages are published
 
+컨테이너에서 다음을 명령을 실행하세요.
+```bash
+./python.sh standalone_examples/api/isaacsim.ros2.bridge/moveit.py
+```
 
+### Receiving ROS 2 Messages
+다음은 빈 ROS2 message를 receive하면 장면의 큐브가 무작위 위치로 텔레포트하는 basic subscriber example입니다. 렌더링이 활성화된 상태에서 실행 중인 이 예제는 장면과 큐브가 움직이는 것을 관찰할 수 있는지 확인할 수 있습니다.<br>
+<br>
 
-
-
-
-
-
+컨테이너에서 다음을 명령을 실행하세요.
+```bash
+./python.sh standalone_examples/api/isaacsim.ros2.bridge/subscriber.py
+```
+큐브가 있는 장면이 로드된 후 새로운 터미널에서 다음 명령을 실행하여 empty message를 수동으로 publish할 수 있습니다. 1Hz rate를 사용합니다.
+```bash
+cd ~/IsaacSim-ros_workspaces/humble_ws/
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
+```
+```bash
+ros2 topic pub -r 1 /move_cube std_msgs/msg/Empty
+```
 
 
 
