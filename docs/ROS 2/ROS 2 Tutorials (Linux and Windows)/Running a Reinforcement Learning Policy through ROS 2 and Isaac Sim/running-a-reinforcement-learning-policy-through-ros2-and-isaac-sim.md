@@ -351,10 +351,13 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 > [running-a-reinforcement-learning-policy-through-ros2-and-isaac-sim_2.webm](https://github.com/user-attachments/assets/fa6d11d7-4ab0-466d-8333-ce6be2218fb7)
 
+## 작성자 분석
+### 실행 시 화면이 느린 현상
+해당 예제 공식 사이트에서 결과 영상에서는 로봇이 부드럽고 보다 빠르게 움직이는 것을 확인할 수 있다.<br>
+느린 현상을 분석하기 위해 Real Time Factor(RTF)를 확인해보았다.<br>
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/62b8f244-074d-4df1-b3fa-f2b9e27d1742" />
 
-
-
-
+RTF 값이 0.2~0.3으로 나오기에 시뮬레이션이 실제 시간 대비 느리게 실행되고 있다는 것을 확인할 수 있다.
 
 
 
