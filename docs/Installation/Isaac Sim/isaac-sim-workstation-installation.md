@@ -51,7 +51,7 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 > [!NOTE]
 > IOMMU 비활성화 방법은 메인보드 제품에 따라 본 내용에 나오는 비활성화 방법과 다를 수 있습니다.
 
-### Intel VT for Directed I/O (VT-d) Disabled
+**Intel VT for Directed I/O (VT-d) Disabled**
 | Step | Screenshot | Path / Description |
 |:-:|:-:|-|
 | 1 | <img src="https://github.com/user-attachments/assets/ccf9846d-4826-45a8-a159-2c752d53f3e8" width="300"/> | BIOS 진입 후 **Advanced** 탭 선택 후<br>**Chipset Configuration** 진입 |
@@ -61,10 +61,10 @@ IOMMU가 켜져 있으면, Linux에서 CUDA랑 NVIDIA 드라이버가 GPU 간 �
 | 5 | <img src="https://github.com/user-attachments/assets/fe7a84c1-be5f-4fbf-9edf-edf948dd5d79" width="300"/> | **Intel VT for Directed I/O (VT-d)** → `Disabled` |
 
 **Intel VT for Directed I/O (VT-d)** 우측 설명을 보면
-**To disable VT-d, X2APIC must also be disabled.** 라고 나와있다.
-즉, VT-d를 Disable 할려면 **X2APIC**도 Disabled 해줘야 한다
+**To disable VT-d, X2APIC must also be disabled.** 라고 나와있다.<br>
+즉, VT-d를 Disable 할려면 **X2APIC**도 Disabled 해줘야 한다.<br>
 **X2APIC**를 Disable 하지 않고 **Intel VT for Directed I/O (VT-d)** 만 Disabled 하게 되면
-저장하고 나와도 **Intel VT for Directed I/O (VT-d)** 는 다시 Enabled 가 된다.
+저장하고 나와도 **Intel VT for Directed I/O (VT-d)** 는 다시 Enabled 가 된다.<br>
 
 ### **X2APIC** Disabled
 | Step | Screenshot | Path / Description |
