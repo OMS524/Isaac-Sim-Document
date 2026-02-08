@@ -311,7 +311,7 @@ IMU 데이터를 처리하여 body frame linear acceleration, angular velocity �
 1. 새로운 ActionGraph를 생성하고 이름을 `ROS_Clock`으로 변경하세요.
 2. ActionGraph를 클릭하고 Property에서 **Raw USD Properties**의 `pipelineStage`를 `pipelineStageOnDemand`으로 설정하세요.
 3. 다음과 같이 ActionGraph를 구성하세요.
-> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/702f92bb-b296-4bca-b102-c5134d628407" /><br>
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/53e7491c-ea01-40ec-b633-544c61bf00ba" /><br>
 > 
 > - `On Physics Step`: 이 노드는 Isaac Sim physics steps에서 트리거되어 전체 그래프를 실행합니다.<br>
 > - `ROS2 Context`: 이 노드는 ROS 2 노드에 대한 context를 생성합니다.<br>
