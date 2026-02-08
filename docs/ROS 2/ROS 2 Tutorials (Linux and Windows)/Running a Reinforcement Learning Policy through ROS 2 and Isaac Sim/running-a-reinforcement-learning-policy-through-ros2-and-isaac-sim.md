@@ -129,6 +129,9 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 5. 다시 **Reset Simulation on Stop**를 체크하세요.
 
 ## Setting Joint Configuration
+H1 flat terrain policy 환경 정의 파일은 [YAML file](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/Running%20a%20Reinforcement%20Learning%20Policy%20through%20ROS%202%20and%20Isaac%20Sim/h1_env.yaml)에 있습니다.<br>
+<br>
+
 1. 각 joint 마다 Property에서 **joint drive API**의 `Stiffness`를 다음 내용의 `stiffness`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 **joint drive API**의 `Damping`를 다음 내용의 `damping`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 **joint drive API**의 `Max Force`를 다음 내용의 `effort_limit`를 참고해서 설정하세요.<br>`d435_left_imager`, `d435_rgb_module`, `imu`, `logo`, `mid360`을 제외한 joint의 Property에서 **Raw USD Properties**의 `Maximum Joint Velocity`를 다음 내용의 `velocity_limit`를 참고해서 설정하세요.<br>
 > [!NOTE]
 > `stiffness`, `damping`, `velocity_limit`는 다음 수식을 이용하여 degree로 변환해서 넣어야 합니다.<br>
