@@ -158,7 +158,8 @@ Connect를 누르면 다음과 같이 Isaac Sim 인터페이스가 나타난다.
 | <img src="https://github.com/user-attachments/assets/23f0d4bc-bcbf-465e-b2d9-8ff43d907958" width="300"/> | <img src="https://github.com/user-attachments/assets/26919689-4653-4ac6-ab3f-ffe6d12a3afe" width="300"/> |
 
 ## 명령어
-자세한 명령어는 [commands.md](/docs/commands.md)를 참고하세요.
+> [!NOTE]
+> 자세한 명령어는 [commands.md](/docs/commands.md)를 참고하세요.
 
 ### Container 생성
 ```bash
