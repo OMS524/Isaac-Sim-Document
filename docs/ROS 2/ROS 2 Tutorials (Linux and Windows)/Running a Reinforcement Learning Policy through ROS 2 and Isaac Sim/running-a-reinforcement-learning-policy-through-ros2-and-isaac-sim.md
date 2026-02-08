@@ -357,7 +357,7 @@ source install/local_setup.bash
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
-> [running-a-reinforcement-learning-policy-through-ros2-and-isaac-sim_2.webm](https://github.com/user-attachments/assets/fa6d11d7-4ab0-466d-8333-ce6be2218fb7)
+> [running-a-reinforcement-learning-policy-through-ros2-and-isaac-sim_2.webm](https://github.com/user-attachments/assets/0c140722-a35a-41e7-8921-ed61e5800901)
 
 ## 작성자 분석
 ### 실행 시 화면이 느린 현상
