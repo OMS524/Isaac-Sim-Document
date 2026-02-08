@@ -201,7 +201,7 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > ```bash
 > from isaacsim.core.prims import SingleArticulation
 > 
-> prim_path = "/h1"
+> prim_path = "/World/h1"
 > prim = SingleArticulation(prim_path=prim_path, name="h1")
 > print(prim.dof_names)
 > print(prim.dof_properties)
