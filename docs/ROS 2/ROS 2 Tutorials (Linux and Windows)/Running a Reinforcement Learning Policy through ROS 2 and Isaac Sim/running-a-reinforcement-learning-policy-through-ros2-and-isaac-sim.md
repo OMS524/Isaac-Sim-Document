@@ -65,6 +65,24 @@
 Set Up Robot Joint Configurations은 [Tutorial 13: Rigging a Legged Robot for Locomotion Policy](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/robot_setup_tutorials/tutorial_rig_legged_robot.html#isaac-sim-app-tutorial-rig-legged-robot)의 내용을 진행합니다.
 
 1. content browser에서 `Isaac Sim/Robots/Unitree/H1`에 있는 `h1.usd`를 Stage로 드래그합니다.
-> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/f4451ce5-f89f-4a56-acbe-012ab98b176d" />
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/f4451ce5-f89f-4a56-acbe-012ab98b176d" /><br>
 
-2. 
+2. Stage 우측 상단에 `funnel` 아이콘을 선택하고 `Physics Joints`를 선택합니다.
+> <img width="250" alt="image" src="https://github.com/user-attachments/assets/6c0f159a-268f-4a4b-9c4d-98468f0f8555" /><br>
+
+3. `left_hip_yaw`를 클릭하고 Shift를 누른 상태에서 `right_elbow`를 눌러 모든 joint를 선택합니다.<br>**Add > Physics > Joint State Angular**를 추가하세요.<br>**Add > Physics > Angular drive**를 추가하세요.
+> <img width="250" alt="image" src="https://github.com/user-attachments/assets/9f274499-8c80-49ef-9f86-dd4aad3f1f79" /><br>
+> <img width="250" alt="image" src="https://github.com/user-attachments/assets/dc82953e-2b54-467d-aae5-b9b986cfc152" /><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
