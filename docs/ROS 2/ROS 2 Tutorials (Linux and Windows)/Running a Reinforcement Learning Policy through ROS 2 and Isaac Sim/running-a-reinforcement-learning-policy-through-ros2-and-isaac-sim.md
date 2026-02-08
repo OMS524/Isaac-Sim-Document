@@ -79,7 +79,7 @@ Set Up Robot Joint Configurations은 [Tutorial 13: Rigging a Legged Robot for Lo
 
 5. 각 joint 마다 Property에서 joint drive API의 `Target Position`를 다음 내용의 `joint_pos`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Target Velocity`를 다음 내용의 `joint_vel`를 참고해서 설정하세요.<br>
 > [!NOTE]
-> `joint_pos`, `joint_vel`는 radian이기에 `Target Velocity`에 넣을 때 degree로 변환해서 넣어야 합니다.
+> `joint_pos`, `joint_vel`는 radian 단위이기에 `Target Velocity`에 넣을 때 degree로 변환해서 넣어야 합니다.
 
 > ```python
 > robot:
@@ -190,8 +190,11 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 > print(prim.dof_properties)
 > ```
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/5e83a137-e64d-4f91-bc29-002aa03b5ca7" /><br>
+>
 
-
+콘솔 출력 값은 radian 단위입니다.<br>
+각 행은 첫 번째 목록과 동일한 순서로 나열된 joint에 대한 값입니다.<br>
+각 행의 마지막 네 가지 값, 즉 maxVelocity, maxEffort, stiffness, damping을 각각 확인합니다.
 
 
 
