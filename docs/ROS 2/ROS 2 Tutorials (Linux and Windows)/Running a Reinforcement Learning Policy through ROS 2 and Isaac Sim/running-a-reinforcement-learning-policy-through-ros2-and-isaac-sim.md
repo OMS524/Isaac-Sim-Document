@@ -107,7 +107,7 @@ joint state API 값이 재설정되지 않도록 하려면 로봇 상태를 정�
 1. **Edit > Preferences**를 클릭하세요.
 2. 왼쪽 카테고리에서 **Physics**를 클릭하세요.
 3. **Reset Simulation on Stop**를 체크 해제하세요.
-> <img width="500" alt="image" src="https://github.com/user-attachments/assets/17e78913-81e8-46cc-b2fd-cb437ecd061a" /><br>
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/17e78913-81e8-46cc-b2fd-cb437ecd061a" /><br>
 
 
 
