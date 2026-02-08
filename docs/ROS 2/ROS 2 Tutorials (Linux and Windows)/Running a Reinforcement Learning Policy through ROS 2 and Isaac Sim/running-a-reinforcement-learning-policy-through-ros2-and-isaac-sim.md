@@ -243,20 +243,28 @@ IMU 데이터를 처리하여 body frame linear acceleration, angular velocity �
 이렇게 하면 Isaac Sim physics 단계에서 ActionGraph 노드가 실행됩니다.
 
 ### Create Imu Publisher Node
+이 노드는 신체 프레임 linear acceleration, angular velocity 및 orientation을 포함하는 ROS 2에 IMU 데이터를 publish합니다.<br>
+
 1. ActionGraph를 오른쪽 클릭하고 **Open Graph**를 클릭하여 ActionGraph를 여세요.
 2. 다음과 같이 ActionGraph를 구성하세요.
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/4e0fbbb2-44f7-4695-b108-f8c6300c006c" /><br>
-> `On Physics Step`: 이 노드는 Isaac Sim physics steps에서 트리거되어 전체 그래프를 실행합니다.
-> `ROS2 Context`: 이 노드는 ROS 2 노드에 대한 context를 생성합니다.
-> `ROS2 QoS Profile`: 이 노드는 ROS 2 노드의 QoS profile을 설정합니다.
-> `Isaac Read IMU Node`: 이 노드는 Isaac Sim에서 IMU 데이터를 읽습니다.
-> `Isaac Read Simulation Time`: 이 노드는 Isaac Sim에서 simulation time을 읽습니다.
-> `ROS2 Publish IMU`: 이 노드는 `Isaac Read IMU Node` 노드와 `Isaac Read Simulation Time` 노드를 source로 사용하여 ROS 2에 IMU 데이터를 publish합니다.
+> `On Physics Step`: 이 노드는 Isaac Sim physics steps에서 트리거되어 전체 그래프를 실행합니다.<br>
+> `ROS2 Context`: 이 노드는 ROS 2 노드에 대한 context를 생성합니다.<br>
+> `ROS2 QoS Profile`: 이 노드는 ROS 2 노드의 QoS profile을 설정합니다.<br>
+> `Isaac Read IMU Node`: 이 노드는 Isaac Sim에서 IMU 데이터를 읽습니다.<br>
+> `Isaac Read Simulation Time`: 이 노드는 Isaac Sim에서 simulation time을 읽습니다.<br>
+> `ROS2 Publish IMU`: 이 노드는 `Isaac Read IMU Node` 노드와 `Isaac Read Simulation Time` 노드를 source로 사용하여 ROS 2에 IMU 데이터를 publish합니다.<br>
+
+3. 다음과 같이 노드를 설정하세요.
+> - `Isaac Read IMU Node` 노드에서 `IMU Prim`을 `/h1/pelvis/Imu_Sensor`으로 설정하세요.
+> - `Isaac Read IMU Node` 노드에서 `Read Gravity`를 체크 해제하세요. pelvis link에서 gravity vector를 읽지 않습니다.
+> - `Read Simulation Time` 노드에서 `Reset on Stop`를 체크하세요. 시뮬레이션이 중지될 때 시뮬레이션 시간을 재설정합니다.
 
 ### Create Joint State Publisher and Subscriber Nodes
+이 노드는 oint states를 ROS 2에 publish하며, 여기에는 joint names, positions 및 velocities가 포함되어 있으며 Isaac Sim의 joint state commands를 subscribe합니다.<br>
 
-
-
+1. 새로운 ActionGraph를 만들고 이름을 `ROS_Joint_States`으로 변경하세요.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/074bbbdd-aa56-4fee-abce-db2c0b615b83" />
 
 
 
