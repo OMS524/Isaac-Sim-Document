@@ -74,9 +74,24 @@ Set Up Robot Joint Configurations은 [Tutorial 13: Rigging a Legged Robot for Lo
 > <img width="250" alt="image" src="https://github.com/user-attachments/assets/9f274499-8c80-49ef-9f86-dd4aad3f1f79" />
 > <img width="250" alt="image" src="https://github.com/user-attachments/assets/dc82953e-2b54-467d-aae5-b9b986cfc152" /><br>
 
-
-
-
+4. 각 joint 마다 Property에서 joint drive API의 `Target Position`를 다음 표의 `joint_pos`를 참고해서 설정하세요.<br>각 joint 마다 Property에서 joint drive API의 `Target Velocity`를 다음 표의 `joint_vel`를 참고해서 설정하세요.<br>
+> ```python
+> robot:
+>   init_state:
+>     joint_pos:
+>       .*_hip_yaw: 0.0
+>       .*_hip_roll: 0.0
+>       .*_hip_pitch: -0.28
+>       .*_knee: 0.79
+>       .*_ankle: -0.52
+>       torso: 0.0
+>       .*_shoulder_pitch: 0.28
+>       .*_shoulder_roll: 0.0
+>       .*_shoulder_yaw: 0.0
+>       .*_elbow: 0.52
+>     joint_vel:
+>       .*: 0.0
+> ```
 
 
 
