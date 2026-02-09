@@ -46,6 +46,9 @@
 > <img width="200" alt="image" src="https://github.com/user-attachments/assets/32d6ef9f-97dc-4755-aa12-23a6e35be1d0" /><br>
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/1e7270ad-33bd-4192-b2ed-3a56470aff55" /><br>
 
+2. **Isaac Read Simulation Time** 노드에서 Property에서 **Reset On Stop**을 체크합니다.
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/2954b3bf-211b-4549-921e-60a33d238bd3" /><br>
+
 ### Running Navigation
 이제 3D scene과 로봇이 Nav2 stack을 실행하도록 설정되었습니다.
 
