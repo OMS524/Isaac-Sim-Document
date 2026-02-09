@@ -92,17 +92,43 @@
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/eb6b8eaa-eb93-4b1c-bdc8-3aa79dd3ce18" /><br>
 
 4. RViz2에서 **Nav2 Goal**을 클릭한 다음 원하는 위치를 클릭합니다.
-> 
+> [ros2_navigation_1.webm](https://github.com/user-attachments/assets/b0d83cac-09fc-4733-bf3f-02fa2d7122da)
 
+> [!NOTE]
+> Carter robot은 기본적으로 RTX Lidar를 사용합니다. 
 
+### Nav2 with Nova Carter with Robot Description in a Small Warehouse
+1. 다음 명령을 실행하여 **Nova Carter Description Package**를 설치합니다.
+> [!NOTE]
+> 해당 설치 내용은 Linux 환경에 ROS 2 Humble에서만 지원됩니다.
+locale을 설정합니다 (locale 설정은 ROS 2 Humble 설치 시 이미 설정된 것이기에 넘어가셔도 됩니다.)
+```bash
+locale
 
+sudo apt update && sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-
-
-
-
-
-
+locale
+```
+종속성 설치
+```bash
+sudo apt update && sudo apt install gnupg wget
+sudo apt install software-properties-common
+sudo add-apt-repository universe
+```
+NVIDIA의 GPG 키 및 저장소 등록
+```bash
+wget -qO - https://isaac.download.nvidia.com/isaac-ros/repos.key | sudo apt-key add -
+grep -qxF "deb https://isaac.download.nvidia.com/isaac-ros/release-3 $(lsb_release -cs) release-3.0" /etc/apt/sources.list || \
+echo "deb https://isaac.download.nvidia.com/isaac-ros/release-3 $(lsb_release -cs) release-3.0" | sudo tee -a /etc/apt/sources.list
+sudo apt-get update
+```
+nova_carter_description package 설치
+```bash
+sudo apt install ros-humble-nova-carter-description
+```
 
 
 
