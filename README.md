@@ -54,7 +54,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
   - [ROS 2 Bridge in Standalone Workflow](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Bridge%20in%20Standalone%20Workflow/ros2-bridge-in-standalone-workflow.md)
 
 ### Connecting with ROS 2 Stacks
-  - [ROS 2 Navigation]
+  - [ROS 2 Navigation](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Navigation/ros2-navigation.md)
   - [Multiple Robot ROS2 Navigation]
   - [ROS 2 Navigation with Block World Generator]
   - [MoveIt 2]
