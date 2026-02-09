@@ -201,12 +201,15 @@ docker exec -it isaac-sim bash
 ```
 > [!NOTE]
 > 위 명령어는 터미널 2개가 필요합니다.<br>
+> 
 > 터미널1에서는 다음을 실행합니다.<br>
 > - Container 생성<br>
 > - Container 실행<br>
 > - Isaac Sim 실행<br>
+> 
 > 터미널2에서는 다음을 실행합니다.<br>
 > - Isaac Sim WebRTC Streaming Client 실행<br>
+> 
 > 해당 Container 생성 코드는 한 번 생성하면 컴퓨터를 재부팅해도 사라지지 않기에 이후에도 Container 실행, Container 진입만 하면 됩니다.<br>
 > Container 실행이 끝나면 삭제되길 원하면 파라미터에 `--rm`을 추가하세요.<br>
 > `--rm`은 Container를 임시로 실행하고 끝나면 자동 삭제합니다.
