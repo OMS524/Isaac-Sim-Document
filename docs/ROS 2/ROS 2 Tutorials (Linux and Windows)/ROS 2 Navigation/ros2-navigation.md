@@ -29,8 +29,7 @@
 이 시나리오에서는 occupancy map가 필요합니다. 이 샘플의 경우 NVIDIA Isaac Sim 내의 [Occupancy Map Generator extension](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/digital_twin/ext_isaacsim_asset_generator_occupancy_map.html#ext-isaacsim-asset-generator-occupancy-map)을 사용하여 창고 환경의 occupancy map를 생성하고 있습니다.<br>
 <br>
 
-1. **Window > Examples > Robotics Examples**로 이동하세요.<br>**Robotics Examples** 탭을 클릭하세요.<br>
-**ROS2 > Navigation > Nova Carter**를 누르고 우측에서 **Load Sample Scene**을 클릭하세요.
+1. **Window > Examples > Robotics Examples**로 이동하세요.<br>**Robotics Examples** 탭을 클릭하세요.<br>**ROS2 > Navigation > Nova Carter**를 누르고 우측에서 **Load Sample Scene**을 클릭하세요.
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/5dea56d2-de9e-4599-896a-14e4a8dc1f91" /><br>
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/04346da6-8b05-46e8-8a4d-cd43380244c8" /><br>
 
@@ -48,14 +47,52 @@
 > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/9b285411-fe13-4c55-99de-c5acda8815e7" /><br>
 
 5. Stage에서 **warehouse_with_forklifts**을 클릭합니다.<br>Occupancy Map extension에서 **BOUND SELECTION**을 클릭합니다.
-> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/8b578b0e-9092-4836-891c-56eff09efed4" /><br>
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/c8be2019-db76-44c3-b94a-e64801b49392" /><br>
 
+6. Stage에서 `Nova_Carter_ROS`를 삭제합니다.
 
+7. Occupancy Map extension에서 **CALCULATE**를 클릭하고 **VISUALIZE IMAGE**를 클릭합니다.<br>Visualization popup이 표시됩니다.
+> <img width="400" alt="image" src="https://github.com/user-attachments/assets/5add0725-1851-447e-8dc7-a56c76400aa0" /><br>
 
+8. **Rotate Image**에서 180도를 선택합니다.<br>**Coordinate Type**에서 **ROS Occupancy Map Parameters File (YAML)**으로 선택합니다.<br>**RE-GENERATE IMAGE**를 클릭합니다.
 
+9. Occupancy map parameters YAML 형식으로 아래 필드에 표시됩니다. 전체 텍스트를 복사하세요.<br>`~/IsaacSim-ros_workspaces/humble_ws/src/navigation/carter_navigation/maps` 경로에 `carter_warehouse_navigation.yaml`을 새로 생성하여 복사한 텍스트를 넣고 저장합니다.
+> <img width="400" alt="image" src="https://github.com/user-attachments/assets/a5887507-78c1-4a66-a71a-0c2b9d964749" /><br>
+>
+> ```text
+> image: carter_warehouse_navigation.png
+> resolution: 0.05
+> origin: [-11.975, -17.975, 0.0000]
+> negate: 0
+> occupied_thresh: 0.65
+> free_thresh: 0.196
+> ```
 
+10. Visualization popup에서 **Save Image**를 클릭합니다.<br>`~/IsaacSim-ros_workspaces/humble_ws/src/navigation/carter_navigation/maps` 경로에 `carter_warehouse_navigation.png`라는 이름으로 저장하세요.
+> <img width="400" alt="carter_warehouse_navigation" src="https://github.com/user-attachments/assets/6e5dc0c9-314c-45b7-8f0f-3e1d094b128c" /><br>
 
+## Running Nav2
+### Nav2 with Nova Carter in a Small Warehouse
+1. **Window > Examples > Robotics Examples**로 이동하세요.<br>**Robotics Examples** 탭을 클릭하세요.<br>**ROS2 > Navigation > Nova Carter**를 누르고 우측에서 **Load Sample Scene**을 클릭하세요.
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/5dea56d2-de9e-4599-896a-14e4a8dc1f91" /><br>
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/04346da6-8b05-46e8-8a4d-cd43380244c8" /><br>
 
+2. **Play**를 클릭하여 시뮬레이션을 시작합니다.
+
+3. 새로운 터미널에서 다음 명령을 실행합니다.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 launch carter_navigation carter_navigation.launch.py
+> ```
+> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/eb6b8eaa-eb93-4b1c-bdc8-3aa79dd3ce18" /><br>
+
+4. RViz2에서 **Nav2 Goal**을 클릭한 다음 원하는 위치를 클릭합니다.
+> 
 
 
 
