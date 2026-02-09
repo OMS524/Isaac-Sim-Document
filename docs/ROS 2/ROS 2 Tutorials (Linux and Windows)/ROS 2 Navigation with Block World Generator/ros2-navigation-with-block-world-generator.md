@@ -50,6 +50,7 @@
 이제 3D scene과 로봇이 Nav2 stack을 실행하도록 설정되었습니다.
 
 1. **Play**를 클릭하여 시뮬레이션을 시작합니다.
+
 2. 새로운 터미널에서 다음 명령을 실행하여 Nav2를 실행합니다.
 > ```bash
 > cd ~/IsaacSim-ros_workspaces/humble_ws/
@@ -60,7 +61,11 @@
 > ```bash
 > ros2 launch carter_navigation carter_navigation.launch.py
 > ```
-3. RViz2에서 Nav2 Goal을 클릭한 다음 원하는 위치를 클릭합니다.
+
+3. RViz2에서 **2D Pose Estimate**를 사용하여 로봇의 위치를 재설정합니다.
+
+4. RViz2에서 Nav2 Goal을 클릭한 다음 원하는 위치를 클릭합니다.
+> [ros2_navigation_with_block_world_generator.webm](https://github.com/user-attachments/assets/8b82fc10-cd59-4e29-892b-f7afb1b4c488)
 
 
 
