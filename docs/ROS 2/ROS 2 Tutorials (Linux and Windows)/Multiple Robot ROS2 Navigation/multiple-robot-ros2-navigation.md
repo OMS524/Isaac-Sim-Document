@@ -17,39 +17,43 @@
 
 ## Getting Started
 ### Occupancy Map
-NVIDIA Isaac Sim 내의 Occupancy Map Generator extension을 사용하여 병원 및 사무실 환경 모두의 지도를 생성합니다.<br>
+NVIDIA Isaac Sim 내의 Occupancy Map Generator extension을 사용하여 Hospital Environment 및 Office Environment 모두의 지도를 생성합니다.<br>
 <br>
 
-1. Content browser에서 **Isaac Sim>Environments>Hospital**에서 **hospital.usd**를 Stage로 드래그 합니다.<br>불러온 asset의 Translate을 0으로 설정합니다.<br>Stage에서 `/hospital` prim을 선택하고 **F**를 눌러 확대합니다.
-> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/1a89c97a-139b-4aab-9d70-c4efab09fa1e" />
+> [!NOTE]
+> 해당 내용에서는 Hospital Environment 환경으로 진행하였습니다.
+> Office Environment로 진행하고 싶으시면 [Multiple Robot ROS2 Navigation Occupancy Map](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/ros2_tutorials/tutorial_ros2_multi_navigation.html#occupancy-map)을 참고하세요.
 
-2. viewport 상단 왼쪽에 **Perspective**를 클릭합니다.<br>**Top**을 클릭합니다.
-> <img width="200" alt="image" src="https://github.com/user-attachments/assets/58b9d860-65d3-4af3-9c27-08198e43ca24" />
-
-3. **Tools > Robotics > Occupancy Map**을 엽니다.<br>Origin을 `X: 0.0, Y: 0.0, Z: 0.0`으로 설정합니다.<br>Lower bound에서 `Z: 0.1`로 설정합니다.<br>Upper Bound에서 `Z: 0.62`로 설정합니다.
-
-4. Stage에서 `/hospital` prim을 선택하고 Occupancy Map extension에서 **BOUND SELECTION**를 클릭합니다.
-> <img width="1000" alt="image" src="https://github.com/user-attachments/assets/82d61fff-4a5d-4310-87e3-caf2a6ff48ba" />
-
-5. Occupancy Map extension에서 **CALCULATE**를 클릭 후 **VISUALIZE IMAGE**를 클릭합니다.
-> <img width="460" height="551" alt="image" src="https://github.com/user-attachments/assets/5d66f508-6bb7-4ce6-91f7-2fc6b6dd24b1" />
-
-6. **Rotate Image**에서 180도를 선택합니다.<br>**Coordinate Type**에서 **ROS Occupancy Map Parameters File (YAML)**으로 선택합니다.<br>**RE-GENERATE IMAGE**를 클릭합니다.
-
-7. Occupancy map parameters YAML 형식으로 아래 필드에 표시됩니다. 전체 텍스트를 복사하세요.<br>`~/IsaacSim-ros_workspaces/humble_ws/src/navigation/carter_navigation/maps` 경로에 `carter_hospital_navigation.yaml`을 새로 생성하여 복사한 텍스트를 넣고 저장합니다.
-> <img width="460" height="123" alt="image" src="https://github.com/user-attachments/assets/2884e730-c9ce-4859-b642-469cb6c69cee" /><br>
+> 1. Content browser에서 **Isaac Sim>Environments>Hospital**에서 **hospital.usd**를 Stage로 드래그 합니다.<br>불러온 asset의 Translate을 0으로 설정합니다.<br>Stage에서 `/hospital` prim을 선택하고 **F**를 눌러 확대합니다.
+> > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/1a89c97a-139b-4aab-9d70-c4efab09fa1e" />
 > 
-> ```text
-> image: World0.png
-> resolution: 0.05
-> origin: [-49.62500152587891, -4.775000190734863, 0.0000]
-> negate: 0
-> occupied_thresh: 0.65
-> free_thresh: 0.196
-> ```
-
-8. Visualization popup에서 **Save Image**를 클릭합니다.<br>`~/IsaacSim-ros_workspaces/humble_ws/src/navigation/carter_navigation/maps` 경로에 `carter_hospital_navigation.png`라는 이름으로 저장하세요.
-> <img width="1000" alt="carter_hospital_navigation" src="https://github.com/user-attachments/assets/50c30dc8-34fc-4309-8770-d50d04781c1d" />
+> 2. viewport 상단 왼쪽에 **Perspective**를 클릭합니다.<br>**Top**을 클릭합니다.
+> > <img width="200" alt="image" src="https://github.com/user-attachments/assets/58b9d860-65d3-4af3-9c27-08198e43ca24" />
+> 
+> 3. **Tools > Robotics > Occupancy Map**을 엽니다.<br>Origin을 `X: 0.0, Y: 0.0, Z: 0.0`으로 설정합니다.<br>Lower bound에서 `Z: 0.1`로 설정합니다.<br>Upper Bound에서 `Z: 0.62`로 설정합니다.
+> 
+> 4. Stage에서 `/hospital` prim을 선택하고 Occupancy Map extension에서 **BOUND SELECTION**를 클릭합니다.
+> > <img width="1000" alt="image" src="https://github.com/user-attachments/assets/82d61fff-4a5d-4310-87e3-caf2a6ff48ba" />
+> 
+> 5. Occupancy Map extension에서 **CALCULATE**를 클릭 후 **VISUALIZE IMAGE**를 클릭합니다.
+> > <img width="460" height="551" alt="image" src="https://github.com/user-attachments/assets/5d66f508-6bb7-4ce6-91f7-2fc6b6dd24b1" />
+> 
+> 6. **Rotate Image**에서 180도를 선택합니다.<br>**Coordinate Type**에서 **ROS Occupancy Map Parameters File (YAML)**으로 선택합니다.<br>**RE-GENERATE IMAGE**를 클릭합니다.
+> 
+> 7. Occupancy map parameters YAML 형식으로 아래 필드에 표시됩니다. 전체 텍스트를 복사하세요.<br>`~/IsaacSim-ros_workspaces/humble_ws/src/navigation/carter_navigation/maps` 경로에 `carter_hospital_navigation.yaml`을 새로 생성하여 복사한 텍스트를 넣고 저장합니다.
+> > <img width="460" height="123" alt="image" src="https://github.com/user-attachments/assets/2884e730-c9ce-4859-b642-469cb6c69cee" /><br>
+> > 
+> > ```text
+> > image: World0.png
+> > resolution: 0.05
+> > origin: [-49.62500152587891, -4.775000190734863, 0.0000]
+> > negate: 0
+> > occupied_thresh: 0.65
+> > free_thresh: 0.196
+> > ```
+> 
+> 8. Visualization popup에서 **Save Image**를 클릭합니다.<br>`~/IsaacSim-ros_workspaces/humble_ws/src/navigation/carter_navigation/maps` 경로에 `carter_hospital_navigation.png`라는 이름으로 저장하세요.
+> > <img width="1000" alt="carter_hospital_navigation" src="https://github.com/user-attachments/assets/50c30dc8-34fc-4309-8770-d50d04781c1d" />
 
 ## Multiple Robot ROS2 Navigation Setup
 **Window > Examples > Robotics Examples**로 이동하세요.<br>**Robotics Examples** 탭을 클릭하세요.<br>**ROS2 > Navigation > Multiple Robots > Hospital Scene**를 누르고 우측에서 **Load Sample Scene**을 클릭하세요.
