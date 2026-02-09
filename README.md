@@ -23,7 +23,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 ## Installation
 ### Isaac Sim
   - [Workstation Installation](/docs/Installation/Isaac%20Sim/isaac-sim-workstation-installation.md)
-  - [Container Installation](/docs/Installation/Isaac%20Sim/isaac-sim-container-installation.md)
+  - [Container Installation (Recommanded)](/docs/Installation/Isaac%20Sim/isaac-sim-container-installation.md)
 
 ### ROS 2
   - [ROS 2 Humble Installation](/docs/Installation/ROS%202/ros2-humble-installation.md)
@@ -56,7 +56,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 ### Connecting with ROS 2 Stacks
   - [ROS 2 Navigation](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Navigation/ros2-navigation.md)
   - [Multiple Robot ROS2 Navigation](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/Multiple%20Robot%20ROS2%20Navigation/multiple-robot-ros2-navigation.md)
-  - [ROS 2 Navigation with Block World Generator]
+  - [ROS 2 Navigation with Block World Generator](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Navigation%20with%20Block%20World%20Generator/ros2-navigation-with-block-world-generator.md)
   - [MoveIt 2]
 
 
