@@ -139,21 +139,42 @@ ROS 2의 주요 communication interfaces 스타일 중 하나는 이 topic에 �
 
 5. **Play**를 클릭하여 시뮬레이션을 시작합니다.
 
----
-
 ## Example: Subscribe to Object Pose
+다음 예제는 일반적인 ROS 2 message type `sgeometry_msgs/msgs/Pose`를 사용하여 객체를 수신된 Pose로 텔레포트하기 위해 `/object_pose`대한 Subscriber를 생성하는 방법을 보여줍니다.<br>
 
+1. **Create > Shape > Cube**를 클릭하여 object를 생성합니다.
 
+2. **Window > Graph Editors > Action Graph**로 이동하여 Action Graph를 생성 후 다음과 같이 구성합니다.
+> [!NOTE]
+> **ROS2 Subscriber**의 **Property**에서 `messagePackage`, `messageName`를 정의해야 노드의 인풋이 생성됩니다.
 
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/070a6dc8-5390-4144-9caa-25e0c4597964" /><br>
+> | Node | Input field | Value |
+> |-|-|-|
+> | ROS2 Publisher | messagePackage | geometry_msgs |
+> |  | messageName | Pose |
+> |  | topicName | object_pose |
+> | Read Prim Attribute (upper node) | Prim | /World/Cube |
+> |  | Attribute Name | xformOp:translate |
+> | Read Prim Attribute (lower node) | Prim | /World/Cube |
+> |  | Attribute Name | xformOp:orient |
+>
+> **Write Prim Attribute** 노드는 특정 Prim attribute values을 설정합니다.
+> **Make 3-Vector** 노드는 개별 구성 요소로부터 three-component vector를 만듭니다.
 
+3. **Play**를 클릭하여 시뮬레이션을 시작합니다.
 
-
-
-
-
-
-
-
+4. 새로운 터미널에서 다음 명령을 실행하여 Isaac Sim의 객체를 지정된 pose로 텔레포트합니다.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 topic pub -1 /object_pose geometry_msgs/msg/Pose "{position: {x: 1, y: 2, z: 3}, orientation: {x: 0.4619398, y: 0.1913417, z: 0.4619398, w: 0.7325378}}"
+> ```
+> [ros2_generic_publisher_and_subscriber.webm](https://github.com/user-attachments/assets/4adeb491-b8a8-4f5f-83ff-10693dbb0749)
 
 
 
