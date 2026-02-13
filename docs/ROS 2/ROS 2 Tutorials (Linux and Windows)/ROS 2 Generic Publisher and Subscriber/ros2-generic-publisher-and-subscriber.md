@@ -151,7 +151,7 @@ ROS 2의 주요 communication interfaces 스타일 중 하나는 이 topic에 �
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/070a6dc8-5390-4144-9caa-25e0c4597964" /><br>
 > | Node | Input field | Value |
 > |-|-|-|
-> | ROS2 Publisher | messagePackage | geometry_msgs |
+> | ROS2 Subscriber | messagePackage | geometry_msgs |
 > |  | messageName | Pose |
 > |  | topicName | object_pose |
 > | Read Prim Attribute (upper node) | Prim | /World/Cube |
