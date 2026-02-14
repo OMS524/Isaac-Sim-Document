@@ -65,7 +65,7 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 - [ROS 2 Service for Manipulating Prims Attributes](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Service%20for%20Manipulating%20Prims%20Attributes/ros2-service-for-manipulating-prims-attributes.md)
 
 ### Customization
-- [ROS 2 Python Custom Messages]
+- [ROS 2 Python Custom Messages](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS%202%20Python%20Custom%20Messages/ros2-python-custom-messages.md)
 - [ROS 2 Python Custom OmniGraph Node]
 - [ROS 2 Custom C++ OmniGraph Node]
 
