@@ -87,18 +87,18 @@ cd ~/IsaacSim-ros_workspaces/
 > `./build_ros.sh` 실행 시 오류가 날 경우 해당 오류 패키지를 잠시 다른 위치로 이동하여 다시 빌드하고 원래 위치로 이동하는 걸 추천합니다.
 > `Successfully copied 4.29GB to /home/oms/IsaacSim-ros_workspaces/build_ws/humble/humble_ws`와 같은 문구가 나오면 빌드 성공입니다.
 
-- 소싱하기 위한 python3 경로 설정
+- 컨테이너에서 소싱하기 위한 python3 경로 설정
 ```bash
 export PATH=/isaac-sim/kit/python/bin:$PATH
 ```
 
-- 소싱
+- 컨테이너에서 소싱
 ```bash
 source /IsaacSim-ros_workspaces/build_ws/humble/humble_ws/install/local_setup.bash
 source /IsaacSim-ros_workspaces/build_ws/humble/isaac_sim_ros_ws/install/setup.bash
 ```
 
-- 실행
+- 컨테이너에서 실행
 ```bash
 ./python.sh {path}/ros2_custom_message.py
 ./python.sh /IsaacSim-ros_workspaces/tutorials/ros2_tutorials/ros2_python_custom_messages/ros2_custom_message.py
