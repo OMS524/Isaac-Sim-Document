@@ -31,19 +31,19 @@ Isaac Sim과 함께 사용할 수 있는 ROS 2 custom message packages를 만들
 
 ### Script Editor
 1. **Window > Script Editor**로 이동하여 다음 코드를 입력합니다.
-```python
-import rclpy
-from custom_message.msg import SampleMsg
-
-# Create message
-sample_msg = SampleMsg()
-
-# assign data in the string part and integer part of the message
-sample_msg.my_string.data = "hello from Isaac Sim!"
-sample_msg.my_num = 23
-
-print("Message assignment completed!")
-```
+> ```python
+> import rclpy
+> from custom_message.msg import SampleMsg
+> 
+> # Create message
+> sample_msg = SampleMsg()
+> 
+> # assign data in the string part and integer part of the message
+> sample_msg.my_string.data = "hello from Isaac Sim!"
+> sample_msg.my_num = 23
+> 
+> print("Message assignment completed!")
+> ```
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/503dea0f-483a-48fe-934c-aeccc8cdd563" />
 
 2. **Run**을 클릭합니다.
