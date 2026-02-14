@@ -69,15 +69,6 @@ cd ~/IsaacSim-ros_workspaces/
 git checkout IsaacSim-5.1.0
 ```
 
-- `~/IsaacSim-ros_workspaces/build_ros.sh` 파일 맨 마지막에 아래 내용 추가
-```bash
-# After build complete, create runtime compat symlinks
-mkdir -p /workspace 2>/dev/null || true
-ln -sfn "${SCRIPT_DIR}/build_ws/${ROS_DISTRO}/${ROS_DISTRO}_ws" "/workspace/${ROS_DISTRO}_ws" 2>/dev/null || true
-ln -sfn "${SCRIPT_DIR}/build_ws/${ROS_DISTRO}/${ROS_DISTRO}_ws" "/workspace/humble_ws" 2>/dev/null || true
-ln -sfn "${SCRIPT_DIR}/build_ws/${ROS_DISTRO}/isaac_sim_ros_ws" "/workspace/build_ws" 2>/dev/null || true
-```
-
 - ROS2 워크스페이스에서 파이썬 3.11로 빌드
 ```bash
 cd ~/IsaacSim-ros_workspaces/
