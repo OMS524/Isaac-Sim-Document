@@ -184,10 +184,67 @@ Isaac Sim에서 사용자 지정 메시지를 사용하려면 ROS 2를 사용하
 > ```
 > <img width="500" alt="image" src="https://github.com/user-attachments/assets/33b36db0-be1e-48f2-9682-a3f8dc3eae2c" />
 
+## Deeper Dive into Nodes and Extension
+- `premake5.lua`는 확장의 빌드를 처리하며, 지정된 ROS 설치 경로에 대한 컴파일 및 링크를 처리하는 섹션을 검토합니다:
+```text
+-- Build the C++ plugin that will be loaded by the extension.
+project_ext_plugin(ext, ogn.plugin_project)
+    -- It is important that you add all subdirectories containing C++ code to this project
+    add_files("source", "plugins/"..ogn.module)
+    add_files("nodes", "plugins/nodes")
 
+    -- Add the standard dependencies all OGN projects have; includes, libraries to link, and required compiler flags
+    add_ogn_dependencies(ogn)
 
+    includedirs {
+        -- System level ROS includes
+        "%{target_deps}/system_ros/include/std_msgs",
 
+        "%{target_deps}/system_ros/include/geometry_msgs",
 
+        "%{target_deps}/system_ros/include/rosidl_runtime_c",
+
+        "%{target_deps}/system_ros/include/rosidl_typesupport_interface",
+
+        "%{target_deps}/system_ros/include/rcl",
+
+        "%{target_deps}/system_ros/include/rcutils",
+
+        "%{target_deps}/system_ros/include/rmw",
+
+        "%{target_deps}/system_ros/include/rcl_yaml_param_parser",
+
+        -- Additional sourced ROS workspace includes
+        "%{target_deps}/additional_ros/include/tutorial_interfaces",
+    }
+
+    libdirs {
+        -- System level ROS libraries
+        "%{target_deps}/system_ros/lib",
+
+        -- Additional sourced ROS workspace libraries
+        "%{target_deps}/additional_ros/lib",
+    }
+
+    links{
+        --  Minimal ROS 2 C API libs needed for your nodes to work
+        "rosidl_runtime_c", "rcutils", "rcl", "rmw",
+
+        -- For the simple string message, add the deps
+        "std_msgs__rosidl_typesupport_c", "std_msgs__rosidl_generator_c",
+
+        -- Add dependencies of the custom message with its libs
+        "geometry_msgs__rosidl_typesupport_c", "geometry_msgs__rosidl_typesupport_c",
+        "tutorial_interfaces__rosidl_typesupport_c", "tutorial_interfaces__rosidl_generator_c",
+    }
+
+    filter { "system:linux" }
+        linkoptions { "-Wl,--export-dynamic" }
+
+    cppdialect "C++17"
+```
+- OmniGraph 노드는 `plugins/nodes` 아래에 있습니다. `rcl` ROS 2 API는 OmniGraph 노드에서 ROS 2 구성 요소를 생성하고 작업하는 데 사용됩니다:
+  - C++ 노드에서는 `Exec In` 조건이 참일 때 `compute()`를 호출합니다. 여기서 노드와 publisher가 처음 생성됩니다. 이 함수에서도 메시지가 publish됩니다.
 
 
 
