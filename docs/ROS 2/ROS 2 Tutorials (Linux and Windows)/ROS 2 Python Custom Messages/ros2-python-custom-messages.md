@@ -90,6 +90,7 @@ source /IsaacSim-ros_workspaces/build_ws/humble/isaac_sim_ros_ws/install/setup.b
 ```
 
 > ![NOTE]
+> 
 > ```bash
 > source /IsaacSim-ros_workspaces/build_ws/humble/isaac_sim_ros_ws/install/setup.bash
 > ```
