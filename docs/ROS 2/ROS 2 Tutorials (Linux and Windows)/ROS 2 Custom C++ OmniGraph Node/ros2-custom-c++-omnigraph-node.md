@@ -182,7 +182,7 @@ Isaac Sim에서 사용자 지정 메시지를 사용하려면 ROS 2를 사용하
 > ```bash
 > ros2 topic list
 > ```
-> <img width="200" alt="image" src="https://github.com/user-attachments/assets/33b36db0-be1e-48f2-9682-a3f8dc3eae2c" />
+> <img width="500" alt="image" src="https://github.com/user-attachments/assets/33b36db0-be1e-48f2-9682-a3f8dc3eae2c" />
 
 
 
