@@ -86,16 +86,19 @@ ROS2 Service Prim 노드는 다음과 같은 메시지 유형의 네 가지 Serv
 > > ```bash
 > > ros2 service list
 > > ```
+> > <img width="500" alt="image" src="https://github.com/user-attachments/assets/3d9d5929-7be5-4aa4-9dca-598d820bb5d9" /><br>
 > 
 > 모든 child prim paths와 types을 prim `/World` 아래로 가져옵니다:
 > > ```bash
 > > ros2 service call /get_prims isaac_ros2_messages/srv/GetPrims "{path: /World}"
 > > ```
+> > <img width="500" alt="image" src="https://github.com/user-attachments/assets/f3f9d6ed-effb-462f-b29f-1f5f1cf6e836" /><br>
 > 
 > Cube(`/World/Cube`) prim의 모든 attribute names과 types을 가져옵니다:
 > > ```bash
 > > ros2 service call /get_prim_attributes isaac_ros2_messages/srv/GetPrimAttributes "{path: /World/Cube}"
 > > ```
+> > <img width="500" alt="image" src="https://github.com/user-attachments/assets/998d1d2a-9b66-4294-8103-3e303a07fe50" /><br>
 > 
 > Cube(`/World/Cube`) prim의 pose(position 및 orientation)를 가져옵니다
 > > ```bash
@@ -104,6 +107,8 @@ ROS2 Service Prim 노드는 다음과 같은 메시지 유형의 네 가지 Serv
 > > # get orientation (quaternion: wxyz)
 > > ros2 service call /get_prim_attribute isaac_ros2_messages/srv/GetPrimAttribute "{path: /World/Cube, attribute: xformOp:orient}"
 > > ```
+> > <img width="500" alt="image" src="https://github.com/user-attachments/assets/27c92936-0c76-4d94-b54c-294656dcb8ca" /><br>
+> > <img width="500" alt="image" src="https://github.com/user-attachments/assets/467c011a-06ff-4742-aa5a-b7fb0e949b04" /><br>
 > 
 > Cube(`/World/Cube`) prim의 새 pose(position 및 orientation)를 설정합니다:
 > > ```bash
