@@ -18,7 +18,7 @@
 > [!IMPORTANT]
 > 해당 튜토리얼은 ROS 2에서 로컬에 설치된 Isaac Sim을 실행하는 예제입니다.<br>
 > 본 환경에서는 Isaac Sim은 컨테이너에서 실행하고, ROS 2는 로컬에서 실행하고 있으므로 튜토리얼과 실행 구조가 다릅니다.<br>
-> 따라서 본 튜토리얼은 로컬 설치형 Isaac Sim을 ROS 2 launch로 실행할 수 있다는 예시로 이해하시기 바랍니다.<br>
+> 따라서 본 튜토리얼은 Isaac Sim을 ROS 2 launch로 실행할 수 있다는 예시로 이해하시기 바랍니다.<br>
 
 ## Launching Isaac Sim with ROS 2
 `isaacsim` 패키지에는 Isaac Sim을 실행하기 위한 스크립트와 ROS 2 실행 파일이 포함되어 있습니다.<br>
