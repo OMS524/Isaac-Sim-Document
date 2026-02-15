@@ -158,7 +158,7 @@ GetEntitiesStates Service는 시뮬레이션에서 여러 엔티티의 월드 �
 > ```bash
 > ros2 service call /get_entities_states simulation_interfaces/srv/GetEntitiesStates "{filters: {filter: '^/World'}}"
 > ```
-> <img width="300" alt="image" src="https://github.com/user-attachments/assets/4836fc83-4fdf-4895-b7ff-6f3f2b490031" />
+> [ros2_simulation_control_12.webm](https://github.com/user-attachments/assets/e10f5882-a937-4281-b1c7-5d9c945b74a5)
 
 - GetEntities와 GetEntityState 서비스의 기능을 결합합니다
 - 리제그스 패턴 매칭을 사용하여 엔티티를 먼저 필터링합니다
