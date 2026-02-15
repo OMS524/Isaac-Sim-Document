@@ -176,7 +176,7 @@ DeleteEntity Service는 시뮬레이션에서 지정된 엔티티를 삭제합�
 > ```bash
 > ros2 service call /delete_entity simulation_interfaces/srv/DeleteEntity "{entity: '/World/robot'}"
 > ```
-> <img width="300" alt="image" src="https://github.com/user-attachments/assets/9a8eb892-7a81-444f-a931-987b75410ef0" />
+> [ros2_simulation_control_13.webm](https://github.com/user-attachments/assets/954d5b3e-d46f-4e08-b9ff-e69e32f0b4c9)
 
 - 엔티티가 성공적으로 삭제되면 서비스는 `RESULT_OK`를 반환합니다
 - 엔티티가 보호되어 삭제할 수 없는 경우 `RESULT_OPERATION_FAILED`를 반환합니다
