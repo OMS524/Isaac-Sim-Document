@@ -54,7 +54,7 @@ launch parameters는 아래에 정의되어 있습니다:
 > - **custom_args**: 실행 시간 동안 isaac-sim.sh 에 전달하고자 하는 커스텀 Isaac Sim args를 추가합니다.<br>
 > [**default_value** = ""]
 > 
-> - **exclude_install_path**: LD_LIBRARY_PATH, PYTHONPATH 및 PATH 환경 변수에서 제외할 설치 경로 목록입니다. <br>(/path/to/custom_ros_workspace/install/).<br>
+> - **exclude_install_path**: LD_LIBRARY_PATH, PYTHONPATH 및 PATH 환경 변수에서 제외할 설치 경로 목록입니다. (/path/to/custom_ros_workspace/install/).<br>
 > [**default_value** = ""]
 
 
