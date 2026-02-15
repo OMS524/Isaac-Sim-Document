@@ -76,5 +76,5 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/index.html
 - [ROS2 Simulation Control](/docs/ROS%202/ROS%202%20Tutorials%20(Linux%20and%20Windows)/ROS2%20Simulation%20Control/ros2-simulation-control.md)
 
 ### Troubleshooting
-- [ROS 2 Troubleshooting]
+- [ROS 2 Troubleshooting](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/ros2_tutorials/troubleshooting.html#ros-2-troubleshooting)
 
