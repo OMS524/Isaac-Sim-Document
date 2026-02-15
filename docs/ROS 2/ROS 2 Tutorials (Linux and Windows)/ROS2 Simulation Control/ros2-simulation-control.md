@@ -128,7 +128,7 @@ GetEntityInfo Service는 특정 엔티티의 유형 및 속성과 같은 세부 
 > ```bash
 > ros2 service call /get_entity_info simulation_interfaces/srv/GetEntityInfo "{entity: '/World/robot'}"
 > ```
-> <img width="300" alt="image" src="https://github.com/user-attachments/assets/8bed8f08-28b3-47e0-988c-ebf61ef10195" />
+> [ros2_simulation_control_11.webm](https://github.com/user-attachments/assets/eb0e01d8-cce4-40db-8856-529656191c0f)
 
 ### GetEntityState Service
 GetEntityState Service는 주어진 기준 프레임에 대해 특정 엔티티의 pose, twist, acceleration를 제공합니다. 현재는 world 프레임만 지원됩니다.
