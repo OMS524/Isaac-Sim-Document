@@ -15,6 +15,11 @@
 | ROS 2 Installation | Native (Host) |
 | DDS Implementation | Fast DDS |
 
+> [!IMPORTANT]
+> 해당 튜토리얼은 ROS 2에서 로컬에 설치된 Isaac Sim을 실행하는 예제입니다.<br>
+> 본 환경에서는 Isaac Sim은 컨테이너에서 실행하고, ROS 2는 로컬에서 실행하고 있으므로 튜토리얼과 실행 구조가 다릅니다.<br>
+> 따라서 본 튜토리얼은 로컬 설치형 Isaac Sim을 ROS 2 launch로 실행할 수 있다는 예시로 이해하시기 바랍니다.<br>
+
 ## Launching Isaac Sim with ROS 2
 `isaacsim` 패키지에는 Isaac Sim을 실행하기 위한 스크립트와 ROS 2 실행 파일이 포함되어 있습니다.<br>
 <br>
@@ -57,28 +62,82 @@ launch parameters는 아래에 정의되어 있습니다:
 > - **exclude_install_path**: LD_LIBRARY_PATH, PYTHONPATH 및 PATH 환경 변수에서 제외할 설치 경로 목록입니다. (/path/to/custom_ros_workspace/install/).<br>
 > [**default_value** = ""]
 
+이제 ROS 2 launch에서 Isaac Sim을 실행하는 주요 예제를 살펴보겠습니다. 다음 예제 실행 전에 이전 프로세스를 종료해야 합니다.
 
+- 기본 설정에서 Isaac Sim을 실행하려면 아래 명령을 실행합니다.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 launch isaacsim run_isaacsim.launch.py
+> ```
 
+- 작업 공간에서 사용자 지정 ROS 패키지로 Isaac Sim을 실행하려면 아래 명령을 실행합니다.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 launch isaacsim run_isaacsim.launch.py exclude_install_path:=/home/user/IsaacSim-ros_workspaces/humble_ws/install ros_installation_path:=/home/user/IsaacSim-ros_workspaces/build_ws/humble/humble_ws/install/local_setup.bash
+> ```
 
+- 다음으로 USD 파일이 열려 있는 상태에서 아이작 심을 실행하고 즉시 플레이를 시작하겠습니다. 아래 명령을 실행하세요.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 launch isaacsim run_isaacsim.launch.py gui:=https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Samples/ROS2/Robots/Nova_Carter_ROS.usd play_sim_on_start:=true
+> ```
 
+- 이제 독립 실행형 워크플로를 사용하여 Isaac Sim을 실행해 보겠습니다. 아래 명령을 실행하세요.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 launch isaacsim run_isaacsim.launch.py standalone:=$HOME/isaacsim/standalone_examples/api/isaacsim.ros2.bridge/moveit.py
+> ```
 
+## Launch Isaac Sim with Nav2
+Isaac Sim launch 파일은 다른 ROS 2 워크플로우에서 Isaac Sim launching을 통합하기 위해 다른 launching 파일에 포함될 수 있습니다.<br>
+<br>
+여기서 우리는 [Nav2 example](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/ros2_tutorials/tutorial_ros2_navigation.html#isaac-sim-app-tutorial-ros2-navigation)와 [isaac_ros_navigation_goal ROS 2 package](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/ros2_tutorials/tutorial_ros2_navigation.html#isaac-sim-app-tutorial-ros2-nav-goals)를 사용하여 Isaac Sim을 실행하는 것을 시연할 것입니다.<br>
+<br>
+예제 실행 파일 `carter_navigation/launch/carter_navigation_isaacsim.launch.py`은 `carter_navigation` 패키지에서 찾을 수 있습니다.<br>
+<br>
+이 시나리오에서는 실행 파일이 Isaac Sim에서 console 출력을 기다리도록 구성되어 있습니다: "Stage loaded and simulation is playing." 이 메시지는 GUI 모드에서 모든 장면을 로드하는 데 사용되는 `open_isaacsim_stage.py` 스크립트에서 출력됩니다. 이는 `Isaacsim` 패키지의 스크립트 폴더에서 찾을 수 있습니다.<br>
 
+1. 아래 명령을 사용하여 통합 실행 파일을 실행합니다.
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 launch carter_navigation carter_navigation_isaacsim.launch.py
+> ```
+> 장면이 로드될 때까지 잠시 기다립니다. 창고 내비게이션 장면이 Isaac Sim에 자동으로 로드되면 RViz2가 로봇의 센서 데이터를 자동으로 표시하기 시작하고 로봇이 탐색할 수 있는 자동 goals가 생성됩니다.
 
-
-
-```bash
-cd ~/IsaacSim-ros_workspaces/humble_ws/
-export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
-source /opt/ros/humble/setup.bash
-source install/local_setup.bash
-```
-```bash
-ros2 launch isaacsim run_isaacsim.launch.py
-```
-
-
-
-
-
+iw_hub robot navigation scene과 `iw_hub_navigation` 패키지를 사용하여 동일한 워크플로를 실행할 수 있습니다. 다음 명령을 사용하여 통합 실행 파일을 실행합니다:
+> ```bash
+> cd ~/IsaacSim-ros_workspaces/humble_ws/
+> export FASTRTPS_DEFAULT_PROFILES_FILE=/home/oms/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+> source /opt/ros/humble/setup.bash
+> source install/local_setup.bash
+> ```
+> ```bash
+> ros2 launch carter_navigation carter_navigation_isaacsim.launch.py
+> ```
 
 
