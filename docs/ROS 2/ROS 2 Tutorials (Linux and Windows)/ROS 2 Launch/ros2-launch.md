@@ -25,7 +25,7 @@ launch parameters는 아래에 정의되어 있습니다:
 > [**default_value** = "5.1.0"]
 > 
 > - **install_path**: Isaac Sim이 기본값이 아닌 위치에 설치된 경우 Isaac Sim 앱 셀렉터에 표시되는 패키지 경로인 Isaac Sim 설치 루트 폴더에 대한 특정 경로를 제공합니다. (정의된 경우 "version" parameter는 무시됩니다.)<br>
-> [**default_value** = "]
+> [**default_value** = ""]
 > 
 > - **use_internal_libs**: Isaac Sim과 함께 제공된 내부 ROS 라이브러리를 사용하려면 true로 설정합니다.<br>
 > [**default_value** = "true"]
@@ -34,10 +34,10 @@ launch parameters는 아래에 정의되어 있습니다:
 > [**default_value** = "fastdds"]
 > 
 > - **gui**: 표준 gui 모드에서 Isaac Sim을 시작할 때 USD 파일의 경로를 제공하여 파일을 엽니다. 비어 있으면 표준 gui 모드에서 Isaac Sim이 empty stage를 엽니다.<br>
-> [**default_value** = "]
+> [**default_value** = ""]
 > 
 > - **standalone**: Python 파일의 경로를 제공하여 파일을 열고 독립 실행형 워크플로에서 Isaac Sim을 시작합니다. 빈 상태로 두면 표준 GUI 모드에서 Isaac Sim이 empty stage를 엽니다.<br>
-> [**default_value** = "]
+> [**default_value** = ""]
 > 
 > - **play_sim_on_start**: 활성화되면 scene이 로드된 후 Isaac Sim이 play을 시작합니다. (표준 GUI 모드에서만 적용됩니다.)<br>
 > [**default_value** = "false"]
