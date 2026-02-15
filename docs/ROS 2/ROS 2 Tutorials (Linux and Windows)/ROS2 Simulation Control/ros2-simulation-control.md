@@ -347,16 +347,57 @@ GetCurrentWorld Service는 현재 로드된 world에 대한 URI, name, format �
 - 성공하면 월드 정보와 함께 `RESULT_OK`를 반환합니다
 - 현재 로드된 월드가 없는 경우 `NO_WORLD_LOADED`를 반환합니다
 
+### GetAvailableWorlds Service
+GetAvailableWorlds Service는 시뮬레이션에 로드할 수 있는 사용 가능한 world 파일 목록을 반환합니다. TagsFilter 기반 필터링을 지원하여 기본 Isaac Sim 경로에서 USD 월드 파일을 검색합니다.
+> - Get all default available worlds:
+> ```bash
+> ros2 service call /get_available_worlds simulation_interfaces/srv/GetAvailableWorlds
+> ```
+> - Get worlds with tag filtering (search for default worlds with specific tags in filename):
+> ```bash
+> ros2 service call /get_available_worlds simulation_interfaces/srv/GetAvailableWorlds "{filter: {tags: ['warehouse', 'carter']}, continue_on_error: true}"
+> ```
+> - Search additional custom paths:
+> ```bash
+> ros2 service call /get_available_worlds simulation_interfaces/srv/GetAvailableWorlds "{additional_sources: ['/custom/worlds/path'], continue_on_error: true}"
+> ```
+> - Offline-only search with additional local sources:
+> ```bash
+> ros2 service call /get_available_worlds simulation_interfaces/srv/GetAvailableWorlds "{additional_sources: ['/home/user/custom_worlds', '/opt/isaac_worlds'], offline_only: true, continue_on_error: true}"
+> ```
+> [ros2_simulation_control_9.webm](https://github.com/user-attachments/assets/071fc0f2-66fd-4e46-b649-13556f29a7c8)
 
+- 기본 Isaac Sim 경로 검색: `/Isaac/Environments` 및 `/Isaac/Samples/ROS2/Scenario`
+- 태그 매칭을 위해 FILTER_MODE_ANY(기본값) 또는 FILTER_MODE_ALL로 TagsFilter를 지원합니다
+- `additional_sources`에 지정된 추가 사용자 지정 경로를 검색할 수 있습니다
+- `offline_only: true`: 로컬 파일 시스템 경로만 검색하는 경우 true
+- 일부 경로가 실패하더라도 계속 검색하려면 `continue_on_error: true`를 설정합니다
+- 사용 가능한 월드 목록과 함께 `RESULT_OK`를 반환합니다
+- 기본 자산 경로에 액세스할 수 없고 추가 소스가 제공되지 않는 경우 `DEFAULT_SOURCES_FAILED`을 반환합니다
 
+## Using the ROS 2 Simulation Control Actions
+### SimulateSteps Action
+SimulateSteps Action은 유한한 수의 steps를 시뮬레이션하고 각 step이 끝난 후 피드백과 함께 일시 정지 상태로 돌아갑니다.
+> - Basic usage - Step the simulation by 10 frames:
+> ```bash
+> ros2 action send_goal /simulate_steps simulation_interfaces/action/SimulateSteps "{steps: 10}"
+> ```
+> - With feedback - Step the simulation by 20 frames and show feedback:
+> ```bash
+> ros2 action send_goal /simulate_steps simulation_interfaces/action/SimulateSteps "{steps: 20}" --feedback
+> ```
+> [ros2_simulation_control_10.webm](https://github.com/user-attachments/assets/11ea9cfd-08cf-4651-ba00-6c856416fda1)
 
+- stepping을 수행하려면 시뮬레이션이 일시 중지된 상태여야 합니다
+- step이 완료되면 시뮬레이션이 일시 중지된 상태로 돌아갑니다
+- 각 step이 완료되고 남은 step을 표시한 후 피드백을 받게 됩니다
+- 실행 중에 action을 취소할 수 있습니다
 
-
-
-
-
-
-
+## Technical Details
+extension 기능은 `omni.timeline` interface를 사용하여 시뮬레이션 상태를 제어하고 표준 서비스를 통해 깨끗한 ROS 2 interface를 제공합니다. 구현에는 다음이 포함됩니다:
+- 단일 노드를 통해 모든 ROS 2 services를 처리하는 singleton `ROS2ServiceManager`
+- Isaac Sim’s timeline과 interface하는 `SimulationControl` class
+- Action Graph interface와 독립적으로 ROS 2 spinning을 위한 Thread-safe implementation
 
 
 
